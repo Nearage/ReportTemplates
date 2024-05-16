@@ -1,5 +1,5 @@
+.gitignore
 /.alpackages
 /.snapshots
 /.vscode
-/app.json
 /Default Publisher_Reports_1.0.0.0.app
