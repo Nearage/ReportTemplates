@@ -28,7 +28,7 @@ report 50100 "Demo 1"
                 trigger OnPreDataItem()
                 var
                     LinesPerPage: Integer;
-                    Section1Lines: Integer;
+                    SectionLines: Integer;
                     Lines: Integer;
                 begin
                     LinesPerPage := 38;
