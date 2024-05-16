@@ -16,7 +16,6 @@ report 50100 "Demo 1"
 
             dataitem(Child; Integer)
             {
-                // DataItemTableView = where(Number = filter(1 .. 5));
                 RequestFilterFields = Number;
 
                 column(Child_Number; Number) { }
