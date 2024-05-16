@@ -34,7 +34,7 @@ report 50100 "Demo 1"
                     LinesPerPage := 38;
                     SectionLines := 13;
 
-                    Lines := (LinesPerPage - ((Child.Count() + Section1Lines) mod LinesPerPage)) mod LinesPerPage;
+                    Lines := (LinesPerPage - ((Child.Count() + SectionLines) mod LinesPerPage)) mod LinesPerPage;
 
                     SetRange(Number, 1, Lines);
                 end;
