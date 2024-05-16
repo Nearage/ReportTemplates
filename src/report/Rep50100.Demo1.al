@@ -32,7 +32,7 @@ report 50100 "Demo 1"
                     Lines: Integer;
                 begin
                     LinesPerPage := 38;
-                    Section1Lines := 13;
+                    SectionLines := 13;
 
                     Lines := (LinesPerPage - ((Child.Count() + Section1Lines) mod LinesPerPage)) mod LinesPerPage;
 
