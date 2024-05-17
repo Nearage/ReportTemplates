@@ -1,10 +1,10 @@
 {
   "id": "eed9f188-4fe8-4400-a068-011fc5e7fb8f",
   "name": "Reports",
-  "publisher": "Default Publisher",
+  "publisher": "Alejandro de Tena",
   "version": "1.0.0.0",
-  "brief": "",
-  "description": "",
+  "brief": "Biblioteca de plantillas de informes.",
+  "description": "Biblioteca de plantillas de informes que integran funciones de diseño avanzadas.",
   "privacyStatement": "",
   "EULA": "",
   "help": "",
