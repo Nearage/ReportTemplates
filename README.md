@@ -16,5 +16,3 @@ En este informe se ha incluido el _dataitem_ **Blanks** y se ha exportado la el 
 >La fórmula combinada permite obtener el mismo resultado diréctamente, simplificando el proceso: `9,69 - (9,69 div 0,25) * 0,25 = 0,19 in`.
 >
 >\* _Nótese que, pese a dividir y multiplicar inmediatamente por el mismo valor, la operación no se anula debido a que no se trata de una división común, ya que la parte decimal se descarta con el operador_ `div`.
->
->&nbsp;
