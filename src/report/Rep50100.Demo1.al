@@ -1,7 +1,3 @@
-namespace Reports.Reports;
-
-using System.Utilities;
-
 report 50100 "Demo 1"
 {
     Caption = 'Demo 1';
