@@ -1,7 +1,7 @@
 # Demo 1
 Este informe integra la funcionalidad necesaria para distribuir la altura del documento, de manera que las secciones adicionales se sitúen al final del mismo, junto al pie de página, si lo hay.
 
-En este informe se ha incluido el _dataitem_ **Blanks** y se ha exportado la el campo _Number_ como una columna del mismo. Este _dataitem_ hace uso del procedimiento `SetBlankLinesRange`para calcular el número de líneas en blanco que deben añadirse al cuerpo. Para más información, consultar la documentación del procedimiento en el código.
+Para ello, se ha incluido el _dataitem_ **Blanks** y se ha exportado la el campo _Number_ como una columna del mismo. Este _dataitem_ hace uso del procedimiento `SetBlankLinesRange`para calcular y establecer el número de líneas en blanco que deben añadirse al cuerpo. Para más información, consultar la documentación del procedimiento en el código.
 
 ># Aviso
 >Es posible que, tras aplicar el procedimiento desarrollado, quede un espacio en blanco entre la útlma sección adicional y el pie de página. Esto ocurre cuando la altura de las líneas insertadas, incluídas las líneas en blanco y las líneas reservadas para secciones adicionales, no es suficiente para completar la altura del cuerpo completamente. **No es necesario, pero si se desea, es posible rellenar este espacio**. Para ello, basta con calcular la diferencia entre la altura del cuerpo y la altura total de las líneas insertadas, en blanco y reservadas. La altura resultante debe añadirse a cualquier sección estática del informe que se repita en las mismas páginas que la tabla principal; normalmente, cabecera o pie de página. 
