@@ -105,6 +105,46 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
+                  <Height>0.25in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Child_Number4">
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>0,25 in</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>PaleTurquoise</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Child_Number</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>PaleTurquoise</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                            <BackgroundColor>LightSeaGreen</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
                   <Height>3.25in</Height>
                   <TablixCells>
                     <TablixCell>
@@ -175,6 +215,16 @@
                   </TablixMembers>
                 </TablixMember>
                 <TablixMember>
+                  <Group Name="Group2" />
+                  <TablixMembers>
+                    <TablixMember>
+                      <Visibility>
+                        <Hidden>=IsNothing(Fields!Child2_Number.Value)</Hidden>
+                      </Visibility>
+                    </TablixMember>
+                  </TablixMembers>
+                </TablixMember>
+                <TablixMember>
                   <KeepWithGroup>Before</KeepWithGroup>
                 </TablixMember>
               </TablixMembers>
@@ -182,7 +232,7 @@
             <DataSetName>DataSet_Result</DataSetName>
             <Top>0in</Top>
             <Left>0in</Left>
-            <Height>3.75in</Height>
+            <Height>4in</Height>
             <Width>8.27in</Width>
             <Style>
               <Border>
@@ -191,7 +241,7 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>3.75in</Height>
+        <Height>4in</Height>
         <Style />
       </Body>
       <Width>8.27in</Width>
@@ -372,6 +422,9 @@ End Function
       <Fields>
         <Field Name="Child_Number">
           <DataField>Child_Number</DataField>
+        </Field>
+        <Field Name="Child2_Number">
+          <DataField>Child2_Number</DataField>
         </Field>
         <Field Name="Blank_Number">
           <DataField>Blank_Number</DataField>
