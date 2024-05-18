@@ -45,8 +45,8 @@ codeunit 50100 "Report Templates"
 
         /* El número de líneas en blanco se puede calcular de dos maneras equivalentes:
 
-        NumBlankLins := (LinesPerPage - (TotalNumLins mod LinesPerPage)) mod LinesPerPage;
-        NumBlankLins := (-TotalNumLins) mod LinesPerPage;
+          1. (LinesPerPage - (TotalNumLins mod LinesPerPage)) mod LinesPerPage
+          2. (-TotalNumLins) mod LinesPerPage
 
         La segunda opción es una versión refactorizada y simplificada de la primera, pero
         el resultado debería ser el mismo. Sin embargo, el operador módulo en AL no actúa
@@ -54,8 +54,8 @@ codeunit 50100 "Report Templates"
         creado el  procedimiento  Modulo  en la codeunit Mathx, que emplea una definición 
         distinta del operador módulo para realizar el cálculo. 
         
-        De  ese  modo,  haiendo  uso  de  dicha función, la versión simplificada funciona
-        corréctamente. */
+        Haiendo uso de dicho procedimiento, la versión simplificada funciona de la manera
+        deseada. */
 
         NumBlankLins := Mathx.Modulo(-TotalNumLins, LinesPerPage);
     end;
