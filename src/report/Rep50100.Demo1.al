@@ -44,8 +44,8 @@ report 50100 "Demo 1"
         DataSetLines: Integer; // Número de líneas del DataSet, teniendo en cuenta el espacio reservado.
         NumBlankLins: Integer; // Número de líneas en blanco.
     begin
-        LinesPerPage := BodyHeight div LineHeight; // Calcula cuántas líneas que caben en el cuerpo de una página.
-        ReserveLines := RsrvHeight div LineHeight; // Calcula cuántas líneas que deben reservarse para secciones adicionales.
+        LinesPerPage := BodyHeight div LineHeight; // Calcula cuántas líneas caben en el cuerpo de una página.
+        ReserveLines := RsrvHeight div LineHeight; // Calcula cuántas líneas deben reservarse para secciones adicionales.
         DataSetLines := Child.Count() + ReserveLines; // Calcula cuántas lineas ocupa el DataSet tras procesarse, teniendo en cuenta el espacio reservado.
         NumBlankLins := (LinesPerPage - (DataSetLines mod LinesPerPage)) mod LinesPerPage; // Calcula el número de líneas en blanco a añadir.
 
