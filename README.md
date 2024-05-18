@@ -1,5 +1,4 @@
 # Plantilla para diseño de informes dinámicos con secciones adicionales.
-
 Esta rama contiene el código y el diseño de un informe AL/RDL de ejemplo, que integra la funcionalidad necesaria para distribuir la altura del documento, de manera que las secciones adicionales se sitúen al final del mismo, junto al pie de página, si lo hay.
 
 En este informe se ha incluido el _dataitem_ **Blanks** y se ha exportado la el campo _Number_ como una columna del mismo. Este _dataitem_ hace uso del procedimiento `SetBlankLinesRange`para calcular el número de líneas en blanco que deben añadirse al cuerpo. Para más información, consultar la documentación del procedimiento en el código.
