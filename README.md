@@ -19,7 +19,7 @@ La _Codeunit_ `"Report Templates"` encapsula la lógica destinada a la gestión 
 ```al
 OnRun()
 ```
-Este trigger se activa automáticamente al invocar la _Codeunit_. Establece el rango del `dataitem` correspondiente a las líneas en blanco, basándose en el valor almacenado en `NumBlankLins`.
+Este trigger se activa automáticamente al invocar la _Codeunit_. Establece el rango del `DataItem` correspondiente a las líneas en blanco, basándose en el valor almacenado en `NumBlankLins`.
 
 ---
 
@@ -44,10 +44,10 @@ Este procedimiento calcula el espacio disponible en el cuerpo del informe, resta
 ---
 
 ```al
-IncludeDataitem(Dataitem: Variant)
+IncludeDataItem(DataItem: Variant)
 ```
 
-Permite incorporar un `dataitem` en el proceso de generación de líneas en blanco, incrementando el contador de registros del `dataitem` al total de líneas utilizadas.
+Permite incorporar un `DataItem` en el proceso de generación de líneas en blanco, incrementando el contador de registros del `DataItem` al total de líneas utilizadas.
 
 ## Uso
 
@@ -66,7 +66,7 @@ dataitem(...; Integer)
     var
         ReportTemplates: Codeunit "Report Templates";
     begin
-        ReportTemplates.IncludeDataitem(...);
+        ReportTemplates.IncludeDataItem(...);
         ReportTemplates.CalcBodysHeight(...);
         ReportTemplates.CalcBlanksRange(...);
         ReportTemplates.Run(...);

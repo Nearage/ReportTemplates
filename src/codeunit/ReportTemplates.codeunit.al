@@ -1,6 +1,6 @@
 codeunit 50100 "Report Templates"
 {
-    // Tabla que se usará el el dataitem encargado de generar las líneas en blanco.
+    // Tabla que se usará el el DataItem encargado de generar las líneas en blanco.
     TableNo = Integer;
 
     var
@@ -8,7 +8,7 @@ codeunit 50100 "Report Templates"
         NumBlankLins: Integer; // Número de líneas en blanco a añadir.
         TotalNumLins: Integer; // Número total de líneas reservadas en el informe.
 
-    // Establece el rango del dataitem de las líneas en blanco.
+    // Establece el rango del DataItem de las líneas en blanco.
     trigger OnRun()
     begin
         Rec.SetRange(Number, 1, NumBlankLins);
@@ -72,12 +72,12 @@ codeunit 50100 "Report Templates"
     /// Incluye  el _dataitem_  proporcionado  en  el  proceso de generación de líneas en
     /// blanco.
     /// </summary>
-    /// <param name="Dataitem">Dataitem a incluir en el proceso.</param>
-    procedure IncludeDataitem(Dataitem: Variant)
+    /// <param name="DataItem">DataItem a incluir en el proceso.</param>
+    procedure IncludeDataItem(DataItem: Variant)
     var
         RecordRef: RecordRef;
     begin
-        RecordRef.GetTable(Dataitem);
+        RecordRef.GetTable(DataItem);
         TotalNumLins += RecordRef.Count();
     end;
 }

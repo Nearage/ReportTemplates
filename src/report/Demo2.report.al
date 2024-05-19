@@ -30,8 +30,8 @@ report 50101 "Demo 2"
                 var
                     ReportTemplates: Codeunit "Report Templates";
                 begin
-                    ReportTemplates.IncludeDataitem(Child1);
-                    ReportTemplates.IncludeDataitem(Child2);
+                    ReportTemplates.IncludeDataItem(Child1);
+                    ReportTemplates.IncludeDataItem(Child2);
                     ReportTemplates.CalcBodysHeight(11.69, 0, 0, 1, 1);
                     ReportTemplates.CalcBlanksRange(0.25, 3.25);
                     ReportTemplates.Run(Blanks);
