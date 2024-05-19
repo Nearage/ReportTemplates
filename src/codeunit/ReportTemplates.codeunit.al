@@ -1,11 +1,12 @@
 codeunit 50100 "Report Templates"
 {
+    // Tabla que se usará el el dataitem encargado de generar las líneas en blanco.
     TableNo = Integer;
 
     var
-        BodyHeight: Decimal;
-        NumBlankLins: Integer;
-        TotalNumLins: Integer;
+        BodyHeight: Decimal; // Altura disponible en el cuerpo del informe.
+        NumBlankLins: Integer; // Número de líneas en blanco a añadir.
+        TotalNumLins: Integer; // Número total de líneas reservadas en el informe.
 
     // Establece el rango del dataitem de las líneas en blanco.
     trigger OnRun()
@@ -56,9 +57,15 @@ codeunit 50100 "Report Templates"
     /// <param name="HeaderHgt">Altura de la cabecera.</param>
     /// <param name="FooterHgt">Altura del pie.</param>
     /// <returns>La altura disponible en el cuerpo.</returns>
-    procedure CalcBodysHeight(DocHeight: Decimal; MarginTop: Decimal; MarginBot: Decimal; HeaderHgt: Decimal; FooterHgt: Decimal): Decimal
+    procedure CalcBodysHeight(DocHeight: Decimal;
+                              MarginTop: Decimal;
+                              MarginBot: Decimal;
+                              HeaderHgt: Decimal;
+                              FooterHgt: Decimal): Decimal
     begin
-        BodyHeight := DocHeight - MarginBot - MarginTop - HeaderHgt - FooterHgt;
+        BodyHeight := DocHeight;
+        BodyHeight -= (MarginTop + MarginBot);
+        BodyHeight -= (HeaderHgt + FooterHgt);
     end;
 
     /// <summary>
