@@ -32,7 +32,11 @@ Procedimiento encargado de calcular el número de líneas en blanco requeridas p
 ---
 
 ```al
-CalcBodysHeight(DocHeight: Decimal; MarginTop: Decimal; MarginBot: Decimal; HeaderHgt: Decimal; FooterHgt: Decimal): Decimal
+CalcBodysHeight(DocHeight: Decimal;
+                MarginTop: Decimal; 
+                MarginBot: Decimal; 
+                HeaderHgt: Decimal; 
+                FooterHgt: Decimal): Decimal
 ```
 
 Este procedimiento calcula el espacio disponible en el cuerpo del informe, restando los márgenes, el encabezado y el pie de página, devolviendo dicha altura como resultado.
