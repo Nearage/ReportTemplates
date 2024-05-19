@@ -1,20 +1,21 @@
-report 50100 "Demo 1"
+report 50102 "Demo 3"
 {
-    Caption = 'Demo 1';
-    RDLCLayout = 'src/report/layout/Demo1.rdl';
+    Caption = 'Demo 3';
+    RDLCLayout = 'src/report/layout/Demo3.rdl';
     UsageCategory = ReportsAndAnalysis;
 
     DataSet
     {
-        dataitem(Parent; Integer)
+        dataitem(Parent; "Sales Header")
         {
-            DataItemTableView = where(Number = const(1));
+            RequestFilterFields = "No.", "Sell-to Customer No.", "No. Printed";
 
-            dataitem(Child; Integer)
+            column(Parent_Number; "No.") { }
+            dataitem(Child; "Sales Line")
             {
-                RequestFilterFields = Number;
+                DataItemLink = "Document No." = field("No.");
 
-                column(Child_Number; Number) { }
+                column(Child_Number; "No.") { }
             }
             dataitem(Blanks; Integer)
             {
