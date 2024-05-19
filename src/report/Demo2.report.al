@@ -1,8 +1,8 @@
 report 50101 "Demo 2"
 {
     Caption = 'Demo 2';
-    UsageCategory = ReportsAndAnalysis;
     RDLCLayout = 'src/report/layout/Demo2.rdl';
+    UsageCategory = ReportsAndAnalysis;
 
     DataSet
     {
@@ -16,14 +16,12 @@ report 50101 "Demo 2"
 
                 column(Child_Number; Number) { }
             }
-
             dataitem(Child2; Integer)
             {
                 RequestFilterFields = Number;
 
                 column(Child2_Number; Number) { }
             }
-
             dataitem(Blanks; Integer)
             {
                 column(Blank_Number; Number) { }
