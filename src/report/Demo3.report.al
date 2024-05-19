@@ -11,6 +11,7 @@ report 50102 "Demo 3"
             RequestFilterFields = "No.", "Sell-to Customer No.", "No. Printed";
 
             column(Parent_Number; "No.") { }
+
             dataitem(Child; "Sales Line")
             {
                 DataItemLink = "Document No." = field("No.");
