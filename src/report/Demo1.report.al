@@ -6,11 +6,11 @@ report 50100 "Demo 1"
 
     DataSet
     {
-        dataitem(Parent; "Integer")
+        dataitem(Parent; Integer)
         {
             DataItemTableView = where(Number = const(1));
 
-            dataitem(Child1; Integer)
+            dataitem(Child; Integer)
             {
                 RequestFilterFields = Number;
 
@@ -25,8 +25,9 @@ report 50100 "Demo 1"
                 var
                     ReportTemplates: Codeunit "Report Templates";
                 begin
-                    ReportTemplates.IncludeDataitem(Child1);
-                    ReportTemplates.CalcBlanksRange(0.25, 9.69, 3.25);
+                    ReportTemplates.IncludeDataitem(Child);
+                    ReportTemplates.CalcBodysHeight(11.69, 0, 0, 1, 1);
+                    ReportTemplates.CalcBlanksRange(0.25, 3.25);
                     ReportTemplates.Run(Blanks);
                 end;
             }

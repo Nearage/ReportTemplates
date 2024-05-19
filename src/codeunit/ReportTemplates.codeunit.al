@@ -12,6 +12,7 @@ codeunit 50100 "Report Templates"
     var
         NumBlankLins: Integer;
         TotalNumLins: Integer;
+        BodyHeight: Decimal;
 
     /// <summary>
     /// Incluye  el _dataitem_  proporcionado  en  el  proceso de generación de líneas en
@@ -27,13 +28,27 @@ codeunit 50100 "Report Templates"
     end;
 
     /// <summary>
+    /// Calcula el espacio disponible en el cuerpo del informe descontando márgenes,
+    /// cabecera y pie de página.
+    /// </summary>
+    /// <param name="DocHeight">Altura del documento.</param>
+    /// <param name="MarginTop">Margen superior.</param>
+    /// <param name="MarginBot">Margen inferior.</param>
+    /// <param name="HeaderHgt">Altura de la cabecera.</param>
+    /// <param name="FooterHgt">Altura del pie.</param>
+    /// <returns>La altura disponible en el cuerpo.</returns>
+    procedure CalcBodysHeight(DocHeight: Decimal; MarginTop: Decimal; MarginBot: Decimal; HeaderHgt: Decimal; FooterHgt: Decimal): Decimal
+    begin
+        BodyHeight := DocHeight - MarginBot - MarginTop - HeaderHgt - FooterHgt;
+    end;
+
+    /// <summary>
     /// Calcula el número de líneas en blanco necesarias para mantener la distribución de
     /// los distintos elementos del informe.
     /// </summary>
     /// <param name="LineHeight">Altura por defecto de las líneas.</param>
-    /// <param name="BodyHeight">Altura del cuerpo del informe.</param>
     /// <param name="RsrvHeight">Altura reservada para secciones adicionales.</param>
-    procedure CalcBlanksRange(LineHeight: Decimal; BodyHeight: Decimal; RsrvHeight: Decimal)
+    procedure CalcBlanksRange(LineHeight: Decimal; RsrvHeight: Decimal)
     var
         Mathx: Codeunit Mathx;
         LinesPerPage: Integer;

@@ -34,7 +34,8 @@ report 50101 "Demo 2"
                 begin
                     ReportTemplates.IncludeDataitem(Child1);
                     ReportTemplates.IncludeDataitem(Child2);
-                    ReportTemplates.CalcBlanksRange(0.25, 9.69, 3.25);
+                    ReportTemplates.CalcBodysHeight(11.69, 0, 0, 1, 1);
+                    ReportTemplates.CalcBlanksRange(0.25, 3.25);
                     ReportTemplates.Run(Blanks);
                 end;
             }
