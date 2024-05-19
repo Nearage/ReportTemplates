@@ -8,9 +8,9 @@ La _Codeunit_ `"Report Templates"` encapsula la lógica destinada a la gestión 
 
 ### Variables Globales
 
-- `BodyHeight`: Variable de tipo Decimal que almacena la altura disponible en el cuerpo del informe, tras descontar los márgenes, el encabezado y el pie de página.
-- `NumBlankLins`: Variable de tipo Integer que contiene el número de líneas en blanco necesarias para garantizar una distribución óptima de los elementos del informe.
-- `TotalNumLins`: Variable de tipo Integer que acumula el total de líneas utilizadas en el informe, incluyendo tanto las líneas de contenido como aquellas reservadas.
+- `BodyHeight`: Variable de tipo _Decimal_ que almacena la altura disponible en el cuerpo del informe, tras descontar los márgenes, el encabezado y el pie de página.
+- `NumBlankLins`: Variable de tipo _Integer_ que contiene el número de líneas en blanco necesarias para garantizar una distribución óptima de los elementos del informe.
+- `TotalNumLins`: Variable de tipo _Integer_ que acumula el total de líneas utilizadas en el informe, incluyendo tanto las líneas de contenido como aquellas reservadas.
 
 ### Triggers y Procedimientos
 
