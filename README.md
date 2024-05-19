@@ -80,6 +80,6 @@ Para más información, consultar el código y la documentación de la _Codeunit
 
 La _Codeunit_ `"Mathx"` implementa operaciones matemáticas que no se incluyen o no se comportan de la forma esperada de manera estándar en AL. Su propósito es agrupar estas funciones en un mismo objeto para facilitar su implementación en otros proyectos.
 
-Por ahora, solo contiene un procedimiento que extiende la definición del operador `mod`, para que pueda procesar correctamente valores negativos del dividendo.
+Por ahora, solo contiene un procedimiento que extiende la definición estándar del operador `mod`, para que pueda procesar correctamente valores negativos del dividendo.
 
 Para más información, consultar el código y la documentación de la _Codeunit_ `"Mathx"`.
