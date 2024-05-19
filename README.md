@@ -55,7 +55,7 @@ Para hacer uso de las funcionalidades brindadas por esta _Codeunit_, los desarro
 
 Generalmente, es suficiente con añadir y configurar corréctamente un _dataitem_ asociado a la tabla `Integer` a nuestro informe, al mismo nivel que el _dataitem_ que genere las líneas en el mismo. En el _trigger_ `OnPreDataItem` de este _dataitem_, deben configurarse los parámetros necesarios para que la _Codeunit_ `"Report Templates"` pueda realizar los cálculos necesarios correctamente.
 
-Su estructura básica es:
+Su estructura básica es la siguiente:
 
 ```al
 dataitem(...; Integer)
