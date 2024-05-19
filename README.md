@@ -60,7 +60,7 @@ Su estructura básica es:
 ```al
 dataitem(...; Integer)
 {
-    column(Numero; Number) { }
+    column(...; Number) { }
 
     trigger OnPreDataItem()
     var
