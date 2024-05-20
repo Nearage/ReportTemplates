@@ -1,7 +1,7 @@
 report 50102 "Demo 3"
 {
     Caption = 'Demo 3';
-    RDLCLayout = 'src/report/layout/Demo3.rdl';
+    RDLCLayout = 'src/report/demo/layout/Demo3.rdl';
     UsageCategory = ReportsAndAnalysis;
 
     DataSet

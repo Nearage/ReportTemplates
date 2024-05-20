@@ -1,26 +1,20 @@
-report 50101 "Demo 2"
+report 50100 "Demo 1"
 {
-    Caption = 'Demo 2';
-    RDLCLayout = 'src/report/layout/Demo2.rdl';
+    Caption = 'Demo 1';
+    RDLCLayout = 'src/report/demo/layout/Demo1.rdl';
     UsageCategory = ReportsAndAnalysis;
 
     DataSet
     {
-        dataitem(Parent; "Integer")
+        dataitem(Parent; Integer)
         {
             DataItemTableView = where(Number = const(1));
 
-            dataitem(Child1; Integer)
+            dataitem(Child; Integer)
             {
                 RequestFilterFields = Number;
 
                 column(Child_Number; Number) { }
-            }
-            dataitem(Child2; Integer)
-            {
-                RequestFilterFields = Number;
-
-                column(Child2_Number; Number) { }
             }
             dataitem(Blanks; Integer)
             {
@@ -30,8 +24,7 @@ report 50101 "Demo 2"
                 var
                     ReportTemplates: Codeunit "Report Templates";
                 begin
-                    ReportTemplates.IncludeDataItem(Child1);
-                    ReportTemplates.IncludeDataItem(Child2);
+                    ReportTemplates.IncludeDataItem(Child);
                     ReportTemplates.CalcBodysHeight(11.69, 0, 0, 1, 1);
                     ReportTemplates.CalcBlanksRange(0.25, 3.25);
                     ReportTemplates.Run(Blanks);
