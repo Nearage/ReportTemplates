@@ -29,25 +29,33 @@
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="Sales_Header">
-                          <CanGrow>true</CanGrow>
+                          <CanGrow>false</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!Sales_Header_Document_Type.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
                                 </TextRun>
                                 <TextRun>
                                   <Value xml:space="preserve"> </Value>
-                                  <Style />
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
                                 </TextRun>
                                 <TextRun>
                                   <Value>=Fields!Sales_Header_No.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <Style>
@@ -56,6 +64,7 @@
                               <Style>Solid</Style>
                             </Border>
                             <BackgroundColor>LightGrey</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -85,17 +94,19 @@
                                   <TablixCell>
                                     <CellContents>
                                       <Textbox Name="Textbox2">
-                                        <CanGrow>true</CanGrow>
+                                        <CanGrow>false</CanGrow>
                                         <KeepTogether>true</KeepTogether>
                                         <Paragraphs>
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
-                                                <Value>=Fields!Sales_Line_No.Value</Value>
+                                                <Value>=Fields!Sales_Line_Line_No.Value</Value>
                                                 <Style />
                                               </TextRun>
                                             </TextRuns>
-                                            <Style />
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
                                           </Paragraph>
                                         </Paragraphs>
                                         <rd:DefaultName>Textbox1</rd:DefaultName>
@@ -104,6 +115,7 @@
                                             <Color>LightGrey</Color>
                                             <Style>Solid</Style>
                                           </Border>
+                                          <VerticalAlign>Middle</VerticalAlign>
                                           <PaddingLeft>2pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>2pt</PaddingTop>
@@ -120,7 +132,7 @@
                                   <TablixCell>
                                     <CellContents>
                                       <Textbox Name="Textbox3">
-                                        <CanGrow>true</CanGrow>
+                                        <CanGrow>false</CanGrow>
                                         <KeepTogether>true</KeepTogether>
                                         <Paragraphs>
                                           <Paragraph>
@@ -130,7 +142,9 @@
                                                 <Style />
                                               </TextRun>
                                             </TextRuns>
-                                            <Style />
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
                                           </Paragraph>
                                         </Paragraphs>
                                         <rd:DefaultName>Textbox1</rd:DefaultName>
@@ -139,6 +153,7 @@
                                             <Color>LightGrey</Color>
                                             <Style>Solid</Style>
                                           </Border>
+                                          <VerticalAlign>Middle</VerticalAlign>
                                           <PaddingLeft>2pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>2pt</PaddingTop>
@@ -168,7 +183,7 @@
                                                 <TablixCell>
                                                   <CellContents>
                                                     <Textbox Name="Number">
-                                                      <CanGrow>true</CanGrow>
+                                                      <CanGrow>false</CanGrow>
                                                       <KeepTogether>true</KeepTogether>
                                                       <Paragraphs>
                                                         <Paragraph>
@@ -178,7 +193,9 @@
                                                               <Style />
                                                             </TextRun>
                                                           </TextRuns>
-                                                          <Style />
+                                                          <Style>
+                                                            <TextAlign>Center</TextAlign>
+                                                          </Style>
                                                         </Paragraph>
                                                       </Paragraphs>
                                                       <rd:DefaultName>Number</rd:DefaultName>
@@ -187,6 +204,7 @@
                                                           <Style>None</Style>
                                                         </Border>
                                                         <BackgroundColor>LightBlue</BackgroundColor>
+                                                        <VerticalAlign>Middle</VerticalAlign>
                                                         <PaddingLeft>2pt</PaddingLeft>
                                                         <PaddingRight>2pt</PaddingRight>
                                                         <PaddingTop>2pt</PaddingTop>
@@ -239,12 +257,7 @@
                           <TablixRowHierarchy>
                             <TablixMembers>
                               <TablixMember>
-                                <Group Name="Details2">
-                                  <GroupExpressions>
-                                    <GroupExpression>=Fields!Sales_Line_Line_No.Value</GroupExpression>
-                                    <GroupExpression>=Fields!Blanks_Line_No.Value</GroupExpression>
-                                  </GroupExpressions>
-                                </Group>
+                                <Group Name="Details2" />
                                 <TablixMembers>
                                   <TablixMember>
                                     <Visibility>
@@ -271,7 +284,6 @@
                             </Border>
                           </Style>
                         </Tablix>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
@@ -282,7 +294,7 @@
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="Textbox29">
-                          <CanGrow>true</CanGrow>
+                          <CanGrow>false</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -378,7 +390,7 @@
               </Style>
             </Image>
             <Textbox Name="Company_Name">
-              <CanGrow>true</CanGrow>
+              <CanGrow>false</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
@@ -402,6 +414,7 @@
                 <Border>
                   <Style>None</Style>
                 </Border>
+                <VerticalAlign>Middle</VerticalAlign>
                 <PaddingLeft>2pt</PaddingLeft>
                 <PaddingRight>2pt</PaddingRight>
                 <PaddingTop>2pt</PaddingTop>
@@ -409,7 +422,7 @@
               </Style>
             </Textbox>
             <Textbox Name="Company_Address">
-              <CanGrow>true</CanGrow>
+              <CanGrow>false</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
@@ -433,6 +446,7 @@
                 <Border>
                   <Style>None</Style>
                 </Border>
+                <VerticalAlign>Middle</VerticalAlign>
                 <PaddingLeft>2pt</PaddingLeft>
                 <PaddingRight>2pt</PaddingRight>
                 <PaddingTop>2pt</PaddingTop>
@@ -440,7 +454,7 @@
               </Style>
             </Textbox>
             <Textbox Name="Sell_to_Customer_Name">
-              <CanGrow>true</CanGrow>
+              <CanGrow>false</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
@@ -466,6 +480,7 @@
                 <Border>
                   <Style>None</Style>
                 </Border>
+                <VerticalAlign>Middle</VerticalAlign>
                 <PaddingLeft>2pt</PaddingLeft>
                 <PaddingRight>2pt</PaddingRight>
                 <PaddingTop>2pt</PaddingTop>
@@ -473,7 +488,7 @@
               </Style>
             </Textbox>
             <Textbox Name="Sell_to_Customer_Name2">
-              <CanGrow>true</CanGrow>
+              <CanGrow>false</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
@@ -499,6 +514,7 @@
                 <Border>
                   <Style>None</Style>
                 </Border>
+                <VerticalAlign>Middle</VerticalAlign>
                 <PaddingLeft>2pt</PaddingLeft>
                 <PaddingRight>2pt</PaddingRight>
                 <PaddingTop>2pt</PaddingTop>
@@ -518,7 +534,7 @@
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
             <Textbox Name="Textbox17">
-              <CanGrow>true</CanGrow>
+              <CanGrow>false</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
