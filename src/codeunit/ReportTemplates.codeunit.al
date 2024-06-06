@@ -14,6 +14,13 @@ codeunit 50100 "Report Templates"
         Rec.SetRange(Number, 1, NumBlankLins);
     end;
 
+    procedure Reset()
+    begin
+        BodyHeight := 0;
+        NumBlankLins := 0;
+        TotalNumLins := 0;
+    end;
+
     /// <summary>
     /// Calcula el número de líneas en blanco necesarias para mantener la distribución de
     /// los distintos elementos del informe.
@@ -61,11 +68,13 @@ codeunit 50100 "Report Templates"
                               MarginTop: Decimal;
                               MarginBot: Decimal;
                               HeaderHgt: Decimal;
-                              FooterHgt: Decimal): Decimal
+                              FooterHgt: Decimal;
+                              RservHght: Decimal): Decimal
     begin
         BodyHeight := DocHeight;
         BodyHeight -= (MarginTop + MarginBot);
         BodyHeight -= (HeaderHgt + FooterHgt);
+        BodyHeight -= RservHght;
     end;
 
     /// <summary>

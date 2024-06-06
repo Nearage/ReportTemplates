@@ -35,18 +35,19 @@ report 50103 "Sales Order"
             }
 
             column(Thanksgiving; Label.Get(Labels::ThanksForYourOrder)) { }
-        }
 
-        dataitem(Blanks_Line; Integer)
-        {
-            column(Blanks_Line_No; Number) { }
+            dataitem(Blanks_Line; Integer)
+            {
+                column(Blanks_Line_No; Number) { }
 
-            trigger OnPreDataItem()
-            begin
-                ReportTemplates.CalcBodysHeight(11.69, 0, 0, 1.5, 1);
-                ReportTemplates.CalcBlanksRange(0.25, 0.25);
-                ReportTemplates.Run(Blanks_Line);
-            end;
+                trigger OnPreDataItem()
+                begin
+                    ReportTemplates.CalcBodysHeight(11.69, 0, 0, 1.5, 1, 0.25);
+                    ReportTemplates.CalcBlanksRange(0.25, 0.25);
+                    ReportTemplates.Run(Blanks_Line);
+                    ReportTemplates.Reset();
+                end;
+            }
         }
     }
 

@@ -39,7 +39,7 @@ report 50101 "Demo 2"
 
             trigger OnPreDataItem()
             begin
-                ReportTemplates.CalcBodysHeight(11.69, 0, 0, 1, 1);
+                ReportTemplates.CalcBodysHeight(11.69, 0, 0, 1, 1, 0.25);
                 ReportTemplates.CalcBlanksRange(0.25, 3.25);
                 ReportTemplates.Run(Blanks);
             end;
