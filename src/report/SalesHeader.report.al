@@ -45,7 +45,7 @@ report 50103 "Sales Header"
                 trigger OnPreDataItem()
                 begin
                     ReportTemplates.CalcBodysHeight(11.69, 0, 0, 1.25, 1, 0.25);
-                    ReportTemplates.CalcBlanksRange(0.25, 0.25);
+                    ReportTemplates.CalcBlanksRange(0.25, 0.5);
                     ReportTemplates.Run(Blanks_Line);
                 end;
             }
