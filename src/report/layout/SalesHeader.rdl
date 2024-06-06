@@ -28,42 +28,34 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Sales_Header_No">
+                        <Textbox Name="Sales_Header">
+                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!Sales_Header_Document_Type.Value</Value>
-                                  <Style>
-                                    <FontWeight>Bold</FontWeight>
-                                  </Style>
+                                  <Style />
                                 </TextRun>
                                 <TextRun>
                                   <Value xml:space="preserve"> </Value>
-                                  <Style>
-                                    <FontWeight>Bold</FontWeight>
-                                  </Style>
+                                  <Style />
                                 </TextRun>
                                 <TextRun>
                                   <Value>=Fields!Sales_Header_No.Value</Value>
-                                  <Style>
-                                    <FontWeight>Bold</FontWeight>
-                                  </Style>
+                                  <Style />
                                 </TextRun>
                               </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
+                              <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Sales_Header_No</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <VerticalAlign>Middle</VerticalAlign>
+                            <BackgroundColor>LightGrey</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -79,154 +71,43 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Tablix Name="Tablix3">
+                        <Tablix Name="Tablix2">
                           <TablixBody>
                             <TablixColumns>
                               <TablixColumn>
-                                <Width>3.175cm</Width>
-                              </TablixColumn>
-                              <TablixColumn>
-                                <Width>11.4808cm</Width>
-                              </TablixColumn>
-                              <TablixColumn>
-                                <Width>1.905cm</Width>
-                              </TablixColumn>
-                              <TablixColumn>
-                                <Width>1.905cm</Width>
+                                <Width>7.27in</Width>
                               </TablixColumn>
                             </TablixColumns>
                             <TablixRows>
                               <TablixRow>
-                                <Height>0.635cm</Height>
+                                <Height>0.25in</Height>
                                 <TablixCells>
                                   <TablixCell>
                                     <CellContents>
-                                      <Textbox Name="Textbox9">
+                                      <Textbox Name="Textbox2">
+                                        <CanGrow>true</CanGrow>
                                         <KeepTogether>true</KeepTogether>
                                         <Paragraphs>
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
-                                                <Value>No</Value>
-                                                <Style>
-                                                  <FontWeight>Bold</FontWeight>
-                                                </Style>
+                                                <Value>=Fields!Sales_Line_No.Value</Value>
+                                                <Style />
                                               </TextRun>
                                             </TextRuns>
-                                            <Style>
-                                              <TextAlign>Left</TextAlign>
-                                            </Style>
+                                            <Style />
                                           </Paragraph>
                                         </Paragraphs>
-                                        <rd:DefaultName>Textbox5</rd:DefaultName>
-                                        <ZIndex>4</ZIndex>
+                                        <rd:DefaultName>Textbox1</rd:DefaultName>
                                         <Style>
                                           <Border>
-                                            <Style>None</Style>
+                                            <Color>LightGrey</Color>
+                                            <Style>Solid</Style>
                                           </Border>
-                                          <BackgroundColor>LightGrey</BackgroundColor>
-                                          <VerticalAlign>Middle</VerticalAlign>
                                           <PaddingLeft>2pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
-                                        </Style>
-                                      </Textbox>
-                                    </CellContents>
-                                  </TablixCell>
-                                  <TablixCell>
-                                    <CellContents>
-                                      <Textbox Name="Textbox11">
-                                        <KeepTogether>true</KeepTogether>
-                                        <Paragraphs>
-                                          <Paragraph>
-                                            <TextRuns>
-                                              <TextRun>
-                                                <Value>Description</Value>
-                                                <Style>
-                                                  <FontWeight>Bold</FontWeight>
-                                                </Style>
-                                              </TextRun>
-                                            </TextRuns>
-                                            <Style>
-                                              <TextAlign>Left</TextAlign>
-                                            </Style>
-                                          </Paragraph>
-                                        </Paragraphs>
-                                        <rd:DefaultName>Textbox7</rd:DefaultName>
-                                        <ZIndex>5</ZIndex>
-                                        <Style>
-                                          <Border>
-                                            <Style>None</Style>
-                                          </Border>
-                                          <BackgroundColor>LightGrey</BackgroundColor>
-                                          <VerticalAlign>Middle</VerticalAlign>
-                                          <PaddingLeft>2pt</PaddingLeft>
-                                          <PaddingRight>2pt</PaddingRight>
-                                        </Style>
-                                      </Textbox>
-                                    </CellContents>
-                                  </TablixCell>
-                                  <TablixCell>
-                                    <CellContents>
-                                      <Textbox Name="Textbox14">
-                                        <KeepTogether>true</KeepTogether>
-                                        <Paragraphs>
-                                          <Paragraph>
-                                            <TextRuns>
-                                              <TextRun>
-                                                <Value>Quantity</Value>
-                                                <Style>
-                                                  <FontWeight>Bold</FontWeight>
-                                                </Style>
-                                              </TextRun>
-                                            </TextRuns>
-                                            <Style>
-                                              <TextAlign>Right</TextAlign>
-                                            </Style>
-                                          </Paragraph>
-                                        </Paragraphs>
-                                        <rd:DefaultName>Textbox9</rd:DefaultName>
-                                        <ZIndex>6</ZIndex>
-                                        <Style>
-                                          <Border>
-                                            <Style>None</Style>
-                                          </Border>
-                                          <BackgroundColor>LightGrey</BackgroundColor>
-                                          <VerticalAlign>Middle</VerticalAlign>
-                                          <PaddingLeft>2pt</PaddingLeft>
-                                          <PaddingRight>2pt</PaddingRight>
-                                        </Style>
-                                      </Textbox>
-                                    </CellContents>
-                                  </TablixCell>
-                                  <TablixCell>
-                                    <CellContents>
-                                      <Textbox Name="Textbox15">
-                                        <KeepTogether>true</KeepTogether>
-                                        <Paragraphs>
-                                          <Paragraph>
-                                            <TextRuns>
-                                              <TextRun>
-                                                <Value>Amount</Value>
-                                                <Style>
-                                                  <FontWeight>Bold</FontWeight>
-                                                </Style>
-                                              </TextRun>
-                                            </TextRuns>
-                                            <Style>
-                                              <TextAlign>Right</TextAlign>
-                                            </Style>
-                                          </Paragraph>
-                                        </Paragraphs>
-                                        <rd:DefaultName>Textbox11</rd:DefaultName>
-                                        <ZIndex>7</ZIndex>
-                                        <Style>
-                                          <Border>
-                                            <Style>None</Style>
-                                          </Border>
-                                          <BackgroundColor>LightGrey</BackgroundColor>
-                                          <VerticalAlign>Middle</VerticalAlign>
-                                          <PaddingLeft>2pt</PaddingLeft>
-                                          <PaddingRight>2pt</PaddingRight>
+                                          <PaddingTop>2pt</PaddingTop>
+                                          <PaddingBottom>2pt</PaddingBottom>
                                         </Style>
                                       </Textbox>
                                     </CellContents>
@@ -238,14 +119,24 @@
                           <TablixColumnHierarchy>
                             <TablixMembers>
                               <TablixMember />
-                              <TablixMember />
-                              <TablixMember />
-                              <TablixMember />
                             </TablixMembers>
                           </TablixColumnHierarchy>
                           <TablixRowHierarchy>
                             <TablixMembers>
-                              <TablixMember />
+                              <TablixMember>
+                                <Group Name="Details2">
+                                  <GroupExpressions>
+                                    <GroupExpression>=Fields!Sales_Line_Line_No.Value</GroupExpression>
+                                  </GroupExpressions>
+                                </Group>
+                                <TablixMembers>
+                                  <TablixMember>
+                                    <Visibility>
+                                      <Hidden>=IsNothing(Fields!Sales_Line_No.Value)</Hidden>
+                                    </Visibility>
+                                  </TablixMember>
+                                </TablixMembers>
+                              </TablixMember>
                             </TablixMembers>
                           </TablixRowHierarchy>
                           <DataSetName>DataSet_Result</DataSetName>
@@ -260,166 +151,31 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.94in</Height>
+                  <Height>0.25in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Tablix Name="Tablix2">
+                        <Tablix Name="Tablix3">
                           <TablixBody>
                             <TablixColumns>
                               <TablixColumn>
-                                <Width>1.25in</Width>
-                              </TablixColumn>
-                              <TablixColumn>
-                                <Width>4.52in</Width>
-                              </TablixColumn>
-                              <TablixColumn>
-                                <Width>0.75in</Width>
-                              </TablixColumn>
-                              <TablixColumn>
-                                <Width>0.75in</Width>
+                                <Width>18.4658cm</Width>
                               </TablixColumn>
                             </TablixColumns>
                             <TablixRows>
                               <TablixRow>
-                                <Height>0.25in</Height>
+                                <Height>0.635cm</Height>
                                 <TablixCells>
                                   <TablixCell>
                                     <CellContents>
-                                      <Textbox Name="Sales_Line_No">
-                                        <KeepTogether>true</KeepTogether>
-                                        <Paragraphs>
-                                          <Paragraph>
-                                            <TextRuns>
-                                              <TextRun>
-                                                <Label>No</Label>
-                                                <Value>=Fields!Sales_Line_No.Value</Value>
-                                                <Style />
-                                              </TextRun>
-                                            </TextRuns>
-                                            <Style />
-                                          </Paragraph>
-                                        </Paragraphs>
-                                        <rd:DefaultName>Sales_Line_No</rd:DefaultName>
-                                        <Style>
-                                          <Border>
-                                            <Style>None</Style>
-                                          </Border>
-                                          <VerticalAlign>Middle</VerticalAlign>
-                                          <PaddingLeft>2pt</PaddingLeft>
-                                          <PaddingRight>2pt</PaddingRight>
-                                        </Style>
-                                      </Textbox>
-                                    </CellContents>
-                                  </TablixCell>
-                                  <TablixCell>
-                                    <CellContents>
-                                      <Textbox Name="Sales_Line_Description">
-                                        <KeepTogether>true</KeepTogether>
-                                        <Paragraphs>
-                                          <Paragraph>
-                                            <TextRuns>
-                                              <TextRun>
-                                                <Label>Description</Label>
-                                                <Value>=Fields!Sales_Line_Description.Value</Value>
-                                                <Style />
-                                              </TextRun>
-                                            </TextRuns>
-                                            <Style />
-                                          </Paragraph>
-                                        </Paragraphs>
-                                        <rd:DefaultName>Sales_Line_Description</rd:DefaultName>
-                                        <Style>
-                                          <Border>
-                                            <Style>None</Style>
-                                          </Border>
-                                          <VerticalAlign>Middle</VerticalAlign>
-                                          <PaddingLeft>2pt</PaddingLeft>
-                                          <PaddingRight>2pt</PaddingRight>
-                                        </Style>
-                                      </Textbox>
-                                    </CellContents>
-                                  </TablixCell>
-                                  <TablixCell>
-                                    <CellContents>
-                                      <Textbox Name="Sales_Line_Quantity">
-                                        <KeepTogether>true</KeepTogether>
-                                        <Paragraphs>
-                                          <Paragraph>
-                                            <TextRuns>
-                                              <TextRun>
-                                                <Label>Quantity</Label>
-                                                <Value>=Fields!Sales_Line_Quantity.Value</Value>
-                                                <Style>
-                                                  <Format>0;(0)</Format>
-                                                </Style>
-                                              </TextRun>
-                                            </TextRuns>
-                                            <Style>
-                                              <TextAlign>Right</TextAlign>
-                                            </Style>
-                                          </Paragraph>
-                                        </Paragraphs>
-                                        <rd:DefaultName>Sales_Line_Quantity</rd:DefaultName>
-                                        <Style>
-                                          <Border>
-                                            <Style>None</Style>
-                                          </Border>
-                                          <VerticalAlign>Middle</VerticalAlign>
-                                          <PaddingLeft>2pt</PaddingLeft>
-                                          <PaddingRight>2pt</PaddingRight>
-                                        </Style>
-                                      </Textbox>
-                                    </CellContents>
-                                  </TablixCell>
-                                  <TablixCell>
-                                    <CellContents>
-                                      <Textbox Name="Sales_Line_Amount">
-                                        <KeepTogether>true</KeepTogether>
-                                        <Paragraphs>
-                                          <Paragraph>
-                                            <TextRuns>
-                                              <TextRun>
-                                                <Label>Amount</Label>
-                                                <Value>=Fields!Sales_Line_Amount.Value</Value>
-                                                <Style>
-                                                  <Format>0.00'€';(0.00'€')</Format>
-                                                </Style>
-                                              </TextRun>
-                                            </TextRuns>
-                                            <Style>
-                                              <TextAlign>Right</TextAlign>
-                                            </Style>
-                                          </Paragraph>
-                                        </Paragraphs>
-                                        <rd:DefaultName>Sales_Line_Amount</rd:DefaultName>
-                                        <Style>
-                                          <Border>
-                                            <Style>None</Style>
-                                          </Border>
-                                          <VerticalAlign>Middle</VerticalAlign>
-                                          <PaddingLeft>2pt</PaddingLeft>
-                                          <PaddingRight>2pt</PaddingRight>
-                                          <rd:FormatSymbolCulture>es-ES</rd:FormatSymbolCulture>
-                                        </Style>
-                                      </Textbox>
-                                    </CellContents>
-                                  </TablixCell>
-                                </TablixCells>
-                              </TablixRow>
-                              <TablixRow>
-                                <Height>0.25in</Height>
-                                <TablixCells>
-                                  <TablixCell>
-                                    <CellContents>
-                                      <Textbox Name="Textbox1">
+                                      <Textbox Name="Textbox3">
                                         <CanGrow>true</CanGrow>
                                         <KeepTogether>true</KeepTogether>
                                         <Paragraphs>
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
-                                                <Value />
+                                                <Value>=Fields!Blanks_Line_No.Value</Value>
                                                 <Style />
                                               </TextRun>
                                             </TextRuns>
@@ -429,98 +185,17 @@
                                         <rd:DefaultName>Textbox1</rd:DefaultName>
                                         <Style>
                                           <Border>
-                                            <Style>None</Style>
+                                            <Color>LightGrey</Color>
+                                            <Style>Solid</Style>
                                           </Border>
-                                          <VerticalAlign>Middle</VerticalAlign>
                                           <PaddingLeft>2pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
+                                          <PaddingTop>2pt</PaddingTop>
+                                          <PaddingBottom>2pt</PaddingBottom>
                                         </Style>
                                       </Textbox>
-                                      <ColSpan>4</ColSpan>
                                     </CellContents>
                                   </TablixCell>
-                                  <TablixCell />
-                                  <TablixCell />
-                                  <TablixCell />
-                                </TablixCells>
-                              </TablixRow>
-                              <TablixRow>
-                                <Height>0.19in</Height>
-                                <TablixCells>
-                                  <TablixCell>
-                                    <CellContents>
-                                      <Textbox Name="Textbox6">
-                                        <CanGrow>true</CanGrow>
-                                        <KeepTogether>true</KeepTogether>
-                                        <Paragraphs>
-                                          <Paragraph>
-                                            <TextRuns>
-                                              <TextRun>
-                                                <Value />
-                                                <Style />
-                                              </TextRun>
-                                            </TextRuns>
-                                            <Style />
-                                          </Paragraph>
-                                        </Paragraphs>
-                                        <rd:DefaultName>Textbox6</rd:DefaultName>
-                                        <Style>
-                                          <Border>
-                                            <Style>None</Style>
-                                          </Border>
-                                          <VerticalAlign>Middle</VerticalAlign>
-                                          <PaddingLeft>2pt</PaddingLeft>
-                                          <PaddingRight>2pt</PaddingRight>
-                                        </Style>
-                                      </Textbox>
-                                      <ColSpan>4</ColSpan>
-                                    </CellContents>
-                                  </TablixCell>
-                                  <TablixCell />
-                                  <TablixCell />
-                                  <TablixCell />
-                                </TablixCells>
-                              </TablixRow>
-                              <TablixRow>
-                                <Height>0.25in</Height>
-                                <TablixCells>
-                                  <TablixCell>
-                                    <CellContents>
-                                      <Textbox Name="Thanksgiving">
-                                        <CanGrow>true</CanGrow>
-                                        <KeepTogether>true</KeepTogether>
-                                        <Paragraphs>
-                                          <Paragraph>
-                                            <TextRuns>
-                                              <TextRun>
-                                                <Value>=Fields!Thanksgiving.Value</Value>
-                                                <Style>
-                                                  <FontWeight>Bold</FontWeight>
-                                                </Style>
-                                              </TextRun>
-                                            </TextRuns>
-                                            <Style>
-                                              <TextAlign>Center</TextAlign>
-                                            </Style>
-                                          </Paragraph>
-                                        </Paragraphs>
-                                        <rd:DefaultName>Thanksgiving</rd:DefaultName>
-                                        <Style>
-                                          <Border>
-                                            <Style>None</Style>
-                                          </Border>
-                                          <BackgroundColor>LightGrey</BackgroundColor>
-                                          <VerticalAlign>Middle</VerticalAlign>
-                                          <PaddingLeft>2pt</PaddingLeft>
-                                          <PaddingRight>2pt</PaddingRight>
-                                        </Style>
-                                      </Textbox>
-                                      <ColSpan>4</ColSpan>
-                                    </CellContents>
-                                  </TablixCell>
-                                  <TablixCell />
-                                  <TablixCell />
-                                  <TablixCell />
                                 </TablixCells>
                               </TablixRow>
                             </TablixRows>
@@ -528,21 +203,16 @@
                           <TablixColumnHierarchy>
                             <TablixMembers>
                               <TablixMember />
-                              <TablixMember />
-                              <TablixMember />
-                              <TablixMember />
                             </TablixMembers>
                           </TablixColumnHierarchy>
                           <TablixRowHierarchy>
                             <TablixMembers>
                               <TablixMember>
-                                <Group Name="Details2" />
-                                <Visibility>
-                                  <Hidden>=IsNothing(Fields!Sales_Line_No.Value)</Hidden>
-                                </Visibility>
-                              </TablixMember>
-                              <TablixMember>
-                                <Group Name="Group1" />
+                                <Group Name="Details3">
+                                  <GroupExpressions>
+                                    <GroupExpression>=Fields!Blanks_Line_No.Value</GroupExpression>
+                                  </GroupExpressions>
+                                </Group>
                                 <TablixMembers>
                                   <TablixMember>
                                     <Visibility>
@@ -550,15 +220,6 @@
                                     </Visibility>
                                   </TablixMember>
                                 </TablixMembers>
-                                <Visibility>
-                                  <Hidden>=IsNothing(Fields!Blanks_Line_No.Value)</Hidden>
-                                </Visibility>
-                              </TablixMember>
-                              <TablixMember>
-                                <KeepWithGroup>Before</KeepWithGroup>
-                              </TablixMember>
-                              <TablixMember>
-                                <KeepWithGroup>Before</KeepWithGroup>
                               </TablixMember>
                             </TablixMembers>
                           </TablixRowHierarchy>
@@ -585,16 +246,12 @@
                 <TablixMember>
                   <Group Name="Details">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!Sales_Header_No.Value</GroupExpression>
                       <GroupExpression>=Fields!Sales_Header_Document_Type.Value</GroupExpression>
+                      <GroupExpression>=Fields!Sales_Header_No.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
                   <TablixMembers>
-                    <TablixMember>
-                      <Visibility>
-                        <Hidden>=IsNothing(Fields!Sales_Header_No.Value)</Hidden>
-                      </Visibility>
-                    </TablixMember>
+                    <TablixMember />
                     <TablixMember />
                     <TablixMember />
                   </TablixMembers>
@@ -604,7 +261,7 @@
             <DataSetName>DataSet_Result</DataSetName>
             <Top>0in</Top>
             <Left>0.5in</Left>
-            <Height>1.44in</Height>
+            <Height>0.75in</Height>
             <Width>7.27in</Width>
             <Style>
               <Border>
@@ -613,7 +270,7 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>1.44in</Height>
+        <Height>0.75in</Height>
         <Style />
       </Body>
       <Width>8.27in</Width>
@@ -893,6 +550,9 @@ End Function
         </Field>
         <Field Name="Company_Address">
           <DataField>Company_Address</DataField>
+        </Field>
+        <Field Name="Sales_Line_Line_No">
+          <DataField>Sales_Line_Line_No</DataField>
         </Field>
         <Field Name="Sales_Line_No">
           <DataField>Sales_Line_No</DataField>

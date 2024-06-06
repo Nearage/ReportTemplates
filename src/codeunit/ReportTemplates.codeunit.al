@@ -87,6 +87,7 @@ codeunit 50100 "Report Templates"
         RecordRef: RecordRef;
     begin
         RecordRef.GetTable(DataItem);
+
         TotalNumLins += RecordRef.Count();
     end;
 }

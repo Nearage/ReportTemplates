@@ -22,8 +22,9 @@ report 50103 "Sales Header"
 
             dataitem(Sales_Line; "Sales Line")
             {
-                DataItemLink = "Document No." = field("No.");
+                DataItemLink = "Document Type" = field("Document Type"), "Document No." = field("No.");
 
+                column(Sales_Line_Line_No; "Line No.") { }
                 column(Sales_Line_No; "No.") { }
                 column(Sales_Line_Description; Description) { }
                 column(Sales_Line_Quantity; Quantity) { }
@@ -43,7 +44,7 @@ report 50103 "Sales Header"
 
                 trigger OnPreDataItem()
                 begin
-                    ReportTemplates.CalcBodysHeight(11.69, 0, 0, 1.25, 1, 0.5);
+                    ReportTemplates.CalcBodysHeight(11.69, 0, 0, 1.25, 1, 0);
                     ReportTemplates.CalcBlanksRange(0.25, 0.25);
                     ReportTemplates.Run(Blanks_Line);
                 end;
