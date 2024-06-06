@@ -25,9 +25,9 @@
           <note from="Xliff Generator" annotates="general" priority="3">Enum Labels - EnumValue HelloWorld - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 2496062775 - EnumValue 742956161 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Thanks for your order!</source>
-          <target state="translated">¡Gracias por su pedido!</target>
-          <note from="Developer" annotates="general" priority="2">ESP="¡Gracias por su pedido!"</note>
+          <source>Thanks for your</source>
+          <target state="translated">Gracias por su</target>
+          <note from="Developer" annotates="general" priority="2">ESP="Gracias por su"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum Labels - EnumValue ThanksForYourOrder - Property Caption</note>
         </trans-unit>
       </group>
