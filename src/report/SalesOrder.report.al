@@ -27,22 +27,31 @@ report 50103 "Sales Order"
                 column(Sales_Line_Description; Description) { }
                 column(Sales_Line_Quantity; Quantity) { }
                 column(Sales_Line_Amount; Amount) { }
-            }
 
-            dataitem(Blanks_Line; Integer)
-            {
-                column(Blanks_Line_No; Number) { }
-
-                trigger OnPreDataItem()
-                var
-                    ReportTemplates: Codeunit "Report Templates";
+                trigger OnPostDataItem()
                 begin
                     ReportTemplates.IncludeDataItem(Sales_Line);
-                    ReportTemplates.CalcBodysHeight(11.69, 0, 0, 1.5, 1);
-                    ReportTemplates.CalcBlanksRange(0.25, 0.25);
-                    ReportTemplates.Run(Blanks_Line);
                 end;
             }
+
+            column(Thanksgiving; Label.Get(Labels::ThanksForYourOrder)) { }
+        }
+
+        dataitem(Blanks_Line; Integer)
+        {
+            column(Blanks_Line_No; Number) { }
+
+            trigger OnPreDataItem()
+            begin
+                ReportTemplates.CalcBodysHeight(11.69, 0, 0, 1.5, 1);
+                ReportTemplates.CalcBlanksRange(0.25, 0.25);
+                ReportTemplates.Run(Blanks_Line);
+            end;
         }
     }
+
+    var
+        Label: Codeunit Label;
+        ReportTemplates: Codeunit "Report Templates";
+
 }
