@@ -1,6 +1,6 @@
-report 50103 "Sales Order"
+report 50103 "Sales Header"
 {
-    RDLCLayout = 'src/report/layout/SalesOrder.rdl';
+    RDLCLayout = 'src/report/layout/SalesHeader.rdl';
     UsageCategory = ReportsAndAnalysis;
 
     dataset
