@@ -44,10 +44,17 @@ report 50103 "Sales Header"
 
                 trigger OnPreDataItem()
                 begin
-                    ReportTemplates.CalcBodysHeight(11.69, 0, 0, 1.25, 1, 0);
+                    ReportTemplates.CalcBodysHeight(11.69, 0, 0, 1.25, 1, 0.25);
                     ReportTemplates.CalcBlanksRange(0.25, 0.25);
                     ReportTemplates.Run(Blanks_Line);
                 end;
+            }
+
+            dataitem(Totals; Integer)
+            {
+                DataItemTableView = where(Number = const(1));
+
+                column(Totals_Number; Number) { }
             }
 
             trigger OnAfterGetRecord()
