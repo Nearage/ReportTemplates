@@ -11,6 +11,61 @@
       <rd:DataSourceID>c2d97a10-49e1-4c05-a06b-fe591f837c0f</rd:DataSourceID>
     </DataSource>
   </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+      <Fields>
+        <Field Name="Sales_Header_No">
+          <DataField>Sales_Header_No</DataField>
+        </Field>
+        <Field Name="Order_Date">
+          <DataField>Order_Date</DataField>
+        </Field>
+        <Field Name="Sell_to_Customer_Name">
+          <DataField>Sell_to_Customer_Name</DataField>
+        </Field>
+        <Field Name="Sell_to_Address">
+          <DataField>Sell_to_Address</DataField>
+        </Field>
+        <Field Name="Thanksgiving">
+          <DataField>Thanksgiving</DataField>
+        </Field>
+        <Field Name="Company_Picture">
+          <DataField>Company_Picture</DataField>
+        </Field>
+        <Field Name="Company_Name">
+          <DataField>Company_Name</DataField>
+        </Field>
+        <Field Name="Company_Address">
+          <DataField>Company_Address</DataField>
+        </Field>
+        <Field Name="Sales_Line_No">
+          <DataField>Sales_Line_No</DataField>
+        </Field>
+        <Field Name="Sales_Line_Description">
+          <DataField>Sales_Line_Description</DataField>
+        </Field>
+        <Field Name="Sales_Line_Quantity">
+          <DataField>Sales_Line_Quantity</DataField>
+        </Field>
+        <Field Name="Sales_Line_QuantityFormat">
+          <DataField>Sales_Line_QuantityFormat</DataField>
+        </Field>
+        <Field Name="Sales_Line_Amount">
+          <DataField>Sales_Line_Amount</DataField>
+        </Field>
+        <Field Name="Sales_Line_AmountFormat">
+          <DataField>Sales_Line_AmountFormat</DataField>
+        </Field>
+        <Field Name="Blanks_Line_No">
+          <DataField>Blanks_Line_No</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
   <ReportSections>
     <ReportSection>
       <Body>
@@ -22,7 +77,7 @@
                   <Width>1.25in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>5.02in</Width>
+                  <Width>4.52in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>0.75in</Width>
@@ -277,7 +332,7 @@
             <Top>0in</Top>
             <Left>0.5in</Left>
             <Height>0.75in</Height>
-            <Width>7.77in</Width>
+            <Width>7.27in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -621,6 +676,12 @@
       </Page>
     </ReportSection>
   </ReportSections>
+  <ReportParametersLayout>
+    <GridLayoutDefinition>
+      <NumberOfColumns>4</NumberOfColumns>
+      <NumberOfRows>2</NumberOfRows>
+    </GridLayoutDefinition>
+  </ReportParametersLayout>
   <Code>Public Function BlankZero(ByVal Value As Decimal)
     if Value = 0 then
         Return ""
@@ -660,59 +721,4 @@ End Function
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
   <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
-  <DataSets>
-    <DataSet Name="DataSet_Result">
-      <Fields>
-        <Field Name="Sales_Header_No">
-          <DataField>Sales_Header_No</DataField>
-        </Field>
-        <Field Name="Order_Date">
-          <DataField>Order_Date</DataField>
-        </Field>
-        <Field Name="Sell_to_Customer_Name">
-          <DataField>Sell_to_Customer_Name</DataField>
-        </Field>
-        <Field Name="Sell_to_Address">
-          <DataField>Sell_to_Address</DataField>
-        </Field>
-        <Field Name="Thanksgiving">
-          <DataField>Thanksgiving</DataField>
-        </Field>
-        <Field Name="Company_Picture">
-          <DataField>Company_Picture</DataField>
-        </Field>
-        <Field Name="Company_Name">
-          <DataField>Company_Name</DataField>
-        </Field>
-        <Field Name="Company_Address">
-          <DataField>Company_Address</DataField>
-        </Field>
-        <Field Name="Sales_Line_No">
-          <DataField>Sales_Line_No</DataField>
-        </Field>
-        <Field Name="Sales_Line_Description">
-          <DataField>Sales_Line_Description</DataField>
-        </Field>
-        <Field Name="Sales_Line_Quantity">
-          <DataField>Sales_Line_Quantity</DataField>
-        </Field>
-        <Field Name="Sales_Line_QuantityFormat">
-          <DataField>Sales_Line_QuantityFormat</DataField>
-        </Field>
-        <Field Name="Sales_Line_Amount">
-          <DataField>Sales_Line_Amount</DataField>
-        </Field>
-        <Field Name="Sales_Line_AmountFormat">
-          <DataField>Sales_Line_AmountFormat</DataField>
-        </Field>
-        <Field Name="Blanks_Line_No">
-          <DataField>Blanks_Line_No</DataField>
-        </Field>
-      </Fields>
-      <Query>
-        <DataSourceName>DataSource</DataSourceName>
-        <CommandText />
-      </Query>
-    </DataSet>
-  </DataSets>
 </Report>
