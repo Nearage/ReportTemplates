@@ -15,6 +15,7 @@ report 50103 "Sales Order"
             }
 
             column(Sales_Header_No; "No.") { }
+            column(Sales_Header_Document_Type; "Document Type") { }
             column(Order_Date; "Order Date") { }
             column(Sell_to_Customer_Name; "Sell-to Customer Name") { }
             column(Sell_to_Address; "Sell-to Address") { }
@@ -45,9 +46,13 @@ report 50103 "Sales Order"
                     ReportTemplates.CalcBodysHeight(11.69, 0, 0, 1.5, 1, 0.25);
                     ReportTemplates.CalcBlanksRange(0.25, 0.25);
                     ReportTemplates.Run(Blanks_Line);
-                    ReportTemplates.Reset();
                 end;
             }
+
+            trigger OnAfterGetRecord()
+            begin
+                ReportTemplates.Reset();
+            end;
         }
     }
 

@@ -38,6 +38,14 @@
                                   <Value>=Fields!Sales_Header_No.Value</Value>
                                   <Style />
                                 </TextRun>
+                                <TextRun>
+                                  <Value> / </Value>
+                                  <Style />
+                                </TextRun>
+                                <TextRun>
+                                  <Value>=Fields!Sales_Header_Document_Type.Value</Value>
+                                  <Style />
+                                </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
@@ -345,6 +353,7 @@
                   <Group Name="Details">
                     <GroupExpressions>
                       <GroupExpression>=Fields!Sales_Header_No.Value</GroupExpression>
+                      <GroupExpression>=Fields!Sales_Header_Document_Type.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
                   <TablixMembers>
@@ -750,6 +759,9 @@ End Function
       <Fields>
         <Field Name="Sales_Header_No">
           <DataField>Sales_Header_No</DataField>
+        </Field>
+        <Field Name="Sales_Header_Document_Type">
+          <DataField>Sales_Header_Document_Type</DataField>
         </Field>
         <Field Name="Order_Date">
           <DataField>Order_Date</DataField>
