@@ -14,7 +14,7 @@ codeunit 50100 "Report Templates"
         Rec.SetRange(Number, 1, NumBlankLins);
     end;
 
-    procedure Reset()
+    procedure Init()
     begin
         BodyHeight := 0;
         NumBlankLins := 0;
@@ -26,7 +26,7 @@ codeunit 50100 "Report Templates"
     /// los distintos elementos del informe.
     /// </summary>
     /// <param name="LineHeight">Altura por defecto de las líneas.</param>
-    /// <param name="RsrvHeight">Altura reservada para secciones adicionales.</param>
+    /// <param name="RsrvHeight">Altura reservada en la última página.</param>
     procedure CalcBlanksRange(LineHeight: Decimal; RsrvHeight: Decimal)
     var
         Mathx: Codeunit Mathx;
@@ -63,6 +63,7 @@ codeunit 50100 "Report Templates"
     /// <param name="MarginBot">Margen inferior.</param>
     /// <param name="HeaderHgt">Altura de la cabecera.</param>
     /// <param name="FooterHgt">Altura del pie.</param>
+    /// <param name="RservHght">Altura reservada en todas las páginas.</param>
     /// <returns>La altura disponible en el cuerpo.</returns>
     procedure CalcBodysHeight(DocHeight: Decimal;
                               MarginTop: Decimal;
