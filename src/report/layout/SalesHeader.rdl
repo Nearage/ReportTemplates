@@ -29,7 +29,6 @@
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="Sales_Header">
-                          <CanGrow>false</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -76,7 +75,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.75in</Height>
+                  <Height>0.94in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -94,7 +93,6 @@
                                   <TablixCell>
                                     <CellContents>
                                       <Textbox Name="Textbox2">
-                                        <CanGrow>false</CanGrow>
                                         <KeepTogether>true</KeepTogether>
                                         <Paragraphs>
                                           <Paragraph>
@@ -132,7 +130,6 @@
                                   <TablixCell>
                                     <CellContents>
                                       <Textbox Name="Textbox3">
-                                        <CanGrow>false</CanGrow>
                                         <KeepTogether>true</KeepTogether>
                                         <Paragraphs>
                                           <Paragraph>
@@ -165,7 +162,7 @@
                                 </TablixCells>
                               </TablixRow>
                               <TablixRow>
-                                <Height>0.25in</Height>
+                                <Height>0.44in</Height>
                                 <TablixCells>
                                   <TablixCell>
                                     <CellContents>
@@ -173,17 +170,52 @@
                                         <TablixBody>
                                           <TablixColumns>
                                             <TablixColumn>
-                                              <Width>18.4658cm</Width>
+                                              <Width>7.27in</Width>
                                             </TablixColumn>
                                           </TablixColumns>
                                           <TablixRows>
                                             <TablixRow>
-                                              <Height>0.635cm</Height>
+                                              <Height>0.19in</Height>
+                                              <TablixCells>
+                                                <TablixCell>
+                                                  <CellContents>
+                                                    <Textbox Name="Textbox5">
+                                                      <KeepTogether>true</KeepTogether>
+                                                      <Paragraphs>
+                                                        <Paragraph>
+                                                          <TextRuns>
+                                                            <TextRun>
+                                                              <Value xml:space="preserve"> </Value>
+                                                              <Style />
+                                                            </TextRun>
+                                                          </TextRuns>
+                                                          <Style>
+                                                            <TextAlign>Center</TextAlign>
+                                                          </Style>
+                                                        </Paragraph>
+                                                      </Paragraphs>
+                                                      <rd:DefaultName>Textbox5</rd:DefaultName>
+                                                      <Style>
+                                                        <Border>
+                                                          <Style>None</Style>
+                                                        </Border>
+                                                        <VerticalAlign>Middle</VerticalAlign>
+                                                        <PaddingLeft>2pt</PaddingLeft>
+                                                        <PaddingRight>2pt</PaddingRight>
+                                                        <PaddingTop>2pt</PaddingTop>
+                                                        <PaddingBottom>2pt</PaddingBottom>
+                                                      </Style>
+                                                    </Textbox>
+                                                  </CellContents>
+                                                </TablixCell>
+                                              </TablixCells>
+                                            </TablixRow>
+                                            <TablixRow>
+                                              <Height>0.25in</Height>
                                               <TablixCells>
                                                 <TablixCell>
                                                   <CellContents>
                                                     <Textbox Name="Number">
-                                                      <CanGrow>false</CanGrow>
                                                       <KeepTogether>true</KeepTogether>
                                                       <Paragraphs>
                                                         <Paragraph>
@@ -224,6 +256,9 @@
                                         </TablixColumnHierarchy>
                                         <TablixRowHierarchy>
                                           <TablixMembers>
+                                            <TablixMember>
+                                              <KeepWithGroup>After</KeepWithGroup>
+                                            </TablixMember>
                                             <TablixMember>
                                               <Group Name="Details4" />
                                               <TablixMembers>
@@ -294,7 +329,6 @@
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="Textbox29">
-                          <CanGrow>false</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -355,7 +389,7 @@
             <DataSetName>DataSet_Result</DataSetName>
             <Top>0in</Top>
             <Left>0.5in</Left>
-            <Height>1.25in</Height>
+            <Height>1.44in</Height>
             <Width>7.27in</Width>
             <Style>
               <Border>
@@ -364,7 +398,7 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>1.25in</Height>
+        <Height>1.44in</Height>
         <Style />
       </Body>
       <Width>8.27in</Width>
@@ -390,7 +424,6 @@
               </Style>
             </Image>
             <Textbox Name="Company_Name">
-              <CanGrow>false</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
@@ -422,7 +455,6 @@
               </Style>
             </Textbox>
             <Textbox Name="Company_Address">
-              <CanGrow>false</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
@@ -454,7 +486,6 @@
               </Style>
             </Textbox>
             <Textbox Name="Sell_to_Customer_Name">
-              <CanGrow>false</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
@@ -488,7 +519,6 @@
               </Style>
             </Textbox>
             <Textbox Name="Sell_to_Customer_Name2">
-              <CanGrow>false</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
@@ -534,7 +564,6 @@
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
             <Textbox Name="Textbox17">
-              <CanGrow>false</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
