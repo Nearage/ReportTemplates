@@ -100,7 +100,7 @@ codeunit 50100 "Report Templates"
 
     /// <summary>
     /// Reserva líneas en el cuerpo del informe, que pueden ser ocupadas por
-    /// secciones dinámicas pueden repetirse en cada página.
+    /// contenido dinámico o secciones que pueden variar en tamaño.
     /// </summary>
     /// <param name="RsrvLins"></param>
     procedure ReservBodyLines(RsrvLins: Integer)
