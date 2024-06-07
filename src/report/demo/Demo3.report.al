@@ -58,9 +58,7 @@ report 50104 "Demo 3"
 
             dataitem(Blanks; Integer)
             {
-                #region columns
                 column(Blanks_Number; Number) { }
-                #endregion columns
 
                 trigger OnPreDataItem()
                 begin
