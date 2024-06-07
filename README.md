@@ -39,4 +39,4 @@ Para implementar este proyecto, se recomienda tener en cuenta estos aspectos:
 - _Videoguía_ [^2]
 
 [^1]: _En AL, la función módulo se cauclula_ `A mod B = A - B * (A \ B)`_, donde `\` representa una división entera en la que se descarta la parte decimal. Sin embargo, esa operación no es del todo correcta, ya que no procesa corréctamente los valores negativos de A. Para corregir este comportamiento, este procedimiento implementa la fórmula_ `A mod B = A - B * ⌊A / B⌋` _en su lugar._
-[^2]: Esta versión no cuenta con una videoguía por el momento. Se añadirá en el futuro y estará disponible mediante este mismo enlace.
+[^2]: Esta versión no cuenta con una videoguía por el momento. Se añadirá próximamente y estará disponible mediante este mismo enlace.
