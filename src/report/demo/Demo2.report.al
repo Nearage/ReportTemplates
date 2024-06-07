@@ -16,7 +16,7 @@ report 50101 "Demo 2"
 
                 column(Child_Number; Number) { }
 
-                trigger OnPreDataItem()
+                trigger OnPostDataItem()
                 begin
                     ReportTemplates.IncludeDataItem(Child1);
                 end;
@@ -27,23 +27,27 @@ report 50101 "Demo 2"
 
                 column(Child2_Number; Number) { }
 
-                trigger OnPreDataItem()
+                trigger OnPostDataItem()
                 begin
                     ReportTemplates.IncludeDataItem(Child2);
                 end;
             }
-        }
-        dataitem(Blanks; Integer)
-        {
-            column(Blank_Number; Number) { }
 
-            trigger OnPreDataItem()
+            dataitem(Blanks; Integer)
+            {
+                column(Blank_Number; Number) { }
+
+                trigger OnPreDataItem()
+                begin
+                    ReportTemplates.CalcBodysHeight(11.69, 0, 0, 1, 1);
+                    ReportTemplates.CalcBlanksRange(3.25);
+                    ReportTemplates.Run(Blanks);
+                end;
+            }
+
+            trigger OnAfterGetRecord()
             begin
                 ReportTemplates.Init(0.25);
-                ReportTemplates.CalcBodysHeight(11.69, 0, 0, 1, 1);
-                ReportTemplates.ReservBodyLines(1);
-                ReportTemplates.CalcBlanksRange(3.25);
-                ReportTemplates.Run(Blanks);
             end;
         }
     }
