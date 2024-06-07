@@ -18,17 +18,17 @@
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report Demo 3 - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Enum 2496062775 - EnumValue 2846204132 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Enum 1151841447 - EnumValue 2846204132 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Hello World!</source>
           <target state="translated">¡Hola Mundo!</target>
           <note from="Developer" annotates="general" priority="2">ESP="¡Hola Mundo!"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Enum Labels - EnumValue HelloWorld - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Global Label - EnumValue HelloWorld - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Enum 2496062775 - EnumValue 742956161 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Enum 1151841447 - EnumValue 742956161 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Thanks for your</source>
           <target state="translated">Gracias por su</target>
           <note from="Developer" annotates="general" priority="2">ESP="Gracias por su"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Enum Labels - EnumValue ThanksForYourOrder - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Global Label - EnumValue ThanksForYourOrder - Property Caption</note>
         </trans-unit>
       </group>
     </body>
