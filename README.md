@@ -6,7 +6,7 @@ Este proyecto está diseñado para facilitar la creación de informes personaliz
 
 - [Mathx.codeunit.al](./doc/Mathx.codeunit.md)
     - **Propósito**: Implementa una versión mejorada del operador módulo para manejar correctamente los valores negativos.
-    - **Funcionalidad**: Proporciona un procedimiento para calcular el módulo que implementa una _corrección para valores negativos_<sup> (1)</sup>_._
+    - **Funcionalidad**: Proporciona un procedimiento para calcular el módulo que implementa una _corrección para valores negativos_ [^1]_._
 - [GlobalLabels.codeunit.al](./doc/GlobalLabels.codeunit.md)
     - **Propósito**: Facilita la gestión de etiquetas globales utilizadas en los informes.
     - **Funcionalidad**: Ofrece un procedimiento que devuelve el valor de texto correspondiente a una etiqueta dada.
@@ -33,4 +33,4 @@ Para utilizar este proyecto, se deben seguir los siguientes pasos:
 - **Mantenimiento**: Este proyecto debe ser revisado periódicamente para asegurar compatibilidad con nuevas versiones de Microsoft Dynamics 365 Business Central y para incorporar mejoras basadas en feedback de usuarios.
 - **Extensibilidad**: Se recomienda extender este proyecto con más componentes y procedimientos para cubrir una gama más amplia de necesidades de informes.
 
-**(1)**: _En AL, la función módulo se cauclula_ `A mod B = A - B * (A \ B)`_, donde `\` representa una división entera en la que se descarta la parte decimal. Sin embargo, esa operación no es del todo correcta, ya que no procesa corréctamente los valores negativos de A. Para corregir este comportamiento, este procedimiento implementa la fórmula_ `A mod B = A - B * ⌊A / B⌋` _en su lugar._
+[^1]: _En AL, la función módulo se cauclula_ `A mod B = A - B * (A \ B)`_, donde `\` representa una división entera en la que se descarta la parte decimal. Sin embargo, esa operación no es del todo correcta, ya que no procesa corréctamente los valores negativos de A. Para corregir este comportamiento, este procedimiento implementa la fórmula_ `A mod B = A - B * ⌊A / B⌋` _en su lugar._
