@@ -18,7 +18,7 @@ enum "Global Label"
 
 #### `procedure Get(Label: Enum "Global Label"): Text`
 
-Este procedimiento obtiene el valor de la etiqueta indicada y lo devuelve formateado como texto.
+Este procedimiento obtiene el valor de la etiqueta indicada y lo devuelve formateado como texto. Si el texto contiene marcadores, sus valores se pueden reemplazar con las técnicas estándar.
 
 - **Parámetros**:
     - `Label`: La etiqueta de la que se desea obtener el valor.
