@@ -5,6 +5,7 @@ codeunit 50100 "Report Templates"
 
     var
         BodyHeight: Decimal; // Altura disponible en el cuerpo del informe.
+        LineHeight: Decimal;
         NumBlankLins: Integer; // Número de líneas en blanco a añadir.
         TotalNumLins: Integer; // Número total de líneas reservadas en el informe.
 
@@ -14,9 +15,17 @@ codeunit 50100 "Report Templates"
         Rec.SetRange(Number, 1, NumBlankLins);
     end;
 
-    procedure Init()
+    /// <summary>
+    /// Inicializa las variables y establece la altura por defecto para las líneas
+    /// del informe.
+    /// </summary>
+    /// <param name="DefaultLineHeight"> 
+    /// Altura  por defecto  de  las  líneas  del informe.
+    /// </param>
+    procedure Init(DefaultLineHeight: Decimal)
     begin
         BodyHeight := 0;
+        LineHeight := DefaultLineHeight;
         NumBlankLins := 0;
         TotalNumLins := 0;
     end;
@@ -25,9 +34,8 @@ codeunit 50100 "Report Templates"
     /// Calcula el número de líneas en blanco necesarias para mantener la distribución de
     /// los distintos elementos del informe.
     /// </summary>
-    /// <param name="LineHeight">Altura por defecto de las líneas.</param>
     /// <param name="RsrvHeight">Altura reservada para secciones adicionales.</param>
-    procedure CalcBlanksRange(LineHeight: Decimal; RsrvHeight: Decimal)
+    procedure CalcBlanksRange(RsrvHeight: Decimal)
     var
         Mathx: Codeunit Mathx;
         LinesPerPage: Integer;
@@ -69,13 +77,11 @@ codeunit 50100 "Report Templates"
                               MarginTop: Decimal;
                               MarginBot: Decimal;
                               HeaderHgt: Decimal;
-                              FooterHgt: Decimal;
-                              RservHght: Decimal): Decimal
+                              FooterHgt: Decimal): Decimal
     begin
         BodyHeight := DocHeight;
         BodyHeight -= (MarginTop + MarginBot);
         BodyHeight -= (HeaderHgt + FooterHgt);
-        BodyHeight -= RservHght;
     end;
 
     /// <summary>
@@ -85,10 +91,20 @@ codeunit 50100 "Report Templates"
     /// <param name="DataItem">DataItem a incluir en el proceso.</param>
     procedure IncludeDataItem(DataItem: Variant)
     var
-        RecordRef: RecordRef;
+        RecRef: RecordRef;
     begin
-        RecordRef.GetTable(DataItem);
+        RecRef.GetTable(DataItem);
 
-        TotalNumLins += RecordRef.Count();
+        TotalNumLins += RecRef.Count();
+    end;
+
+    /// <summary>
+    /// Reserva líneas en el cuerpo del informe, que pueden ser ocupadas por
+    /// secciones dinámicas pueden repetirse en cada página.
+    /// </summary>
+    /// <param name="RsrvLins"></param>
+    procedure ReservBodyLines(RsrvLins: Integer)
+    begin
+        BodyHeight -= LineHeight * RsrvLins;
     end;
 }

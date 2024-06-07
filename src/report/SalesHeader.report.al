@@ -22,7 +22,7 @@ report 50103 "Sales Header"
             column(Order_Date; "Order Date") { }
             column(Sell_to_Customer_Name; "Sell-to Customer Name") { }
             column(Sell_to_Address; "Sell-to Address") { }
-            column(Thanksgiving; Label.Get(Labels::ThanksForYourOrder)) { }
+            column(Thanksgiving; MLLabel.Get(Labels::ThanksForYourOrder)) { }
             #endregion columns
 
             dataitem(Sales_Line; "Sales Line")
@@ -43,38 +43,44 @@ report 50103 "Sales Header"
                 end;
             }
 
-            dataitem(Blanks_Line; Integer)
-            {
-                #region columns
-                column(Blanks_Line_No; Number) { }
-                #endregion columns
-
-                trigger OnPreDataItem()
-                begin
-                    ReportTemplates.CalcBodysHeight(11.69, 0, 0, 1.25, 1, 0.25);
-                    ReportTemplates.CalcBlanksRange(0.25, 0.5);
-                    ReportTemplates.Run(Blanks_Line);
-                end;
-            }
-
             dataitem(Totals; Integer)
             {
-                DataItemTableView = where(Number = const(1));
+                DataItemTableView = where(Number = filter(1 .. 3));
 
                 #region columns
                 column(Totals_Number; Number) { }
                 #endregion columns
+
+                // trigger OnPreDataItem()
+                // begin
+                //     CurrReport.Break();
+                // end;
+            }
+
+            dataitem(Blanks; Integer)
+            {
+                #region columns
+                column(Blanks_Number; Number) { }
+                #endregion columns
+
+                trigger OnPreDataItem()
+                begin
+                    ReportTemplates.CalcBodysHeight(11.69, 0, 0, 1.25, 1);
+                    ReportTemplates.ReservBodyLines(Totals.Count());
+                    ReportTemplates.CalcBlanksRange(0.5);
+                    ReportTemplates.Run(Blanks);
+                end;
             }
 
             trigger OnAfterGetRecord()
             begin
-                ReportTemplates.Init();
+                ReportTemplates.Init(0.25);
             end;
         }
     }
 
     var
-        Label: Codeunit Label;
+        MLLabel: Codeunit "ML Label";
         ReportTemplates: Codeunit "Report Templates";
 
 }

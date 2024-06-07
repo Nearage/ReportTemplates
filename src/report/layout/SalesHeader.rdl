@@ -135,7 +135,7 @@
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
-                                                <Value>=Fields!Blanks_Line_No.Value</Value>
+                                                <Value>=Fields!Blanks_Number.Value</Value>
                                                 <Style />
                                               </TextRun>
                                             </TextRuns>
@@ -260,7 +260,11 @@
                                               <KeepWithGroup>After</KeepWithGroup>
                                             </TablixMember>
                                             <TablixMember>
-                                              <Group Name="Details4" />
+                                              <Group Name="Details4">
+                                                <GroupExpressions>
+                                                  <GroupExpression>=Fields!Totals_Number.Value</GroupExpression>
+                                                </GroupExpressions>
+                                              </Group>
                                               <TablixMembers>
                                                 <TablixMember>
                                                   <Visibility>
@@ -292,7 +296,12 @@
                           <TablixRowHierarchy>
                             <TablixMembers>
                               <TablixMember>
-                                <Group Name="Details2" />
+                                <Group Name="Details2">
+                                  <GroupExpressions>
+                                    <GroupExpression>=Fields!Sales_Line_Line_No.Value</GroupExpression>
+                                    <GroupExpression>=Fields!Blanks_Number.Value</GroupExpression>
+                                  </GroupExpressions>
+                                </Group>
                                 <TablixMembers>
                                   <TablixMember>
                                     <Visibility>
@@ -301,7 +310,7 @@
                                   </TablixMember>
                                   <TablixMember>
                                     <Visibility>
-                                      <Hidden>=IsNothing(Fields!Blanks_Line_No.Value)</Hidden>
+                                      <Hidden>=IsNothing(Fields!Blanks_Number.Value)</Hidden>
                                     </Visibility>
                                   </TablixMember>
                                 </TablixMembers>
@@ -712,11 +721,11 @@ End Function
         <Field Name="Sales_Line_AmountFormat">
           <DataField>Sales_Line_AmountFormat</DataField>
         </Field>
-        <Field Name="Blanks_Line_No">
-          <DataField>Blanks_Line_No</DataField>
-        </Field>
         <Field Name="Totals_Number">
           <DataField>Totals_Number</DataField>
+        </Field>
+        <Field Name="Blanks_Number">
+          <DataField>Blanks_Number</DataField>
         </Field>
       </Fields>
       <Query>
