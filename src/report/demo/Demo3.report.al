@@ -1,36 +1,88 @@
-report 50102 "Demo 3"
+report 50104 "Demo 3"
 {
     Caption = 'Demo 3';
     RDLCLayout = 'src/report/demo/layout/Demo3.rdl';
     UsageCategory = ReportsAndAnalysis;
 
-    DataSet
+    dataset
     {
-        dataitem(Parent; "Sales Header")
+        dataitem(Sales_Header; "Sales Header")
         {
-            RequestFilterFields = "No.", "Sell-to Customer No.", "No. Printed";
-
-            column(Parent_Number; "No.") { }
-            dataitem(Child; "Sales Line")
+            dataitem(Company_Information; "Company Information")
             {
-                DataItemLink = "Document No." = field("No.");
-
-                column(Child_Number; "No.") { }
+                #region columns
+                column(Company_Picture; Picture) { AutoCalcField = true; }
+                column(Company_Name; Name) { }
+                column(Company_Address; Address) { }
+                #endregion columns
             }
-            dataitem(Blanks; Integer)
+
+            #region columns
+            column(Sales_Header_No; "No.") { }
+            column(Sales_Header_Document_Type; "Document Type") { }
+            column(Order_Date; "Order Date") { }
+            column(Sell_to_Customer_Name; "Sell-to Customer Name") { }
+            column(Sell_to_Address; "Sell-to Address") { }
+            column(Thanksgiving; GlobalLabels.Get("Global Label"::ThanksForYourOrder)) { }
+            #endregion columns
+
+            dataitem(Sales_Line; "Sales Line")
             {
-                column(Blank_Number; Number) { }
+                DataItemLink = "Document Type" = field("Document Type"), "Document No." = field("No.");
+
+                #region columns
+                column(Sales_Line_Line_No; "Line No.") { }
+                column(Sales_Line_No; "No.") { }
+                column(Sales_Line_Description; Description) { }
+                column(Sales_Line_Quantity; Quantity) { }
+                column(Sales_Line_Amount; Amount) { }
+                #endregion columns
+
+                trigger OnPostDataItem()
+                begin
+                    ReportTemplates.IncludeDataItem(Sales_Line);
+                end;
+            }
+
+            dataitem(Totals; Integer)
+            {
+                #region columns
+                column(Totals_Number; Number) { }
+                #endregion columns
 
                 trigger OnPreDataItem()
-                var
-                    ReportTemplates: Codeunit "Report Templates";
                 begin
-                    ReportTemplates.IncludeDataItem(Child);
-                    ReportTemplates.CalcBodysHeight(11.69, 0, 0, 1, 1);
-                    ReportTemplates.CalcBlanksRange(0.25, 3.25);
+                    SetRange(Number, 1, Random(3) - 1);
+                end;
+            }
+
+            dataitem(Blanks; Integer)
+            {
+                column(Blanks_Number; Number) { }
+
+                trigger OnPreDataItem()
+                begin
+                    ReportTemplates.CalcBodysHeight(11.69, 0, 0, 1.25, 1);
+                    ReportTemplates.ReservBodyLines(Totals.Count());
+                    ReportTemplates.CalcBlanksRange(0.5);
                     ReportTemplates.Run(Blanks);
                 end;
             }
+
+            trigger OnAfterGetRecord()
+            begin
+                ReportTemplates.Reset();
+            end;
         }
     }
+
+    trigger OnInitReport()
+    begin
+        ReportTemplates.Init(0.25);
+    end;
+
+    var
+        GlobalLabels: Codeunit "Global Labels";
+        ReportTemplates: Codeunit "Report Templates";
+
 }

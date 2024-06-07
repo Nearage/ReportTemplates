@@ -1,85 +1,42 @@
-# Documentación general de la _Codeunit_ "Report Templates"
+# Report Templates
 
-Este documento proporciona una visión general de la _Codeunit_ `"Report Templates"`, componente integral de la biblioteca de Informes concebida para la integración avanzada en el diseño de informes. Dicha _Codeunit_ facilita la elaboración de informes detallados y personalizados mediante la ajuste eficiente de la presentación de datos.
+Este proyecto está diseñado para facilitar la creación de informes personalizados en Microsoft Dynamics 365 Business Central. Utiliza varios componentes de código y plantillas de informes para generar documentos específicos según las necesidades del usuario.
 
-## Estructura
+## Archivos Principales
 
-La _Codeunit_ `"Report Templates"` encapsula la lógica destinada a la gestión de la generación de informes. Su enfoque principal radica en el cálculo y manejo de espacios en blanco dentro de los informes, con el objetivo de optimizar su presentación visual.
+[Mathx.codeunit.al](./doc/Mathx.codeunit.md)
+- Implementa una versión mejorada del operador módulo para manejar correctamente los valores negativos.
+- Proporciona un procedimiento para calcular el módulo que implementa una _corrección para valores negativos_ [^1]_._
 
-### Variables Globales
+[GlobalLabels.codeunit.al](./doc/GlobalLabels.codeunit.md)
+- Facilita la gestión de etiquetas globales utilizadas en los informes.
+- Ofrece un procedimiento que devuelve el valor de texto correspondiente a una etiqueta dada.
 
-- `BodyHeight`: Variable de tipo _Decimal_ que almacena la altura disponible en el cuerpo del informe, tras descontar los márgenes, el encabezado y el pie de página.
-- `NumBlankLins`: Variable de tipo _Integer_ que contiene el número de líneas en blanco necesarias para garantizar una distribución óptima de los elementos del informe.
-- `TotalNumLins`: Variable de tipo _Integer_ que acumula el total de líneas utilizadas en el informe, incluyendo tanto las líneas de contenido como aquellas reservadas.
+[ReportTemplates.codeunit.al](./doc/ReportTemplates.codeunit.md)
+- Contiene lógica y procedimientos para gestionar la estructura y diseño de los informes.
+- Gestiona la altura del cuerpo del informe y el cálculo de líneas en blanco.
+- Permite la inclusión de DataItems en el proceso de generación de líneas en blanco.
+- Realiza reservas de líneas para secciones dinámicas.
 
-### Triggers y Procedimientos
+[Demo1.report.al](./src/report/demo/Demo1.report.al), [Demo2.report.al](./src/report/demo/Demo2.report.al), [Demo3.report.al](./src/report/demo/Demo3.report.al), ...
+- Son ejemplos de implementación de informes utilizando las funcionalidades proporcionadas por el proyecto.
+- Cada uno de estos archivos define un informe específico, mostrando cómo se pueden utilizar los procedimientos y componentes del proyecto para crear informes personalizados.
 
----
+## Recomendaciones para Implementación
 
-```al
-OnRun()
-```
-Este trigger se activa automáticamente al invocar la _Codeunit_. Establece el rango del _dataitem_ correspondiente a las líneas en blanco, basándose en el valor almacenado en `NumBlankLins`.
+Para implementar este proyecto, se recomienda tener en cuenta estos aspectos:
 
----
+- **Configuración**: Asegurarse de que todos los archivos requeridos estén disponibles en el proyecto y configurados correctamente en el entorno.
+- **Personalización**: Personalizar los procedimientos y componentes según las necesidades específicas del informe a generar.
+- **Generación de Informes**: Utilizar los ejemplos de informes como base para desarrollar nuevos informes o modificar los existentes.
 
-```al
-CalcBlanksRange(LineHeight: Decimal; RsrvHeight: Decimal)
-```
+## Consideraciones Adicionales
 
-Procedimiento encargado de calcular el número de líneas en blanco requeridas para mantener la distribución adecuada de los diversos elementos del informe. Emplea una función auxiliar denominada `Modulo`, perteneciente a otra _Codeunit_ (`Mathx`), para efectuar cálculos involucrando números negativos.
+- **Mantenimiento**: Este proyecto será revisado periódicamente para asegurar compatibilidad con nuevas versiones de Microsoft Dynamics 365 Business Central y para incorporar mejoras basadas en feedback de usuarios.
+- **Extensibilidad**: Se recomienda extender este proyecto con más componentes y procedimientos para cubrir una gama más amplia de necesidades de informes.
 
----
+## Enlaces de Interés
+- _Videoguía_ [^2]
 
-```al
-CalcBodysHeight(DocHeight: Decimal;
-                MarginTop: Decimal; 
-                MarginBot: Decimal; 
-                HeaderHgt: Decimal; 
-                FooterHgt: Decimal): Decimal
-```
-
-Este procedimiento calcula el espacio disponible en el cuerpo del informe, restando los márgenes, el encabezado y el pie de página, devolviendo dicha altura como resultado.
-
----
-
-```al
-IncludeDataItem(DataItem: Variant)
-```
-
-Permite incorporar un _dataitem_ en el proceso de generación de líneas en blanco, incrementando el contador de registros del _dataitem_ al total de líneas utilizadas.
-
-## Uso
-
-Para hacer uso de las funcionalidades brindadas por esta _Codeunit_, los desarrolladores deben invocar los procedimientos correspondientes con los parámetros necesarios. Esto asegura que el diseño del informe y la distribución del contenido se ajusten a los estándares de presentación deseados.
-
-Generalmente, es suficiente con añadir y configurar corréctamente un _dataitem_ asociado a la tabla `Integer` a nuestro informe, al mismo nivel que el _dataitem_ que genere las líneas en el mismo. En el _trigger_ `OnPreDataItem` de este _dataitem_, deben configurarse los parámetros necesarios para que la _Codeunit_ `"Report Templates"` pueda realizar los cálculos necesarios correctamente.
-
-Su estructura básica es la siguiente:
-
-```al
-dataitem(...; Integer)
-{
-    column(...; Number) { }
-
-    trigger OnPreDataItem()
-    var
-        ReportTemplates: Codeunit "Report Templates";
-    begin
-        ReportTemplates.IncludeDataItem(...);
-        ReportTemplates.CalcBodysHeight(...);
-        ReportTemplates.CalcBlanksRange(...);
-        ReportTemplates.Run(...);
-    end;
-}
-```
-
-Para más información, consultar el código y la documentación de la _Codeunit_ `"Report Templates"`, así como el código y el diseño RDL de los ejemplos _Demo1.report.al_, _Demo2.report.al_ y _Demo3.report.al_.
-
-# Documentación general de la _Codeunit_ "Mathx"
-
-La _Codeunit_ `"Mathx"` implementa operaciones matemáticas que no se incluyen o no se comportan de la forma esperada de manera estándar en AL. Su propósito es agrupar estas funciones en un mismo objeto para facilitar su implementación en otros proyectos.
-
-Por ahora, solo contiene un procedimiento que extiende la definición estándar del operador `mod`, para que pueda procesar correctamente valores negativos del dividendo.
-
-Para más información, consultar el código y la documentación de la _Codeunit_ `"Mathx"`.
+[^1]: _En AL, la función módulo se cauclula_ `A mod B = A - B * (A \ B)`_, donde `\` representa una división entera en la que se descarta la parte decimal. Sin embargo, esa operación no es del todo correcta, ya que no procesa corréctamente los valores negativos de A. Para corregir este comportamiento, este procedimiento implementa la fórmula_ `A mod B = A - B * ⌊A / B⌋` _en su lugar._
+[^2]: Esta versión no cuenta con una videoguía por el momento. Se añadirá próximamente y estará disponible mediante este mismo enlace.
