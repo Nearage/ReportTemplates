@@ -24,8 +24,15 @@ codeunit 50100 "Report Templates"
     /// </param>
     procedure Init(DefaultLineHeight: Decimal)
     begin
-        BodyHeight := 0;
         LineHeight := DefaultLineHeight;
+    end;
+
+    /// <summary>
+    /// Reinicia las variables globales de la codeunit.
+    /// </summary>
+    procedure Reset()
+    begin
+        BodyHeight := 0;
         NumBlankLins := 0;
         TotalNumLins := 0;
     end;

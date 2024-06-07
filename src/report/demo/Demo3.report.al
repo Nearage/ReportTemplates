@@ -71,10 +71,15 @@ report 50104 "Demo 3"
 
             trigger OnAfterGetRecord()
             begin
-                ReportTemplates.Init(0.25);
+                ReportTemplates.Reset();
             end;
         }
     }
+
+    trigger OnInitReport()
+    begin
+        ReportTemplates.Init(0.25);
+    end;
 
     var
         GlobalLabels: Codeunit "Global Labels";

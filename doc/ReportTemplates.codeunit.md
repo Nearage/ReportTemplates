@@ -20,6 +20,12 @@ Inicializa las variables y establece la altura por defecto para las líneas del 
 
 ---
 
+`Reset()`
+
+Reinicia las variables globales de la codeunit.
+
+---
+
  `CalcBlanksRange(RsrvHeight: Decimal)`
 
 Calcula el número de líneas en blanco necesarias para mantener la distribución de los distintos elementos del informe, teniendo en cuenta la altura reservada.

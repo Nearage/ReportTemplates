@@ -47,10 +47,15 @@ report 50101 "Demo 2"
 
             trigger OnAfterGetRecord()
             begin
-                ReportTemplates.Init(0.25);
+                ReportTemplates.Reset();
             end;
         }
     }
+
+    trigger OnInitReport()
+    begin
+        ReportTemplates.Init(0.25);
+    end;
 
     var
         ReportTemplates: Codeunit "Report Templates";
