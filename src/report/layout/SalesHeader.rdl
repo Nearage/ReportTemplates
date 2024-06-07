@@ -37,18 +37,21 @@
                                   <Value>=Fields!Sales_Header_Document_Type.Value</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
+                                    <Color>Turquoise</Color>
                                   </Style>
                                 </TextRun>
                                 <TextRun>
                                   <Value xml:space="preserve"> </Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
+                                    <Color>Turquoise</Color>
                                   </Style>
                                 </TextRun>
                                 <TextRun>
                                   <Value>=Fields!Sales_Header_No.Value</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
+                                    <Color>Turquoise</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -62,7 +65,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>LightGrey</BackgroundColor>
+                            <BackgroundColor>Teal</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -136,7 +139,9 @@
                                             <TextRuns>
                                               <TextRun>
                                                 <Value>=Fields!Blanks_Number.Value</Value>
-                                                <Style />
+                                                <Style>
+                                                  <Color>Gray</Color>
+                                                </Style>
                                               </TextRun>
                                             </TextRuns>
                                             <Style>
@@ -162,7 +167,42 @@
                                 </TablixCells>
                               </TablixRow>
                               <TablixRow>
-                                <Height>0.44in</Height>
+                                <Height>0.19in</Height>
+                                <TablixCells>
+                                  <TablixCell>
+                                    <CellContents>
+                                      <Textbox Name="Textbox4">
+                                        <CanGrow>true</CanGrow>
+                                        <KeepTogether>true</KeepTogether>
+                                        <Paragraphs>
+                                          <Paragraph>
+                                            <TextRuns>
+                                              <TextRun>
+                                                <Value />
+                                                <Style />
+                                              </TextRun>
+                                            </TextRuns>
+                                            <Style />
+                                          </Paragraph>
+                                        </Paragraphs>
+                                        <rd:DefaultName>Textbox4</rd:DefaultName>
+                                        <Style>
+                                          <Border>
+                                            <Style>None</Style>
+                                          </Border>
+                                          <BackgroundColor>LightGrey</BackgroundColor>
+                                          <PaddingLeft>2pt</PaddingLeft>
+                                          <PaddingRight>2pt</PaddingRight>
+                                          <PaddingTop>2pt</PaddingTop>
+                                          <PaddingBottom>2pt</PaddingBottom>
+                                        </Style>
+                                      </Textbox>
+                                    </CellContents>
+                                  </TablixCell>
+                                </TablixCells>
+                              </TablixRow>
+                              <TablixRow>
+                                <Height>0.25in</Height>
                                 <TablixCells>
                                   <TablixCell>
                                     <CellContents>
@@ -175,42 +215,6 @@
                                           </TablixColumns>
                                           <TablixRows>
                                             <TablixRow>
-                                              <Height>0.19in</Height>
-                                              <TablixCells>
-                                                <TablixCell>
-                                                  <CellContents>
-                                                    <Textbox Name="Textbox5">
-                                                      <KeepTogether>true</KeepTogether>
-                                                      <Paragraphs>
-                                                        <Paragraph>
-                                                          <TextRuns>
-                                                            <TextRun>
-                                                              <Value xml:space="preserve"> </Value>
-                                                              <Style />
-                                                            </TextRun>
-                                                          </TextRuns>
-                                                          <Style>
-                                                            <TextAlign>Center</TextAlign>
-                                                          </Style>
-                                                        </Paragraph>
-                                                      </Paragraphs>
-                                                      <rd:DefaultName>Textbox5</rd:DefaultName>
-                                                      <Style>
-                                                        <Border>
-                                                          <Style>None</Style>
-                                                        </Border>
-                                                        <VerticalAlign>Middle</VerticalAlign>
-                                                        <PaddingLeft>2pt</PaddingLeft>
-                                                        <PaddingRight>2pt</PaddingRight>
-                                                        <PaddingTop>2pt</PaddingTop>
-                                                        <PaddingBottom>2pt</PaddingBottom>
-                                                      </Style>
-                                                    </Textbox>
-                                                  </CellContents>
-                                                </TablixCell>
-                                              </TablixCells>
-                                            </TablixRow>
-                                            <TablixRow>
                                               <Height>0.25in</Height>
                                               <TablixCells>
                                                 <TablixCell>
@@ -222,7 +226,9 @@
                                                           <TextRuns>
                                                             <TextRun>
                                                               <Value>=Fields!Totals_Number.Value</Value>
-                                                              <Style />
+                                                              <Style>
+                                                                <Color>Teal</Color>
+                                                              </Style>
                                                             </TextRun>
                                                           </TextRuns>
                                                           <Style>
@@ -235,7 +241,7 @@
                                                         <Border>
                                                           <Style>None</Style>
                                                         </Border>
-                                                        <BackgroundColor>LightBlue</BackgroundColor>
+                                                        <BackgroundColor>Turquoise</BackgroundColor>
                                                         <VerticalAlign>Middle</VerticalAlign>
                                                         <PaddingLeft>2pt</PaddingLeft>
                                                         <PaddingRight>2pt</PaddingRight>
@@ -257,9 +263,6 @@
                                         <TablixRowHierarchy>
                                           <TablixMembers>
                                             <TablixMember>
-                                              <KeepWithGroup>After</KeepWithGroup>
-                                            </TablixMember>
-                                            <TablixMember>
                                               <Group Name="Details4">
                                                 <GroupExpressions>
                                                   <GroupExpression>=Fields!Totals_Number.Value</GroupExpression>
@@ -280,6 +283,7 @@
                                           <Border>
                                             <Style>None</Style>
                                           </Border>
+                                          <BackgroundColor>Plum</BackgroundColor>
                                         </Style>
                                       </Tablix>
                                     </CellContents>
@@ -319,6 +323,13 @@
                                 <KeepWithGroup>Before</KeepWithGroup>
                                 <RepeatOnNewPage>true</RepeatOnNewPage>
                               </TablixMember>
+                              <TablixMember>
+                                <Visibility>
+                                  <Hidden>=Count(Fields!Totals_Number.Value) = 0</Hidden>
+                                </Visibility>
+                                <KeepWithGroup>Before</KeepWithGroup>
+                                <RepeatOnNewPage>true</RepeatOnNewPage>
+                              </TablixMember>
                             </TablixMembers>
                           </TablixRowHierarchy>
                           <DataSetName>DataSet_Result</DataSetName>
@@ -346,12 +357,14 @@
                                   <Value>=Fields!Thanksgiving.Value</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
+                                    <Color>Turquoise</Color>
                                   </Style>
                                 </TextRun>
                                 <TextRun>
                                   <Value xml:space="preserve"> </Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
+                                    <Color>Turquoise</Color>
                                   </Style>
                                 </TextRun>
                                 <TextRun>
@@ -359,6 +372,7 @@
                                   <Value>=LCase(Fields!Sales_Header_Document_Type.Value)</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
+                                    <Color>Turquoise</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -372,7 +386,7 @@
                             <Border>
                               <Style>None</Style>
                             </Border>
-                            <BackgroundColor>LightGrey</BackgroundColor>
+                            <BackgroundColor>Teal</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>

@@ -45,16 +45,14 @@ report 50103 "Sales Header"
 
             dataitem(Totals; Integer)
             {
-                DataItemTableView = where(Number = filter(1 .. 3));
-
                 #region columns
                 column(Totals_Number; Number) { }
                 #endregion columns
 
-                // trigger OnPreDataItem()
-                // begin
-                //     CurrReport.Break();
-                // end;
+                trigger OnPreDataItem()
+                begin
+                    SetRange(Number, 1, Random(3) - 1);
+                end;
             }
 
             dataitem(Blanks; Integer)
