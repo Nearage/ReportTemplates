@@ -4,19 +4,19 @@ Este proyecto está diseñado para facilitar la creación de informes personaliz
 
 ## Archivos Principales
 
-- `Mathx.codeunit.al`
+- [Mathx.codeunit.al](./doc/Mathx.codeunit.md)
     - **Propósito**: Implementa una versión mejorada del operador módulo para manejar correctamente los valores negativos.
     - **Funcionalidad**: Proporciona un procedimiento para calcular el módulo que implementa una _corrección para valores negativos_<sup> (1)</sup>_._
-- `GlobalLabels.codeunit.al`
+- [GlobalLabels.codeunit.al](./doc/GlobalLabels.codeunit.md)
     - **Propósito**: Facilita la gestión de etiquetas globales utilizadas en los informes.
     - **Funcionalidad**: Ofrece un procedimiento que devuelve el valor de texto correspondiente a una etiqueta dada.
-- `ReportTemplates.codeunit.al`
+- [ReportTemplates.codeunit.al](./doc/ReportTemplates.codeunit.md)
     - **Propósito**: Contiene lógica y procedimientos para gestionar la estructura y diseño de los informes.
     - **Funcionalidad**:
         - Gestiona la altura del cuerpo del informe y el cálculo de líneas en blanco.
         - Permite la inclusión de DataItems en el proceso de generación de líneas en blanco.
         - Realiza reservas de líneas para secciones dinámicas.
-- `Demo*.report.al`
+- [Demo1.report.al](./src/report/demo/Demo1.report.al), [Demo2.report.al](./src/report/demo/Demo1.report.al), [Demo3.report.al](./src/report/demo/Demo1.report.al), ...
     - **Propósito**: Son ejemplos de implementación de informes utilizando las funcionalidades proporcionadas por el proyecto.
     - **Funcionalidad**: Cada uno de estos archivos define un informe específico, mostrando cómo se pueden utilizar los procedimientos y componentes del proyecto para crear informes personalizados.
 
@@ -26,7 +26,7 @@ Para utilizar este proyecto, se deben seguir los siguientes pasos:
 
 - **Configuración**: Asegurar que todos los archivos estén disponibles en el proyecto y configurados correctamente en Microsoft Dynamics 365 Business Central.
 - **Personalización**: Personalizar los procedimientos y componentes según las necesidades específicas del informe a generar.
-- **Generación de Informes**: Utilizar los ejemplos de informes (`Demo1.report.al`, `Demo2.report.al`, `Demo3.report.al`) como base para desarrollar nuevos informes o modificar los existentes.
+- **Generación de Informes**: Utilizar los ejemplos de informes como base para desarrollar nuevos informes o modificar los existentes.
 
 ## Consideraciones Adicionales
 
