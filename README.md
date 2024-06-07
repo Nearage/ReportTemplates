@@ -6,7 +6,7 @@ Este proyecto está diseñado para facilitar la creación de informes personaliz
 
 - `Mathx.codeunit.al`
     - **Propósito**: Implementa una versión mejorada del operador módulo para manejar correctamente los valores negativos.
-    - **Funcionalidad**: Proporciona un procedimiento para calcular el módulo que implementa una _corrección para valores negativos_<sup><sub> (1)</sub></sup>_._
+    - **Funcionalidad**: Proporciona un procedimiento para calcular el módulo que implementa una _corrección para valores negativos_<sup> (1)</sup>_._
 - `GlobalLabels.codeunit.al`
     - **Propósito**: Facilita la gestión de etiquetas globales utilizadas en los informes.
     - **Funcionalidad**: Ofrece un procedimiento que devuelve el valor de texto correspondiente a una etiqueta dada.
