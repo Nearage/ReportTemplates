@@ -23,7 +23,7 @@ report 50104 "Demo 3"
             column(Order_Date; "Order Date") { }
             column(Sell_to_Customer_Name; "Sell-to Customer Name") { }
             column(Sell_to_Address; "Sell-to Address") { }
-            column(Thanksgiving; MLLabel.Get(Labels::ThanksForYourOrder)) { }
+            column(Thanksgiving; GlobalLabels.Get("Global Label"::ThanksForYourOrder)) { }
             #endregion columns
 
             dataitem(Sales_Line; "Sales Line")
@@ -77,7 +77,7 @@ report 50104 "Demo 3"
     }
 
     var
-        MLLabel: Codeunit "ML Label";
+        GlobalLabels: Codeunit "Global Labels";
         ReportTemplates: Codeunit "Report Templates";
 
 }
