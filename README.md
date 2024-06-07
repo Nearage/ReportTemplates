@@ -16,7 +16,7 @@ Este proyecto está diseñado para facilitar la creación de informes personaliz
         - Gestiona la altura del cuerpo del informe y el cálculo de líneas en blanco.
         - Permite la inclusión de DataItems en el proceso de generación de líneas en blanco.
         - Realiza reservas de líneas para secciones dinámicas.
-- [Demo1.report.al](./src/report/demo/Demo1.report.al), [Demo2.report.al](./src/report/demo/Demo1.report.al), [Demo3.report.al](./src/report/demo/Demo1.report.al), ...
+- [Demo1.report.al](./src/report/demo/Demo1.report.al), [Demo2.report.al](./src/report/demo/Demo2.report.al), [Demo3.report.al](./src/report/demo/Demo3.report.al), ...
     - **Propósito**: Son ejemplos de implementación de informes utilizando las funcionalidades proporcionadas por el proyecto.
     - **Funcionalidad**: Cada uno de estos archivos define un informe específico, mostrando cómo se pueden utilizar los procedimientos y componentes del proyecto para crear informes personalizados.
 
