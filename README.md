@@ -35,4 +35,8 @@ Para implementar este proyecto, se recomienda tener en cuenta estos aspectos:
 - **Mantenimiento**: Este proyecto será revisado periódicamente para asegurar compatibilidad con nuevas versiones de Microsoft Dynamics 365 Business Central y para incorporar mejoras basadas en feedback de usuarios.
 - **Extensibilidad**: Se recomienda extender este proyecto con más componentes y procedimientos para cubrir una gama más amplia de necesidades de informes.
 
+## Enlaces de Interés
+- _Videogía_ [^2]
+
 [^1]: _En AL, la función módulo se cauclula_ `A mod B = A - B * (A \ B)`_, donde `\` representa una división entera en la que se descarta la parte decimal. Sin embargo, esa operación no es del todo correcta, ya que no procesa corréctamente los valores negativos de A. Para corregir este comportamiento, este procedimiento implementa la fórmula_ `A mod B = A - B * ⌊A / B⌋` _en su lugar._
+[^2]: Esta versión no cuenta con una videoguía por el momento. Se añadirá en el futuro y estará disponible mediante este mismo enlace.
