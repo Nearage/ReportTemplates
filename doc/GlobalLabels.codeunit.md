@@ -13,7 +13,7 @@ En el _enum_ [Global Label](../src/enum/GlobalLabel.enum.al) podemos definir las
 Este procedimiento obtiene el valor de la etiqueta indicada y lo devuelve formateado como texto. Si el texto contiene marcadores, sus valores se pueden reemplazar con las técnicas estándar.
 
 **Parámetros**:
-- `Label`: La etiqueta de la que se desea obtener el valor.
+- `Label: Enum "Global Label"`: La etiqueta de la que se desea obtener el valor.
 
 **Devuelve**: El valor de la etiqueta formateado como texto.
 
