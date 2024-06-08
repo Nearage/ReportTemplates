@@ -1,1 +1,1 @@
-$A mod B = A - B * floor(A / B)$
+$A mod B = A - B * \floor(A / B)$
