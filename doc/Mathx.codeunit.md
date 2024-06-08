@@ -9,8 +9,8 @@ La _codeunit_ [Mathx](../src/codeunit/Mathx.codeunit.al) contiene procedimientos
 Este procedimiento implementa una versión corregida de la operación módulo (`mod`) que es compatible con valores negativos y proporciona resultados precisos sin importar el signo de los operandos.
 
 **Parámetros**:
-- `A`: El divisor sobre el cual se calculará el módulo.
-- `B`: El dividendo contra el cual se calculará el módulo.
+- `A: Decimal`: El divisor sobre el cual se calculará el módulo.
+- `B: Decimal`: El dividendo contra el cual se calculará el módulo.
 
 **Devuelve**: El valor del módulo de dos números decimales `A` y `B` utilizando la fórmula corregida.
 
