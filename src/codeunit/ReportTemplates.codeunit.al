@@ -114,4 +114,9 @@ codeunit 50100 "Report Templates"
     begin
         BodyHeight -= LineHeight * RsrvLins;
     end;
+
+    procedure ToggleVisibility()
+    begin
+
+    end;
 }

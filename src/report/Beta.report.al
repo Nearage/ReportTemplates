@@ -20,6 +20,13 @@ report 50102 Beta
 
                 column(Child_Number; Number) { }
             }
+
+            dataitem(Blank; Integer)
+            {
+                DataItemTableView = where(Number = filter(1 .. 2));
+
+                column(Blank_Number; Number) { }
+            }
         }
     }
 }
