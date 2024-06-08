@@ -4,7 +4,7 @@ La _codeunit_ [Global Labels](../src/codeunit/GlobalLabels.codeunit.al) contiene
 
 ## GlobalLabel.enum.al
 
-En el _enum_ [Global Label](../src/enum/GlobalLabel.enum.al) podemos definir las variables globales de nuestro proyecto. De este modo, no será necesario repetir definiciones para valores similares, aumentando la eficiencia y reduciendo la redundancia del código.
+En el _enum_ [Global Label](../src/enum/GlobalLabel.enum.al) podemos definir las etiquetas globales de nuestro proyecto. De este modo, no será necesario repetir definiciones para valores similares, aumentando la eficiencia y reduciendo la redundancia del código.
 
 ## Procedimientos
 
