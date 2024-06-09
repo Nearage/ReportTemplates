@@ -12,10 +12,21 @@ report 50102 Beta
         {
             column(PerPage; Beta.PerPage) { }
             column(Parent_Number; Number) { }
+            column(Dynamic_Number; Cont) { }
+
 
             dataitem(Child; Integer)
             {
                 column(Child_Number; Number) { }
+
+                dataitem(Dynamic; Integer)
+                {
+
+                    trigger OnPreDataItem()
+                    begin
+                        SetRange(Number, 1);
+                    end;
+                }
 
                 trigger OnPreDataItem()
                 begin
@@ -27,6 +38,7 @@ report 50102 Beta
                 trigger OnAfterGetRecord()
                 begin
                     Beta.Add();
+                    Cont += 1;
                 end;
             }
 
@@ -39,17 +51,6 @@ report 50102 Beta
                     Beta.Run(Blank);
 
                     if IsEmpty then CurrReport.Break();
-                end;
-            }
-
-            dataitem(Dynamic; Integer)
-            {
-                column(Dynamic_Number; Number) { }
-
-                trigger OnPreDataItem()
-                begin
-
-                    SetRange(Number, 1);
                 end;
             }
 
@@ -76,6 +77,8 @@ report 50102 Beta
     }
     var
         Beta: Codeunit Beta;
+        Cont: Integer;
+
 }
 
 codeunit 50103 Beta

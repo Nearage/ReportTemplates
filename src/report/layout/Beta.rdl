@@ -362,14 +362,14 @@ End Function
         <Field Name="Parent_Number">
           <DataField>Parent_Number</DataField>
         </Field>
+        <Field Name="Dynamic_Number">
+          <DataField>Dynamic_Number</DataField>
+        </Field>
         <Field Name="Child_Number">
           <DataField>Child_Number</DataField>
         </Field>
         <Field Name="Blank_Number">
           <DataField>Blank_Number</DataField>
-        </Field>
-        <Field Name="Dynamic_Number">
-          <DataField>Dynamic_Number</DataField>
         </Field>
       </Fields>
       <Query>
