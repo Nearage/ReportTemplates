@@ -19,10 +19,9 @@ report 50102 Beta
 
                 trigger OnPreDataItem()
                 begin
-                    SetRange(Number, 1, 56); // DEMO ONLY
+                    SetRange(Number, 1, 5 + Random(5)); // DEMO ONLY
 
                     if IsEmpty then CurrReport.Break();
-
                 end;
 
                 trigger OnAfterGetRecord()
@@ -45,9 +44,7 @@ report 50102 Beta
 
             trigger OnPreDataItem()
             begin
-                // SetRange(Number, 1, Random(3)); // DEMO ONLY
-                SetRange(Number, 1); // DEMO ONLY
-
+                SetRange(Number, 1, 2); // DEMO ONLY
             end;
 
             trigger OnAfterGetRecord()
@@ -78,7 +75,7 @@ codeunit 50103 Beta
     procedure Init(PerPage: Integer; Static: Integer; Dynamic: Integer): Integer
     begin
         GblRows := Static;
-        GblPerPage := 44;
+        GblPerPage := PerPage - Dynamic;
 
         exit(GblPerPage);
     end;

@@ -61,7 +61,6 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
@@ -204,6 +203,7 @@
                 <TablixMember>
                   <Group Name="Group2">
                     <GroupExpressions>
+                      <GroupExpression>=Fields!Parent_Number.Value</GroupExpression>
                       <GroupExpression>=Fields!Child_Number.Value</GroupExpression>
                       <GroupExpression>=Fields!Blank_Number.Value</GroupExpression>
                     </GroupExpressions>
@@ -278,10 +278,6 @@ End Function
 
 Public Function Footer(ByVal Row As Integer) As Boolean
     Return (Row Mod Me.PerPage) &lt;&gt; 0
-End Function
-
-Public Function InRange(ByVal Row, ByVal Range) As Boolean
-    Return (Row Mod Me.PerPage) &lt;&gt; Range
 End Function</Code>
   <Language>=User!Language</Language>
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
