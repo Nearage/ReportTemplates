@@ -10,7 +10,7 @@ report 50102 Beta
     {
         dataitem(Parent; Integer)
         {
-            column(PerPage; PerPage) { }
+            column(PerPage; Beta.PerPage) { }
             column(Parent_Number; Number) { }
 
             dataitem(Child; Integer)
@@ -19,15 +19,15 @@ report 50102 Beta
 
                 trigger OnPreDataItem()
                 begin
-                    SetRange(Number, 1, Random(10)); // DEMO ONLY
-                    // SetRange(Number, 1, 10);
+                    SetRange(Number, 1, Random(11) - 1); // DEMO ONLY
+
+                    if IsEmpty then CurrReport.Break();
+
                 end;
 
                 trigger OnAfterGetRecord()
                 begin
-                    #region codeunit
-                    CU_Rows += 1;
-                    #endregion codeunit
+                    Beta.Add();
                 end;
             }
 
@@ -37,42 +37,57 @@ report 50102 Beta
 
                 trigger OnPreDataItem()
                 begin
-                    case Mathx.Modulo(-CU_Rows, PerPage) of
-                        0:
-                            CurrReport.Break();
-                        else
-                            SetRange(Number, 1, Mathx.Modulo(-CU_Rows, PerPage));
-                    end;
+                    Beta.Run(Blank);
+
+                    if IsEmpty then CurrReport.Break();
                 end;
             }
 
             trigger OnPreDataItem()
             begin
                 SetRange(Number, 1, Random(3)); // DEMO ONLY
-                // SetRange(Number, 1);
             end;
 
             trigger OnAfterGetRecord()
             begin
-                #region codeunit
-                CU_Rows := 0;
-                #endregion codeunit
+                Beta.Init(5, 0, 1);
             end;
         }
     }
 
-    trigger OnInitReport()
+    var
+        Beta: Codeunit Beta;
+}
+
+codeunit 50103 Beta
+{
+    TableNo = Integer;
+
+    trigger OnRun()
     begin
-        #region codeunit
-        CU_Rows := 0;
-        #endregion codeunit
-        PerPage := 5;
+        Rec.SetRange(Number, 1, Mathx.Modulo(-GblRows, GblPerPage));
     end;
 
     var
         Mathx: Codeunit Mathx;
-        #region codeunit
-        CU_Rows: Integer;
-        #endregion codeunit
-        PerPage: Integer;
+        GblRows: Integer;
+        GblPerPage: Integer;
+
+    procedure Init(PerPage: Integer; Static: Integer; Dynamic: Integer): Integer
+    begin
+        GblRows := Static;
+        GblPerPage := PerPage;
+
+        exit(PerPage - Dynamic);
+    end;
+
+    procedure Add()
+    begin
+        GblRows += 1;
+    end;
+
+    procedure PerPage(): Integer
+    begin
+        exit(GblPerPage);
+    end;
 }
