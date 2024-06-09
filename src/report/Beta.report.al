@@ -19,7 +19,7 @@ report 50102 Beta
 
                 trigger OnPreDataItem()
                 begin
-                    SetRange(Number, 1, 5 + Random(5)); // DEMO ONLY
+                    SetRange(Number, 1, Random(10)); // DEMO ONLY
 
                     if IsEmpty then CurrReport.Break();
                 end;
@@ -59,7 +59,7 @@ report 50102 Beta
 
             trigger OnAfterGetRecord()
             begin
-                Beta.Init(5, 1, 1);
+                Beta.Init(5, 1, 0);
             end;
         }
     }
