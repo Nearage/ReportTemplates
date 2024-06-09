@@ -19,7 +19,7 @@ report 50102 Beta
 
                 trigger OnPreDataItem()
                 begin
-                    SetRange(Number, 1, Random(10)); // DEMO ONLY
+                    SetRange(Number, 1, 45); // DEMO ONLY
 
                     if IsEmpty then CurrReport.Break();
                 end;
@@ -42,24 +42,35 @@ report 50102 Beta
                 end;
             }
 
-            dataitem(Static; Integer)
+            dataitem(Dynamic; Integer)
             {
-                column(Static_Number; Number) { }
+                column(Dynamic_Number; Number) { }
 
                 trigger OnPreDataItem()
                 begin
+
                     SetRange(Number, 1);
                 end;
             }
 
+            // dataitem(Static; Integer)
+            // {
+            //     column(Static_Number; Number) { }
+
+            //     trigger OnPreDataItem()
+            //     begin
+            //         SetRange(Number, 1);
+            //     end;
+            // }
+
             trigger OnPreDataItem()
             begin
-                SetRange(Number, 1, 2); // DEMO ONLY
+                SetRange(Number, 1, 1); // DEMO ONLY
             end;
 
             trigger OnAfterGetRecord()
             begin
-                Beta.Init(5, 1, 0);
+                Beta.Init(44, 0, 1);
             end;
         }
     }
