@@ -19,7 +19,7 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>7.5in</Width>
+                  <Width>8.27in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -228,7 +228,7 @@
             <Top>0in</Top>
             <Left>0in</Left>
             <Height>1in</Height>
-            <Width>7.5in</Width>
+            <Width>8.27in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -239,10 +239,10 @@
         <Height>1in</Height>
         <Style />
       </Body>
-      <Width>7.5in</Width>
+      <Width>8.27in</Width>
       <Page>
-        <PageHeight>8.5in</PageHeight>
-        <PageWidth>11in</PageWidth>
+        <PageHeight>8.27in</PageHeight>
+        <PageWidth>11.69in</PageWidth>
         <LeftMargin>0in</LeftMargin>
         <RightMargin>0in</RightMargin>
         <TopMargin>0in</TopMargin>
