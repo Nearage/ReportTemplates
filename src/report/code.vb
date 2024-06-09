@@ -11,5 +11,5 @@ Public Function Header(ByVal Row As Integer) As Boolean
 End Function
 
 Public Function Footer(ByVal Row As Integer) As Boolean
-    Return (Row Mod Me.Rows) <> Me.PerPage
+    Return (Row Mod Me.PerPage) <> 0
 End Function

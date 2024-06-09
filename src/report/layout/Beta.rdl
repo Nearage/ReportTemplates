@@ -35,6 +35,12 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
+                                  <Value>Header: </Value>
+                                  <Style>
+                                    <Color>PaleTurquoise</Color>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
                                   <Value>=Fields!Parent_Number.Value</Value>
                                   <Style>
                                     <Color>PaleTurquoise</Color>
@@ -76,14 +82,6 @@
                                   <Value>=Fields!Child_Number.Value</Value>
                                   <Style />
                                 </TextRun>
-                                <TextRun>
-                                  <Value xml:space="preserve"> </Value>
-                                  <Style />
-                                </TextRun>
-                                <TextRun>
-                                  <Value>=RowNumber("DataSet_Result")</Value>
-                                  <Style />
-                                </TextRun>
                               </TextRuns>
                               <Style>
                                 <TextAlign>Center</TextAlign>
@@ -122,16 +120,6 @@
                                     <Color>Teal</Color>
                                   </Style>
                                 </TextRun>
-                                <TextRun>
-                                  <Value xml:space="preserve"> </Value>
-                                  <Style>
-                                    <Color>Teal</Color>
-                                  </Style>
-                                </TextRun>
-                                <TextRun>
-                                  <Value>=RowNumber("DataSet_Result")</Value>
-                                  <Style />
-                                </TextRun>
                               </TextRuns>
                               <Style>
                                 <TextAlign>Center</TextAlign>
@@ -164,6 +152,12 @@
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
+                                <TextRun>
+                                  <Value>Footer: </Value>
+                                  <Style>
+                                    <Color>PaleTurquoise</Color>
+                                  </Style>
+                                </TextRun>
                                 <TextRun>
                                   <Value>=Fields!Parent_Number.Value</Value>
                                   <Style>
@@ -225,7 +219,7 @@
                     </TablixMember>
                   </TablixMembers>
                   <Visibility>
-                    <Hidden>=Code.Init(CountRows("DataSet_Result", Recursive), 5)</Hidden>
+                    <Hidden>=Code.Init(Fields!PerPage.Value)</Hidden>
                   </Visibility>
                 </TablixMember>
               </TablixMembers>
@@ -242,7 +236,7 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>2in</Height>
+        <Height>1in</Height>
         <Style />
       </Body>
       <Width>7.5in</Width>
@@ -257,16 +251,14 @@
       </Page>
     </ReportSection>
   </ReportSections>
-  <Code>Private Dim Rows As Integer = 0
-Private Dim PerPage As Integer = 0
+  <Code>Public Dim PerPage As Integer = 0
 
-Public Function Init(ByVal Rows As Integer, ByVal PerPage As Integer) As Boolean
-    Me.Rows = Rows
+Public Function Init(ByVal PerPage As Integer) As Boolean
     Me.PerPage = PerPage
 End Function
 
 Public Function Header(ByVal Row As Integer) As Boolean
-    Return (Row Mod Me.Rows) &lt;&gt; 1
+    Return (Row Mod Me.PerPage) &lt;&gt; 1
 End Function
 
 Public Function Footer(ByVal Row As Integer) As Boolean
@@ -279,6 +271,9 @@ End Function</Code>
   <DataSets>
     <DataSet Name="DataSet_Result">
       <Fields>
+        <Field Name="PerPage">
+          <DataField>PerPage</DataField>
+        </Field>
         <Field Name="Parent_Number">
           <DataField>Parent_Number</DataField>
         </Field>
