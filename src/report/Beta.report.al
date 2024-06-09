@@ -42,6 +42,16 @@ report 50102 Beta
                 end;
             }
 
+            dataitem(Static; Integer)
+            {
+                column(Static_Number; Number) { }
+
+                trigger OnPreDataItem()
+                begin
+                    SetRange(Number, 1);
+                end;
+            }
+
             trigger OnPreDataItem()
             begin
                 SetRange(Number, 1, 2); // DEMO ONLY
@@ -49,11 +59,10 @@ report 50102 Beta
 
             trigger OnAfterGetRecord()
             begin
-                Beta.Init(5, 0, 0);
+                Beta.Init(5, 1, 0);
             end;
         }
     }
-
     var
         Beta: Codeunit Beta;
 }
