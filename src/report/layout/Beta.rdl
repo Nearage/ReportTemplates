@@ -154,6 +154,45 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
+                        <Textbox Name="Textbox1">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox1</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <BackgroundColor>Aqua</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <rd:Selected>true</rd:Selected>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.25in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
                         <Textbox Name="Static_Number">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
@@ -183,7 +222,6 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
@@ -250,7 +288,7 @@
                   <TablixMembers>
                     <TablixMember>
                       <Visibility>
-                        <Hidden>=Code.Header(RowNumber("DataSet_Result"))</Hidden>
+                        <Hidden>=Code.InRange(RowNumber("DataSet_Result"), 1)</Hidden>
                       </Visibility>
                     </TablixMember>
                     <TablixMember>
@@ -265,12 +303,17 @@
                     </TablixMember>
                     <TablixMember>
                       <Visibility>
+                        <Hidden>=Code.InRange(RowNumber("DataSet_Result"), 0)</Hidden>
+                      </Visibility>
+                    </TablixMember>
+                    <TablixMember>
+                      <Visibility>
                         <Hidden>=IsNothing(Fields!Static_Number.Value)</Hidden>
                       </Visibility>
                     </TablixMember>
                     <TablixMember>
                       <Visibility>
-                        <Hidden>=Code.Footer(RowNumber("DataSet_Result"))</Hidden>
+                        <Hidden>=Code.InRange(RowNumber("DataSet_Result"), 0)</Hidden>
                       </Visibility>
                     </TablixMember>
                   </TablixMembers>
@@ -284,7 +327,7 @@
             <DataSetName>DataSet_Result</DataSetName>
             <Top>0in</Top>
             <Left>0in</Left>
-            <Height>1.25in</Height>
+            <Height>1.5in</Height>
             <Width>8.27in</Width>
             <Style>
               <Border>
@@ -293,7 +336,7 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>1.25in</Height>
+        <Height>1.5in</Height>
         <Style>
           <BackgroundColor>Black</BackgroundColor>
         </Style>
@@ -322,7 +365,13 @@ End Function
 
 Public Function Footer(ByVal Row As Integer) As Boolean
     Return (Row Mod Me.PerPage) &lt;&gt; 0
-End Function</Code>
+End Function
+
+Public Function InRange(ByVal Row As Integer, ByVal Range As Integer) As Boolean
+    Return (Row Mod Me.PerPage) &lt;&gt; Range
+End Function
+
+</Code>
   <Language>=User!Language</Language>
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>

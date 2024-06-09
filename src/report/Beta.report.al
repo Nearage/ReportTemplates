@@ -59,7 +59,7 @@ report 50102 Beta
 
             trigger OnAfterGetRecord()
             begin
-                Beta.Init(5, 1, 0);
+                Beta.Init(5, 1, 1);
             end;
         }
     }
