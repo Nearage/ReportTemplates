@@ -11,22 +11,12 @@ report 50102 Beta
         dataitem(Parent; Integer)
         {
             column(PerPage; Beta.PerPage) { }
+            column(Rows; Rows) { }
             column(Parent_Number; Number) { }
-            column(Dynamic_Number; Cont) { }
-
 
             dataitem(Child; Integer)
             {
                 column(Child_Number; Number) { }
-
-                dataitem(Dynamic; Integer)
-                {
-
-                    trigger OnPreDataItem()
-                    begin
-                        SetRange(Number, 1);
-                    end;
-                }
 
                 trigger OnPreDataItem()
                 begin
@@ -38,7 +28,7 @@ report 50102 Beta
                 trigger OnAfterGetRecord()
                 begin
                     Beta.Add();
-                    Cont += 1;
+                    Rows += 1;
                 end;
             }
 
@@ -52,17 +42,32 @@ report 50102 Beta
 
                     if IsEmpty then CurrReport.Break();
                 end;
+
+                trigger OnAfterGetRecord()
+                begin
+                    Rows += 1;
+                end;
             }
 
-            // dataitem(Static; Integer)
-            // {
-            //     column(Static_Number; Number) { }
+            dataitem(Dynamic; Integer)
+            {
+                column(Dynamic_Number; Number) { }
 
-            //     trigger OnPreDataItem()
-            //     begin
-            //         SetRange(Number, 1);
-            //     end;
-            // }
+                trigger OnPreDataItem()
+                begin
+                    SetRange(Number, 1, 2);
+                end;
+            }
+
+            /* dataitem(Static; Integer)
+            {
+                column(Static_Number; Number) { }
+
+                trigger OnPreDataItem()
+                begin
+                    SetRange(Number, 1);
+                end;
+            } */
 
             trigger OnPreDataItem()
             begin
@@ -71,13 +76,13 @@ report 50102 Beta
 
             trigger OnAfterGetRecord()
             begin
-                Beta.Init(44, 0, 1);
+                Beta.Init(44, 0, 2);
             end;
         }
     }
     var
         Beta: Codeunit Beta;
-        Cont: Integer;
+        Rows: Integer;
 
 }
 

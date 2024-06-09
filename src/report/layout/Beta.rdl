@@ -91,6 +91,14 @@
                                                 <Value>=Fields!Child_Number.Value</Value>
                                                 <Style />
                                               </TextRun>
+                                              <TextRun>
+                                                <Value xml:space="preserve"> </Value>
+                                                <Style />
+                                              </TextRun>
+                                              <TextRun>
+                                                <Value>=Fields!Rows.Value</Value>
+                                                <Style />
+                                              </TextRun>
                                             </TextRuns>
                                             <Style />
                                           </Paragraph>
@@ -127,6 +135,14 @@
                                                 <Value>=Fields!Blank_Number.Value</Value>
                                                 <Style />
                                               </TextRun>
+                                              <TextRun>
+                                                <Value xml:space="preserve"> </Value>
+                                                <Style />
+                                              </TextRun>
+                                              <TextRun>
+                                                <Value>=Fields!Rows.Value</Value>
+                                                <Style />
+                                              </TextRun>
                                             </TextRuns>
                                             <Style />
                                           </Paragraph>
@@ -153,33 +169,82 @@
                                 <TablixCells>
                                   <TablixCell>
                                     <CellContents>
-                                      <Textbox Name="Static_Number">
-                                        <CanGrow>true</CanGrow>
-                                        <KeepTogether>true</KeepTogether>
-                                        <Paragraphs>
-                                          <Paragraph>
-                                            <TextRuns>
-                                              <TextRun>
-                                                <Value>=Fields!Dynamic_Number.Value</Value>
-                                                <Style />
-                                              </TextRun>
-                                            </TextRuns>
-                                            <Style />
-                                          </Paragraph>
-                                        </Paragraphs>
-                                        <rd:DefaultName>Static_Number</rd:DefaultName>
+                                      <Tablix Name="Tablix4">
+                                        <TablixBody>
+                                          <TablixColumns>
+                                            <TablixColumn>
+                                              <Width>21.0058cm</Width>
+                                            </TablixColumn>
+                                          </TablixColumns>
+                                          <TablixRows>
+                                            <TablixRow>
+                                              <Height>0.635cm</Height>
+                                              <TablixCells>
+                                                <TablixCell>
+                                                  <CellContents>
+                                                    <Textbox Name="Textbox52">
+                                                      <CanGrow>true</CanGrow>
+                                                      <KeepTogether>true</KeepTogether>
+                                                      <Paragraphs>
+                                                        <Paragraph>
+                                                          <TextRuns>
+                                                            <TextRun>
+                                                              <Value>=Fields!Dynamic_Number.Value</Value>
+                                                              <Style />
+                                                            </TextRun>
+                                                          </TextRuns>
+                                                          <Style />
+                                                        </Paragraph>
+                                                      </Paragraphs>
+                                                      <rd:DefaultName>Textbox52</rd:DefaultName>
+                                                      <Style>
+                                                        <Border>
+                                                          <Color>LightGrey</Color>
+                                                          <Style>Solid</Style>
+                                                        </Border>
+                                                        <BackgroundColor>Aqua</BackgroundColor>
+                                                        <PaddingLeft>2pt</PaddingLeft>
+                                                        <PaddingRight>2pt</PaddingRight>
+                                                        <PaddingTop>2pt</PaddingTop>
+                                                        <PaddingBottom>2pt</PaddingBottom>
+                                                      </Style>
+                                                    </Textbox>
+                                                  </CellContents>
+                                                </TablixCell>
+                                              </TablixCells>
+                                            </TablixRow>
+                                          </TablixRows>
+                                        </TablixBody>
+                                        <TablixColumnHierarchy>
+                                          <TablixMembers>
+                                            <TablixMember />
+                                          </TablixMembers>
+                                        </TablixColumnHierarchy>
+                                        <TablixRowHierarchy>
+                                          <TablixMembers>
+                                            <TablixMember>
+                                              <Group Name="Details2">
+                                                <GroupExpressions>
+                                                  <GroupExpression>=Fields!Dynamic_Number.Value</GroupExpression>
+                                                </GroupExpressions>
+                                              </Group>
+                                              <TablixMembers>
+                                                <TablixMember>
+                                                  <Visibility>
+                                                    <Hidden>=IsNothing(Fields!Dynamic_Number.Value)</Hidden>
+                                                  </Visibility>
+                                                </TablixMember>
+                                              </TablixMembers>
+                                            </TablixMember>
+                                          </TablixMembers>
+                                        </TablixRowHierarchy>
                                         <Style>
                                           <Border>
-                                            <Color>LightGrey</Color>
-                                            <Style>Solid</Style>
+                                            <Style>None</Style>
                                           </Border>
-                                          <BackgroundColor>Aqua</BackgroundColor>
-                                          <PaddingLeft>2pt</PaddingLeft>
-                                          <PaddingRight>2pt</PaddingRight>
-                                          <PaddingTop>2pt</PaddingTop>
-                                          <PaddingBottom>2pt</PaddingBottom>
                                         </Style>
-                                      </Textbox>
+                                      </Tablix>
+                                      <rd:Selected>true</rd:Selected>
                                     </CellContents>
                                   </TablixCell>
                                 </TablixCells>
@@ -189,21 +254,25 @@
                                 <TablixCells>
                                   <TablixCell>
                                     <CellContents>
-                                      <Textbox Name="Textbox25">
+                                      <Textbox Name="Textbox24">
                                         <CanGrow>true</CanGrow>
                                         <KeepTogether>true</KeepTogether>
                                         <Paragraphs>
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
-                                                <Value />
+                                                <Value>F:</Value>
+                                                <Style />
+                                              </TextRun>
+                                              <TextRun>
+                                                <Value>=Fields!Parent_Number.Value</Value>
                                                 <Style />
                                               </TextRun>
                                             </TextRuns>
                                             <Style />
                                           </Paragraph>
                                         </Paragraphs>
-                                        <rd:DefaultName>Textbox25</rd:DefaultName>
+                                        <rd:DefaultName>Textbox24</rd:DefaultName>
                                         <Style>
                                           <Border>
                                             <Color>LightGrey</Color>
@@ -252,12 +321,14 @@
                                       <Hidden>=IsNothing(Fields!Blank_Number.Value)</Hidden>
                                     </Visibility>
                                   </TablixMember>
-                                  <TablixMember>
-                                    <Visibility>
-                                      <Hidden>=Code.InRange(RowNumber("DataSet_Result"), 0)</Hidden>
-                                    </Visibility>
-                                  </TablixMember>
                                 </TablixMembers>
+                                <Visibility>
+                                  <Hidden>=Code.Init(Fields!PerPage.Value)</Hidden>
+                                </Visibility>
+                              </TablixMember>
+                              <TablixMember>
+                                <KeepWithGroup>Before</KeepWithGroup>
+                                <RepeatOnNewPage>true</RepeatOnNewPage>
                               </TablixMember>
                               <TablixMember>
                                 <KeepWithGroup>Before</KeepWithGroup>
@@ -272,7 +343,6 @@
                             </Border>
                           </Style>
                         </Tablix>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
@@ -295,9 +365,6 @@
                   <TablixMembers>
                     <TablixMember />
                   </TablixMembers>
-                  <Visibility>
-                    <Hidden>=Code.Init(Fields!PerPage.Value)</Hidden>
-                  </Visibility>
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
@@ -359,17 +426,20 @@ End Function
         <Field Name="PerPage">
           <DataField>PerPage</DataField>
         </Field>
+        <Field Name="Rows">
+          <DataField>Rows</DataField>
+        </Field>
         <Field Name="Parent_Number">
           <DataField>Parent_Number</DataField>
-        </Field>
-        <Field Name="Dynamic_Number">
-          <DataField>Dynamic_Number</DataField>
         </Field>
         <Field Name="Child_Number">
           <DataField>Child_Number</DataField>
         </Field>
         <Field Name="Blank_Number">
           <DataField>Blank_Number</DataField>
+        </Field>
+        <Field Name="Dynamic_Number">
+          <DataField>Dynamic_Number</DataField>
         </Field>
       </Fields>
       <Query>
