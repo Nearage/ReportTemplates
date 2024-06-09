@@ -10,16 +10,18 @@ report 50102 Beta
     {
         dataitem(Parent; Integer)
         {
-            DataItemTableView = where(Number = const(1));
-
             column(PerPage; PerPage) { }
             column(Parent_Number; Number) { }
 
             dataitem(Child; Integer)
             {
-                DataItemTableView = where(Number = filter(1 .. 6));
-
                 column(Child_Number; Number) { }
+
+                trigger OnPreDataItem()
+                begin
+                    SetRange(Number, 1, Random(10)); // DEMO ONLY
+                    // SetRange(Number, 1, 10);
+                end;
 
                 trigger OnAfterGetRecord()
                 begin
@@ -35,9 +37,20 @@ report 50102 Beta
 
                 trigger OnPreDataItem()
                 begin
-                    SetRange(Number, 1, Mathx.Modulo(-CU_Rows, PerPage));
+                    case Mathx.Modulo(-CU_Rows, PerPage) of
+                        0:
+                            CurrReport.Break();
+                        else
+                            SetRange(Number, 1, Mathx.Modulo(-CU_Rows, PerPage));
+                    end;
                 end;
             }
+
+            trigger OnPreDataItem()
+            begin
+                SetRange(Number, 1, Random(3)); // DEMO ONLY
+                // SetRange(Number, 1);
+            end;
 
             trigger OnAfterGetRecord()
             begin
