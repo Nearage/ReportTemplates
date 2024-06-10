@@ -21,7 +21,7 @@ report 50103 Alpha
 
                 trigger OnPreDataItem()
                 begin
-                    SetRange(Number, 1, 6);
+                    SetRange(Number, 1, Random(10));
                 end;
 
                 trigger OnAfterGetRecord()
@@ -37,6 +37,7 @@ report 50103 Alpha
                 trigger OnPreDataItem()
                 begin
                     Template.Run(Blank);
+
                     if IsEmpty then CurrReport.Break();
                 end;
 

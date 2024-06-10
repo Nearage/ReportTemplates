@@ -8,11 +8,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Alpha - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Report 685846182 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Beta</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Beta - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Report 2879275470 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Demo 1</source>
           <note from="Developer" annotates="general" priority="2"></note>
