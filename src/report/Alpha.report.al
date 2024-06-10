@@ -14,6 +14,9 @@ report 50103 Alpha
 
             column(RowsPerPage; Template.RowsPerPage()) { }
             column(CurrentLine; Template.CurrentLine()) { }
+            column(BlanksCount; Template.BlanksCount()) { }
+
+            column(Parent_Number; Number) { }
 
             dataitem(Child; Integer)
             {
@@ -37,6 +40,7 @@ report 50103 Alpha
                 trigger OnPreDataItem()
                 begin
                     Template.Run(Blank);
+                    Template.SetBlankCount(Count());
 
                     if IsEmpty then CurrReport.Break();
                 end;
@@ -49,7 +53,7 @@ report 50103 Alpha
 
             trigger OnAfterGetRecord()
             begin
-                Template.Init(5, 1);
+                Template.Init(5, 0);
             end;
         }
     }
@@ -71,6 +75,7 @@ codeunit 50104 Template
         Mathx: Codeunit Mathx;
         GblRows: Integer;
         GblRowsPerPage: Integer;
+        GblBlankCount: Integer;
 
     procedure Init(RowsPerPage: Integer; Rows: Integer)
     begin
@@ -91,5 +96,15 @@ codeunit 50104 Template
     procedure RowsPerPage(): Integer
     begin
         exit(GblRowsPerPage);
+    end;
+
+    procedure SetBlankCount(Count: Integer)
+    begin
+        GblBlankCount := Count;
+    end;
+
+    procedure BlanksCount(): Integer
+    begin
+        exit(GblBlankCount);
     end;
 }
