@@ -12,33 +12,80 @@ report 50103 Alpha
         {
             DataItemTableView = where(Number = const(1));
 
-            column(Parent_Number; Number) { }
+            column(PerPage; Template.PerPage()) { }
 
-            dataitem(Content; Integer)
+            dataitem(Child; Integer)
             {
-                DataItemTableView = where(Number = const(1));
+                column(CurrentLine; Template.CurrentLine()) { }
 
-                dataitem(Child; Integer)
-                {
-                    DataItemTableView = where(Number = const(1));
+                trigger OnPreDataItem()
+                begin
+                    SetRange(Number, 1, Random(10));
+                end;
 
-                    column(Child_Number; Number) { }
-                }
+                trigger OnAfterGetRecord()
+                begin
+                    Template.Update();
+                end;
+            }
 
-                dataitem(Blank; Integer)
-                {
-                    DataItemTableView = where(Number = const(1));
+            dataitem(Blank; Integer)
+            {
+                column(CurrentBlank; Template.CurrentLine()) { }
 
-                    column(Blank_Number; Number) { }
-                }
+                trigger OnPreDataItem()
+                begin
+                    Template.Run(Blank);
+                end;
 
-                dataitem(Total; Integer)
-                {
-                    DataItemTableView = where(Number = const(1));
-
-                    column(Total_Number; Number) { }
-                }
+                trigger OnAfterGetRecord()
+                begin
+                    Template.Update();
+                end;
             }
         }
     }
+
+    trigger OnInitReport()
+    begin
+        Template.Init(5);
+    end;
+
+    var
+        Template: Codeunit Template;
+}
+
+codeunit 50104 Template
+{
+    TableNo = Integer;
+
+    trigger OnRun()
+    begin
+        Rec.SetRange(Number, 1, Mathx.Modulo(-GblLines, GblPerPage));
+    end;
+
+    var
+        Mathx: Codeunit Mathx;
+        GblLines: Integer;
+        GblPerPage: Integer;
+
+    procedure Init(PerPage: Integer)
+    begin
+        GblPerPage := PerPage;
+    end;
+
+    procedure Update()
+    begin
+        GblLines += 1;
+    end;
+
+    procedure CurrentLine(): Integer
+    begin
+        exit(GblLines);
+    end;
+
+    procedure PerPage(): Integer
+    begin
+        exit(GblPerPage);
+    end;
 }
