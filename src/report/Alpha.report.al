@@ -64,32 +64,32 @@ codeunit 50104 Template
 
     trigger OnRun()
     begin
-        Rec.SetRange(Number, 1, Mathx.Modulo(-GblLines, GblPerPage));
+        Rec.SetRange(Number, 1, Mathx.Modulo(-GblRows, GblRowsPerPage));
     end;
 
     var
         Mathx: Codeunit Mathx;
-        GblLines: Integer;
-        GblPerPage: Integer;
+        GblRows: Integer;
+        GblRowsPerPage: Integer;
 
-    procedure Init(PerPage: Integer; Lines: Integer)
+    procedure Init(RowsPerPage: Integer; Rows: Integer)
     begin
-        GblLines := Lines;
-        GblPerPage := PerPage;
+        GblRowsPerPage := RowsPerPage;
+        GblRows := Rows;
     end;
 
     procedure Update()
     begin
-        GblLines += 1;
+        GblRows += 1;
     end;
 
     procedure CurrentLine(): Integer
     begin
-        exit(GblLines);
+        exit(GblRows);
     end;
 
     procedure RowsPerPage(): Integer
     begin
-        exit(GblPerPage);
+        exit(GblRowsPerPage);
     end;
 }
