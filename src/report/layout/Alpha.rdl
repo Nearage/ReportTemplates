@@ -19,7 +19,7 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>6.5in</Width>
+                  <Width>8.27in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -32,7 +32,7 @@
                           <TablixBody>
                             <TablixColumns>
                               <TablixColumn>
-                                <Width>6.5in</Width>
+                                <Width>8.27in</Width>
                               </TablixColumn>
                             </TablixColumns>
                             <TablixRows>
@@ -60,8 +60,7 @@
                                         <rd:DefaultName>Child_Number</rd:DefaultName>
                                         <Style>
                                           <Border>
-                                            <Color>LightGrey</Color>
-                                            <Style>Solid</Style>
+                                            <Style>None</Style>
                                           </Border>
                                           <BackgroundColor>Teal</BackgroundColor>
                                           <VerticalAlign>Middle</VerticalAlign>
@@ -99,8 +98,7 @@
                                         <rd:DefaultName>Blank_Number</rd:DefaultName>
                                         <Style>
                                           <Border>
-                                            <Color>LightGrey</Color>
-                                            <Style>Solid</Style>
+                                            <Style>None</Style>
                                           </Border>
                                           <BackgroundColor>Turquoise</BackgroundColor>
                                           <VerticalAlign>Middle</VerticalAlign>
@@ -154,8 +152,7 @@
                                         <rd:DefaultName>PerPage1</rd:DefaultName>
                                         <Style>
                                           <Border>
-                                            <Color>LightGrey</Color>
-                                            <Style>Solid</Style>
+                                            <Style>None</Style>
                                           </Border>
                                           <BackgroundColor>PaleTurquoise</BackgroundColor>
                                           <VerticalAlign>Middle</VerticalAlign>
@@ -211,41 +208,6 @@
                     </TablixCell>
                   </TablixCells>
                 </TablixRow>
-                <TablixRow>
-                  <Height>0.25in</Height>
-                  <TablixCells>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox13">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value />
-                                  <Style />
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox13</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <BackgroundColor>LightGreen</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                  </TablixCells>
-                </TablixRow>
               </TablixRows>
             </TablixBody>
             <TablixColumnHierarchy>
@@ -260,9 +222,11 @@
                     <GroupExpressions>
                       <GroupExpression>=Fields!Parent_Number.Value</GroupExpression>
                     </GroupExpressions>
+                    <PageBreak>
+                      <BreakLocation>Between</BreakLocation>
+                    </PageBreak>
                   </Group>
                   <TablixMembers>
-                    <TablixMember />
                     <TablixMember />
                   </TablixMembers>
                 </TablixMember>
@@ -271,8 +235,8 @@
             <DataSetName>DataSet_Result</DataSetName>
             <Top>0in</Top>
             <Left>0in</Left>
-            <Height>1in</Height>
-            <Width>6.5in</Width>
+            <Height>0.75in</Height>
+            <Width>8.27in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -280,11 +244,17 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>1in</Height>
+        <Height>0.75in</Height>
         <Style />
       </Body>
-      <Width>6.5in</Width>
+      <Width>8.27in</Width>
       <Page>
+        <PageHeight>11.69in</PageHeight>
+        <PageWidth>8.27in</PageWidth>
+        <LeftMargin>0in</LeftMargin>
+        <RightMargin>0in</RightMargin>
+        <TopMargin>0in</TopMargin>
+        <BottomMargin>0in</BottomMargin>
         <Style />
       </Page>
     </ReportSection>
@@ -336,9 +306,6 @@ End Function
         </Field>
         <Field Name="CurrentLine">
           <DataField>CurrentLine</DataField>
-        </Field>
-        <Field Name="BlanksCount">
-          <DataField>BlanksCount</DataField>
         </Field>
         <Field Name="Parent_Number">
           <DataField>Parent_Number</DataField>
