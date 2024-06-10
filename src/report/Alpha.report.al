@@ -13,14 +13,15 @@ report 50103 Alpha
             DataItemTableView = where(Number = const(1));
 
             column(PerPage; Template.PerPage()) { }
+            column(CurrentLine; Template.CurrentLine()) { }
 
             dataitem(Child; Integer)
             {
-                column(CurrentLine; Template.CurrentLine()) { }
+                column(Child_Number; Number) { }
 
                 trigger OnPreDataItem()
                 begin
-                    SetRange(Number, 1, Random(10));
+                    SetRange(Number, 1, 6);
                 end;
 
                 trigger OnAfterGetRecord()
@@ -31,11 +32,12 @@ report 50103 Alpha
 
             dataitem(Blank; Integer)
             {
-                column(CurrentBlank; Template.CurrentLine()) { }
+                column(Blank_Number; Number) { }
 
                 trigger OnPreDataItem()
                 begin
                     Template.Run(Blank);
+                    if IsEmpty then CurrReport.Break();
                 end;
 
                 trigger OnAfterGetRecord()
