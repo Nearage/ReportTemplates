@@ -122,7 +122,7 @@
                                   <Style />
                                 </TextRun>
                                 <TextRun>
-                                  <Value>=Fields!PerPage.Value</Value>
+                                  <Value>=Fields!RowsPerPage.Value</Value>
                                   <Style />
                                 </TextRun>
                                 <TextRun>
@@ -130,7 +130,7 @@
                                   <Style />
                                 </TextRun>
                                 <TextRun>
-                                  <Value>=Fields!CurrentLine.Value Mod Fields!PerPage.Value</Value>
+                                  <Value>=Fields!CurrentLine.Value Mod Fields!RowsPerPage.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -220,14 +220,14 @@
                     </TablixMember>
                     <TablixMember>
                       <Visibility>
-                        <Hidden>=(Fields!CurrentLine.Value Mod Fields!PerPage.Value) &lt;&gt; 0</Hidden>
+                        <Hidden>=(Fields!CurrentLine.Value Mod Fields!RowsPerPage.Value) &lt;&gt; 0</Hidden>
                       </Visibility>
                     </TablixMember>
                   </TablixMembers>
                 </TablixMember>
                 <TablixMember>
                   <Visibility>
-                    <Hidden>=(Fields!CurrentLine.Value Mod Fields!PerPage.Value) &lt;&gt; 0</Hidden>
+                    <Hidden>=(Fields!CurrentLine.Value Mod Fields!RowsPerPage.Value) &lt;&gt; 0</Hidden>
                   </Visibility>
                   <KeepWithGroup>Before</KeepWithGroup>
                 </TablixMember>
@@ -296,8 +296,8 @@ End Function
   <DataSets>
     <DataSet Name="DataSet_Result">
       <Fields>
-        <Field Name="PerPage">
-          <DataField>PerPage</DataField>
+        <Field Name="RowsPerPage">
+          <DataField>RowsPerPage</DataField>
         </Field>
         <Field Name="CurrentLine">
           <DataField>CurrentLine</DataField>

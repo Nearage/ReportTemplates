@@ -12,7 +12,7 @@ report 50103 Alpha
         {
             DataItemTableView = where(Number = filter(1 .. 2));
 
-            column(PerPage; Template.PerPage()) { }
+            column(RowsPerPage; Template.RowsPerPage()) { }
             column(CurrentLine; Template.CurrentLine()) { }
 
             dataitem(Child; Integer)
@@ -88,7 +88,7 @@ codeunit 50104 Template
         exit(GblLines);
     end;
 
-    procedure PerPage(): Integer
+    procedure RowsPerPage(): Integer
     begin
         exit(GblPerPage);
     end;
