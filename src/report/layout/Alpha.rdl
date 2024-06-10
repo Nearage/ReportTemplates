@@ -97,7 +97,6 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
@@ -192,6 +191,7 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
@@ -226,9 +226,6 @@
                   </TablixMembers>
                 </TablixMember>
                 <TablixMember>
-                  <Visibility>
-                    <Hidden>=(Fields!CurrentLine.Value Mod Fields!RowsPerPage.Value) &lt;&gt; 0</Hidden>
-                  </Visibility>
                   <KeepWithGroup>Before</KeepWithGroup>
                 </TablixMember>
               </TablixMembers>

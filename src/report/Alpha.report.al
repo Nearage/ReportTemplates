@@ -49,7 +49,7 @@ report 50103 Alpha
 
             trigger OnAfterGetRecord()
             begin
-                Template.Init(5, 0);
+                Template.Init(5, 1);
             end;
         }
     }
