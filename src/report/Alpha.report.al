@@ -21,7 +21,7 @@ report 50103 Alpha
 
                 trigger OnPreDataItem()
                 begin
-                    SetRange(Number, 1, Random(5));
+                    SetRange(Number, 1, Random(10));
                 end;
 
                 trigger OnAfterGetRecord()
