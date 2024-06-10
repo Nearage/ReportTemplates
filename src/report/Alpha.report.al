@@ -10,7 +10,7 @@ report 50103 Alpha
     {
         dataitem(Parent; Integer)
         {
-            DataItemTableView = where(Number = const(1));
+            DataItemTableView = where(Number = filter(1 .. 2));
 
             column(PerPage; Template.PerPage()) { }
             column(CurrentLine; Template.CurrentLine()) { }
@@ -21,7 +21,7 @@ report 50103 Alpha
 
                 trigger OnPreDataItem()
                 begin
-                    SetRange(Number, 1, Random(10));
+                    SetRange(Number, 1, Random(5));
                 end;
 
                 trigger OnAfterGetRecord()
@@ -46,13 +46,13 @@ report 50103 Alpha
                     Template.Update();
                 end;
             }
+
+            trigger OnAfterGetRecord()
+            begin
+                Template.Init(5, 0);
+            end;
         }
     }
-
-    trigger OnInitReport()
-    begin
-        Template.Init(5);
-    end;
 
     var
         Template: Codeunit Template;
@@ -72,8 +72,9 @@ codeunit 50104 Template
         GblLines: Integer;
         GblPerPage: Integer;
 
-    procedure Init(PerPage: Integer)
+    procedure Init(PerPage: Integer; Lines: Integer)
     begin
+        GblLines := Lines;
         GblPerPage := PerPage;
     end;
 
