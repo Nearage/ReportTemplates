@@ -8,18 +8,18 @@
         <ConnectString />
       </ConnectionProperties>
       <rd:SecurityType>None</rd:SecurityType>
-      <rd:DataSourceID>a0440707-b70b-4a4d-8861-c0f07c329faf</rd:DataSourceID>
+      <rd:DataSourceID>2a78a1ae-f7fd-4728-8d48-357917c96d2d</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <ReportSections>
     <ReportSection>
       <Body>
         <ReportItems>
-          <Tablix Name="Tablix2">
+          <Tablix Name="Tablix1">
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>8.27in</Width>
+                  <Width>6.5in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -29,16 +29,14 @@
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="Child_Number">
+                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>0,25 in</Value>
-                                  <Style>
-                                    <FontWeight>Bold</FontWeight>
-                                    <Color>PaleTurquoise</Color>
-                                  </Style>
+                                  <Value>=Fields!Child_Number.Value</Value>
+                                  <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -49,14 +47,110 @@
                           <rd:DefaultName>Child_Number</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>PaleTurquoise</Color>
-                              <Style>None</Style>
-                            </Border>
-                            <BottomBorder>
+                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
-                            </BottomBorder>
-                            <BackgroundColor>LightSeaGreen</BackgroundColor>
+                            </Border>
+                            <BackgroundColor>Teal</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.25in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Blank_Number">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!Blank_Number.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Blank_Number</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Turquoise</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <rd:Selected>true</rd:Selected>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.25in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="PerPage1">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!CurrentLine.Value</Value>
+                                  <Style />
+                                </TextRun>
+                                <TextRun>
+                                  <Value xml:space="preserve"> </Value>
+                                  <Style />
+                                </TextRun>
+                                <TextRun>
+                                  <Value>=Fields!PerPage.Value</Value>
+                                  <Style />
+                                </TextRun>
+                                <TextRun>
+                                  <Value xml:space="preserve"> </Value>
+                                  <Style />
+                                </TextRun>
+                                <TextRun>
+                                  <Value>=Fields!CurrentLine.Value Mod Fields!PerPage.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>PerPage1</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>PaleTurquoise</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -75,11 +169,8 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>0,25 in</Value>
-                                  <Style>
-                                    <FontWeight>Bold</FontWeight>
-                                    <Color>LightSeaGreen</Color>
-                                  </Style>
+                                  <Value />
+                                  <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -90,90 +181,15 @@
                           <rd:DefaultName>Textbox1</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightSeaGreen</Color>
-                              <Style>None</Style>
-                            </Border>
-                            <BottomBorder>
+                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
-                            </BottomBorder>
-                            <BackgroundColor>PaleTurquoise</BackgroundColor>
-                            <VerticalAlign>Middle</VerticalAlign>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                  </TablixCells>
-                </TablixRow>
-                <TablixRow>
-                  <Height>0.25in</Height>
-                  <TablixCells>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Child_Number4">
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>0,25 in</Value>
-                                  <Style>
-                                    <FontWeight>Bold</FontWeight>
-                                    <Color>PaleTurquoise</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Child_Number</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>PaleTurquoise</Color>
-                              <Style>None</Style>
                             </Border>
-                            <BottomBorder>
-                              <Style>Solid</Style>
-                            </BottomBorder>
-                            <BackgroundColor>LightSeaGreen</BackgroundColor>
+                            <BackgroundColor>LightGreen</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                  </TablixCells>
-                </TablixRow>
-                <TablixRow>
-                  <Height>3.25in</Height>
-                  <TablixCells>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox14">
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>3,25 in</Value>
-                                  <Style>
-                                    <FontWeight>Bold</FontWeight>
-                                    <Color>Teal</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox14</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <BackgroundColor>Turquoise</BackgroundColor>
-                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -197,34 +213,22 @@
                         <Hidden>=IsNothing(Fields!Child_Number.Value)</Hidden>
                       </Visibility>
                     </TablixMember>
-                  </TablixMembers>
-                </TablixMember>
-                <TablixMember>
-                  <Group Name="Child_Number" />
-                  <SortExpressions>
-                    <SortExpression>
-                      <Value>=Fields!Child_Number.Value</Value>
-                    </SortExpression>
-                  </SortExpressions>
-                  <TablixMembers>
                     <TablixMember>
                       <Visibility>
                         <Hidden>=IsNothing(Fields!Blank_Number.Value)</Hidden>
                       </Visibility>
                     </TablixMember>
-                  </TablixMembers>
-                </TablixMember>
-                <TablixMember>
-                  <Group Name="Group2" />
-                  <TablixMembers>
                     <TablixMember>
                       <Visibility>
-                        <Hidden>=IsNothing(Fields!Child2_Number.Value)</Hidden>
+                        <Hidden>=(Fields!CurrentLine.Value Mod Fields!PerPage.Value) &lt;&gt; 0</Hidden>
                       </Visibility>
                     </TablixMember>
                   </TablixMembers>
                 </TablixMember>
                 <TablixMember>
+                  <Visibility>
+                    <Hidden>=(Fields!CurrentLine.Value Mod Fields!PerPage.Value) &lt;&gt; 0</Hidden>
+                  </Visibility>
                   <KeepWithGroup>Before</KeepWithGroup>
                 </TablixMember>
               </TablixMembers>
@@ -232,8 +236,8 @@
             <DataSetName>DataSet_Result</DataSetName>
             <Top>0in</Top>
             <Left>0in</Left>
-            <Height>4in</Height>
-            <Width>8.27in</Width>
+            <Height>1in</Height>
+            <Width>6.5in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -241,139 +245,11 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>4in</Height>
+        <Height>1in</Height>
         <Style />
       </Body>
-      <Width>8.27in</Width>
+      <Width>6.5in</Width>
       <Page>
-        <PageHeader>
-          <Height>1in</Height>
-          <PrintOnFirstPage>true</PrintOnFirstPage>
-          <PrintOnLastPage>true</PrintOnLastPage>
-          <ReportItems>
-            <Textbox Name="Textbox2">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>1 in</Value>
-                      <Style>
-                        <FontWeight>Bold</FontWeight>
-                        <Color>PaleTurquoise</Color>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style>
-                    <TextAlign>Center</TextAlign>
-                  </Style>
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox2</rd:DefaultName>
-              <Top>0in</Top>
-              <Left>0in</Left>
-              <Height>1in</Height>
-              <Width>8.27in</Width>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <VerticalAlign>Middle</VerticalAlign>
-              </Style>
-            </Textbox>
-          </ReportItems>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <BackgroundColor>Teal</BackgroundColor>
-          </Style>
-        </PageHeader>
-        <PageFooter>
-          <Height>1.19in</Height>
-          <PrintOnFirstPage>true</PrintOnFirstPage>
-          <PrintOnLastPage>true</PrintOnLastPage>
-          <ReportItems>
-            <Textbox Name="Textbox4">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>0,19 in</Value>
-                      <Style>
-                        <FontWeight>Bold</FontWeight>
-                        <Color>LightSeaGreen</Color>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style>
-                    <TextAlign>Center</TextAlign>
-                  </Style>
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox2</rd:DefaultName>
-              <Top>0in</Top>
-              <Left>0in</Left>
-              <Height>0.19in</Height>
-              <Width>8.27in</Width>
-              <Style>
-                <Border>
-                  <Color>LightSeaGreen</Color>
-                  <Style>None</Style>
-                </Border>
-                <BackgroundColor>PaleTurquoise</BackgroundColor>
-                <VerticalAlign>Middle</VerticalAlign>
-              </Style>
-            </Textbox>
-            <Textbox Name="Textbox3">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>1 in</Value>
-                      <Style>
-                        <FontWeight>Bold</FontWeight>
-                        <Color>PaleTurquoise</Color>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style>
-                    <TextAlign>Center</TextAlign>
-                  </Style>
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox2</rd:DefaultName>
-              <Top>0.19in</Top>
-              <Left>0in</Left>
-              <Height>1in</Height>
-              <Width>8.27in</Width>
-              <ZIndex>1</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <BackgroundColor>Teal</BackgroundColor>
-                <VerticalAlign>Middle</VerticalAlign>
-              </Style>
-            </Textbox>
-          </ReportItems>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-          </Style>
-        </PageFooter>
-        <PageHeight>11.69in</PageHeight>
-        <PageWidth>8.27in</PageWidth>
-        <LeftMargin>0in</LeftMargin>
-        <RightMargin>0in</RightMargin>
-        <TopMargin>0in</TopMargin>
-        <BottomMargin>0in</BottomMargin>
         <Style />
       </Page>
     </ReportSection>
@@ -420,11 +296,14 @@ End Function
   <DataSets>
     <DataSet Name="DataSet_Result">
       <Fields>
+        <Field Name="PerPage">
+          <DataField>PerPage</DataField>
+        </Field>
+        <Field Name="CurrentLine">
+          <DataField>CurrentLine</DataField>
+        </Field>
         <Field Name="Child_Number">
           <DataField>Child_Number</DataField>
-        </Field>
-        <Field Name="Child2_Number">
-          <DataField>Child2_Number</DataField>
         </Field>
         <Field Name="Blank_Number">
           <DataField>Blank_Number</DataField>
