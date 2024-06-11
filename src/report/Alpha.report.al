@@ -40,6 +40,8 @@ report 50103 Alpha
                 begin
                     Template.Reserve(1);
                     Template.Run(Blank);
+
+                    // if IsEmpty() then CurrReport.Break();
                 end;
 
                 trigger OnAfterGetRecord()
