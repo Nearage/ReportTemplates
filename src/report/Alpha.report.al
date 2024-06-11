@@ -10,7 +10,7 @@ report 50103 Alpha
     {
         dataitem(Parent; Integer)
         {
-            DataItemTableView = where(Number = filter(1 .. 2));
+            DataItemTableView = where(Number = filter(1 .. 10));
 
             column(RowsPerPage; Template.RowsPerPage()) { }
             column(CurrentLine; Template.CurrentLine()) { }
@@ -21,14 +21,14 @@ report 50103 Alpha
             {
                 column(Child_Number; Number) { }
 
-                trigger OnPreDataItem()
-                begin
-                    SetRange(Number, 1, Random(10));
-                end;
-
                 trigger OnAfterGetRecord()
                 begin
                     Template.Update();
+                end;
+
+                trigger OnPreDataItem()
+                begin
+                    SetRange(Number, 1, Parent.Number);
                 end;
             }
 
@@ -38,9 +38,8 @@ report 50103 Alpha
 
                 trigger OnPreDataItem()
                 begin
+                    Template.Reserve(1);
                     Template.Run(Blank);
-
-                    if IsEmpty then CurrReport.Break();
                 end;
 
                 trigger OnAfterGetRecord()
@@ -78,6 +77,11 @@ codeunit 50104 Template
     begin
         Clear(GblRows);
         GblRowsPerPage := RowsPerPage;
+    end;
+
+    procedure Reserve(Rows: Integer)
+    begin
+        GblRows += Rows;
     end;
 
     procedure Update()
