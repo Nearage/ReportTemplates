@@ -18,11 +18,11 @@
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report Demo 3 - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Enum 1151841447 - EnumValue 2846204132 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Hello World!</source>
-          <target state="translated">¡Hola Mundo!</target>
-          <note from="Developer" annotates="general" priority="2">ESP="¡Hola Mundo!"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Enum Global Label - EnumValue HelloWorld - Property Caption</note>
+        <trans-unit id="Enum 1151841447 - EnumValue 4288192982 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Hello %1!</source>
+          <target state="translated">¡Hola %1!</target>
+          <note from="Developer" annotates="general" priority="2">ESP="¡Hola %1!"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Global Label - EnumValue Hello - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 1151841447 - EnumValue 742956161 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Thanks for your</source>

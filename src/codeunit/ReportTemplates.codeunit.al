@@ -42,15 +42,14 @@ codeunit 50100 "Report Templates"
     /// los distintos elementos del informe.
     /// </summary>
     /// <param name="RsrvHeight">Altura reservada para secciones adicionales.</param>
-    procedure CalcBlanksRange(RsrvHeight: Decimal)
+    procedure CalcBlanksRange(ExcludeEach: Decimal; ExcluceOnce: Decimal)
     var
         Mathx: Codeunit Mathx;
         LinesPerPage: Integer;
-        ReserveLines: Integer;
     begin
         LinesPerPage := BodyHeight div LineHeight;
-        ReserveLines := RsrvHeight div LineHeight;
-        TotalNumLins += ReserveLines;
+        LinesPerPage -= ExcludeEach div LineHeight;
+        TotalNumLins += ExcluceOnce div LineHeight;
 
         /* El número de líneas en blanco se puede calcular de dos maneras equivalentes:
 
@@ -113,10 +112,5 @@ codeunit 50100 "Report Templates"
     procedure ReservBodyLines(RsrvLins: Integer)
     begin
         BodyHeight -= LineHeight * RsrvLins;
-    end;
-
-    procedure ToggleVisibility()
-    begin
-
     end;
 }

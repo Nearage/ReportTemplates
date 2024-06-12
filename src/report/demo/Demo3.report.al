@@ -63,8 +63,7 @@ report 50104 "Demo 3"
                 trigger OnPreDataItem()
                 begin
                     ReportTemplates.CalcBodysHeight(11.69, 0, 0, 1.25, 1.25);
-                    ReportTemplates.ReservBodyLines(Totals.Count() + 1);
-                    ReportTemplates.CalcBlanksRange(0.5);
+                    ReportTemplates.CalcBlanksRange((Totals.Count() * 0.5) + 0.25, 0.5);
                     ReportTemplates.Run(Blanks);
                 end;
             }
