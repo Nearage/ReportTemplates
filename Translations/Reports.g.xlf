@@ -3,11 +3,6 @@
   <file datatype="xml" source-language="en-US" target-language="en-US" original="Reports">
     <body>
       <group id="body">
-        <trans-unit id="Report 3069917208 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Alpha</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Alpha - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Report 2879275470 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Demo 1</source>
           <note from="Developer" annotates="general" priority="2"></note>
