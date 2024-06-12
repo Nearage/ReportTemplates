@@ -140,6 +140,7 @@
                                           <PaddingBottom>2pt</PaddingBottom>
                                         </Style>
                                       </Textbox>
+                                      <rd:Selected>true</rd:Selected>
                                     </CellContents>
                                   </TablixCell>
                                 </TablixCells>
@@ -217,7 +218,7 @@
                                   </TablixMember>
                                   <TablixMember>
                                     <Visibility>
-                                      <Hidden>=IsNothing(Fields!Blank_Number.Value) Or (Fields!Blank_Number.Value &lt; 1)</Hidden>
+                                      <Hidden>=IsNothing(Fields!Blank_Number.Value)</Hidden>
                                     </Visibility>
                                   </TablixMember>
                                   <TablixMember>
