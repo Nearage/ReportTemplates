@@ -57,9 +57,4 @@ codeunit 50100 "Report Templates"
     begin
         TotalNumLins += 1;
     end;
-
-    procedure Lins(): Integer
-    begin
-        exit(TotalNumLins);
-    end;
 }
