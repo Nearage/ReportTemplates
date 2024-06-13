@@ -30,7 +30,7 @@ report 50104 "Demo 3"
 
                 trigger OnAfterGetRecord()
                 begin
-                    ReportTemplates.Update();
+                    Templates.Update();
                 end;
             }
             dataitem(Totals; Integer)
@@ -46,7 +46,7 @@ report 50104 "Demo 3"
 
                 trigger OnAfterGetRecord()
                 begin
-                    ReportTemplates.Reserve(0.5, 0);
+                    Templates.Reserve(0.5, 0);
                 end;
             }
             dataitem(Blanks; Integer)
@@ -55,8 +55,8 @@ report 50104 "Demo 3"
 
                 trigger OnPreDataItem()
                 begin
-                    ReportTemplates.Reserve(0.25, 0.5);
-                    ReportTemplates.Run(Blanks);
+                    Templates.Reserve(0.25, 0.5);
+                    Templates.Run(Blanks);
 
                     if IsEmpty() then CurrReport.Break();
                 end;
@@ -64,12 +64,12 @@ report 50104 "Demo 3"
 
             trigger OnAfterGetRecord()
             begin
-                ReportTemplates.Init(Global::A4, 0.25, 0, 0, 1.25, 1.25);
+                Templates.Init(Global::A4, 0.25, 0, 0, 1.25, 1.25);
             end;
         }
     }
 
     var
-        Globals: Codeunit Globals;
-        ReportTemplates: Codeunit "Report Templates";
+        Globals: Codeunit "Global Values";
+        Templates: Codeunit "Report Templates";
 }

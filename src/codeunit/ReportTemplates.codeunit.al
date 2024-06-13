@@ -3,7 +3,7 @@ codeunit 50100 "Report Templates"
     TableNo = Integer;
 
     var
-        Globals: Codeunit Globals;
+        Globals: Codeunit "Global Values";
         BodyHeight: Decimal;
         LineHeight: Decimal;
         LinPerPage: Integer;
