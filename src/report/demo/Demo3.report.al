@@ -8,7 +8,7 @@ report 50104 "Demo 3"
     {
         dataitem(Sales_Header; Integer)
         {
-            DataItemTableView = where(Number = filter(1 .. 80));
+            DataItemTableView = where(Number = filter(1 .. 50));
 
             dataitem(Company_Information; "Company Information")
             {
@@ -42,7 +42,7 @@ report 50104 "Demo 3"
 
                 trigger OnPreDataItem()
                 begin
-                    SetRange(Number, 1, Random(3) - 1);
+                    SetRange(Number, 1, 0);
 
                     if IsEmpty() then CurrReport.Break();
                 end;
@@ -61,6 +61,8 @@ report 50104 "Demo 3"
                 begin
                     ReportTemplates.Reserve(0.25, 0.5);
                     ReportTemplates.Run(Blanks);
+
+                    if IsEmpty() then CurrReport.Break();
                 end;
             }
 
