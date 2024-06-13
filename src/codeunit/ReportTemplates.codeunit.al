@@ -6,13 +6,13 @@ codeunit 50100 "Report Templates"
         Globals: Codeunit Globals;
         BodyHeight: Decimal;
         LineHeight: Decimal;
-        LinesPerPage: Integer;
-        NumBlankLins: Integer;
-        TotalNumLins: Integer;
+        LinPerPage: Integer;
+        BlankLines: Integer;
+        TotalLines: Integer;
 
     trigger OnRun()
     begin
-        Rec.SetRange(Number, 1, NumBlankLins);
+        Rec.SetRange(Number, 1, BlankLines);
     end;
 
     procedure Init(DocFormat: Enum Global;
@@ -24,19 +24,20 @@ codeunit 50100 "Report Templates"
     begin
         BodyHeight := Globals.GetValue(DocFormat);
         LineHeight := LinHeight;
-        BodyHeight -= (MarginTop + MarginBot);
-        BodyHeight -= (HeaderHgt + FooterHgt);
-        TotalNumLins := 0;
-        LinesPerPage := BodyHeight div LineHeight;
+        BodyHeight -= MarginTop + MarginBot;
+        BodyHeight -= HeaderHgt + FooterHgt;
+        LineHeight := LinHeight;
+        LinPerPage := BodyHeight div LineHeight;
+        TotalLines := 0;
     end;
 
     procedure Reserve(PerPage: Decimal; Once: Decimal)
     var
         Mathx: Codeunit Mathx;
     begin
-        LinesPerPage -= PerPage div LineHeight;
-        TotalNumLins += Once div LineHeight;
-        NumBlankLins := Mathx.Modulo(-TotalNumLins, LinesPerPage);
+        LinPerPage -= PerPage div LineHeight;
+        TotalLines += Once div LineHeight;
+        BlankLines := Mathx.Modulo(-TotalLines, LinPerPage);
 
         /* El número de líneas en blanco se puede calcular de dos maneras equivalentes:
 
@@ -55,6 +56,6 @@ codeunit 50100 "Report Templates"
 
     procedure Update()
     begin
-        TotalNumLins += 1;
+        TotalLines += 1;
     end;
 }
