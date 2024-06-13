@@ -10,6 +10,8 @@ report 50104 "Demo 3"
         {
             DataItemTableView = where(Number = filter(1 .. 50));
 
+            column(Sales_Header_No; Number) { }
+
             dataitem(Company_Information; "Company Information")
             {
                 #region columns
@@ -18,7 +20,6 @@ report 50104 "Demo 3"
                 column(Company_Address; Address) { }
                 #endregion columns
             }
-            column(Sales_Header_No; Number) { }
             dataitem(Sales_Line; Integer)
             {
                 column(Sales_Line_Line_No; Number) { }
