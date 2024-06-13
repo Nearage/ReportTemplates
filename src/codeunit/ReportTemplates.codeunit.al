@@ -23,11 +23,10 @@ codeunit 50100 "Report Templates"
                    FooterHgt: Decimal): Decimal
     begin
         BodyHeight := Globals.GetValue(DocFormat);
-        LineHeight := LinHeight;
         BodyHeight -= MarginTop + MarginBot;
         BodyHeight -= HeaderHgt + FooterHgt;
+        LinPerPage := BodyHeight div LinHeight;
         LineHeight := LinHeight;
-        LinPerPage := BodyHeight div LineHeight;
         TotalLines := 0;
     end;
 
