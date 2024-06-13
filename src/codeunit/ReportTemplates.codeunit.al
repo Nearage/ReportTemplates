@@ -1,55 +1,27 @@
 codeunit 50100 "Report Templates"
 {
-    // Tabla que se usará el el DataItem encargado de generar las líneas en blanco.
     TableNo = Integer;
 
     var
-        BodyHeight: Decimal; // Altura disponible en el cuerpo del informe.
+        Globals: Codeunit Globals;
+        BodyHeight: Decimal;
         LineHeight: Decimal;
-        NumBlankLins: Integer; // Número de líneas en blanco a añadir.
-        TotalNumLins: Integer; // Número total de líneas reservadas en el informe.
+        NumBlankLins: Integer;
+        TotalNumLins: Integer;
+        LinesPerPage: Integer;
 
-    // Establece el rango del DataItem de las líneas en blanco.
     trigger OnRun()
     begin
         Rec.SetRange(Number, 1, NumBlankLins);
     end;
 
-    /// <summary>
-    /// Inicializa las variables y establece la altura por defecto para las líneas
-    /// del informe.
-    /// </summary>
-    /// <param name="DefaultLineHeight"> 
-    /// Altura  por defecto  de  las  líneas  del informe.
-    /// </param>
-    procedure Init(DefaultLineHeight: Decimal)
-    begin
-        LineHeight := DefaultLineHeight;
-    end;
-
-    /// <summary>
-    /// Reinicia las variables globales de la codeunit.
-    /// </summary>
-    procedure Reset()
-    begin
-        BodyHeight := 0;
-        NumBlankLins := 0;
-        TotalNumLins := 0;
-    end;
-
-    /// <summary>
-    /// Calcula el número de líneas en blanco necesarias para mantener la distribución de
-    /// los distintos elementos del informe.
-    /// </summary>
-    /// <param name="RsrvHeight">Altura reservada para secciones adicionales.</param>
-    procedure CalcBlanksRange(ExcludeEach: Decimal; ExcluceOnce: Decimal)
+    procedure Reserve(PerPage: Decimal; Once: Decimal)
     var
         Mathx: Codeunit Mathx;
-        LinesPerPage: Integer;
     begin
-        LinesPerPage := BodyHeight div LineHeight;
-        LinesPerPage -= ExcludeEach div LineHeight;
-        TotalNumLins += ExcluceOnce div LineHeight;
+        LinesPerPage -= PerPage div LineHeight;
+        TotalNumLins += Once div LineHeight;
+        NumBlankLins := Mathx.Modulo(-TotalNumLins, LinesPerPage);
 
         /* El número de líneas en blanco se puede calcular de dos maneras equivalentes:
 
@@ -64,53 +36,30 @@ codeunit 50100 "Report Templates"
 
         Haiendo uso de dicho procedimiento, la versión simplificada funciona de la manera
         deseada. */
-
-        NumBlankLins := Mathx.Modulo(-TotalNumLins, LinesPerPage);
     end;
 
-    /// <summary>
-    /// Calcula el espacio disponible en el cuerpo del informe descontando márgenes,
-    /// cabecera y pie de página.
-    /// </summary>
-    /// <param name="DocHeight">Altura del documento.</param>
-    /// <param name="MarginTop">Margen superior.</param>
-    /// <param name="MarginBot">Margen inferior.</param>
-    /// <param name="HeaderHgt">Altura de la cabecera.</param>
-    /// <param name="FooterHgt">Altura del pie.</param>
-    /// <param name="RservHght">Altura reservada para secciones repetidas.</param>
-    /// <returns>La altura disponible en el cuerpo.</returns>
-    procedure CalcBodysHeight(DocHeight: Decimal;
-                              MarginTop: Decimal;
-                              MarginBot: Decimal;
-                              HeaderHgt: Decimal;
-                              FooterHgt: Decimal): Decimal
+    procedure Init(DocFormat: Enum Global;
+                   LinHeight: Decimal;
+                   MarginTop: Decimal;
+                   MarginBot: Decimal;
+                   HeaderHgt: Decimal;
+                   FooterHgt: Decimal): Decimal
     begin
-        BodyHeight := DocHeight;
+        BodyHeight := Globals.GetValue(DocFormat);
+        LineHeight := LinHeight;
         BodyHeight -= (MarginTop + MarginBot);
         BodyHeight -= (HeaderHgt + FooterHgt);
+        TotalNumLins := 0;
+        LinesPerPage := BodyHeight div LineHeight;
     end;
 
-    /// <summary>
-    /// Incluye  el _dataitem_  proporcionado  en  el  proceso de generación de líneas en
-    /// blanco.
-    /// </summary>
-    /// <param name="DataItem">DataItem a incluir en el proceso.</param>
-    procedure IncludeDataItem(DataItem: Variant)
-    var
-        RecRef: RecordRef;
+    procedure Update()
     begin
-        RecRef.GetTable(DataItem);
-
-        TotalNumLins += RecRef.Count();
+        TotalNumLins += 1;
     end;
 
-    /// <summary>
-    /// Reserva líneas en el cuerpo del informe, que pueden ser ocupadas por
-    /// contenido dinámico o secciones que pueden variar en tamaño.
-    /// </summary>
-    /// <param name="RsrvLins"></param>
-    procedure ReservBodyLines(RsrvLins: Integer)
+    procedure Lins(): Integer
     begin
-        BodyHeight -= LineHeight * RsrvLins;
+        exit(TotalNumLins);
     end;
 }

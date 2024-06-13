@@ -16,9 +16,9 @@ report 50100 "Demo 1"
 
                 column(Child_Number; Number) { }
 
-                trigger OnPostDataItem()
+                trigger OnAfterGetRecord()
                 begin
-                    ReportTemplates.IncludeDataItem(Child);
+                    ReportTemplates.Update();
                 end;
             }
 
@@ -28,23 +28,17 @@ report 50100 "Demo 1"
 
                 trigger OnPreDataItem()
                 begin
-                    ReportTemplates.CalcBodysHeight(11.69, 0, 0, 1, 1);
-                    ReportTemplates.CalcBlanksRange(0, 3.25);
+                    ReportTemplates.Reserve(0, 3.25);
                     ReportTemplates.Run(Blanks);
                 end;
             }
 
             trigger OnAfterGetRecord()
             begin
-                ReportTemplates.Reset();
+                ReportTemplates.Init(Global::A4, 0.25, 0, 0, 1, 1);
             end;
         }
     }
-
-    trigger OnInitReport()
-    begin
-        ReportTemplates.Init(0.25);
-    end;
 
     var
         ReportTemplates: Codeunit "Report Templates";

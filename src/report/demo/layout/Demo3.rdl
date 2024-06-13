@@ -34,13 +34,6 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Sales_Header_Document_Type.Value</Value>
-                                  <Style>
-                                    <FontWeight>Bold</FontWeight>
-                                    <Color>PaleTurquoise</Color>
-                                  </Style>
-                                </TextRun>
-                                <TextRun>
                                   <Value xml:space="preserve"> </Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
@@ -356,7 +349,7 @@
                                 <TablixMembers>
                                   <TablixMember>
                                     <Visibility>
-                                      <Hidden>=IsNothing(Fields!Sales_Line_No.Value)</Hidden>
+                                      <Hidden>=IsNothing(Fields!Sales_Line_Line_No.Value)</Hidden>
                                     </Visibility>
                                   </TablixMember>
                                   <TablixMember>
@@ -401,22 +394,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Thanksgiving.Value</Value>
-                                  <Style>
-                                    <FontWeight>Bold</FontWeight>
-                                    <Color>PaleTurquoise</Color>
-                                  </Style>
-                                </TextRun>
-                                <TextRun>
                                   <Value xml:space="preserve"> </Value>
-                                  <Style>
-                                    <FontWeight>Bold</FontWeight>
-                                    <Color>PaleTurquoise</Color>
-                                  </Style>
-                                </TextRun>
-                                <TextRun>
-                                  <Label>Sales_Header_Document_Type</Label>
-                                  <Value>=LCase(Fields!Sales_Header_Document_Type.Value)</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                     <Color>PaleTurquoise</Color>
@@ -457,9 +435,11 @@
                 <TablixMember>
                   <Group Name="Details">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!Sales_Header_Document_Type.Value</GroupExpression>
                       <GroupExpression>=Fields!Sales_Header_No.Value</GroupExpression>
                     </GroupExpressions>
+                    <PageBreak>
+                      <BreakLocation>Between</BreakLocation>
+                    </PageBreak>
                   </Group>
                   <TablixMembers>
                     <TablixMember />
@@ -521,7 +501,7 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Company_Name</rd:DefaultName>
-              <Top>0.375in</Top>
+              <Top>0.36111in</Top>
               <Left>2.75in</Left>
               <Height>0.25in</Height>
               <Width>2in</Width>
@@ -557,72 +537,6 @@
               <Height>0.25in</Height>
               <Width>2in</Width>
               <ZIndex>2</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <VerticalAlign>Middle</VerticalAlign>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Textbox Name="Sell_to_Customer_Name">
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Label>Sell-to_Customer_Name</Label>
-                      <Value>=First(Fields!Sell_to_Customer_Name.Value, "DataSet_Result")</Value>
-                      <Style />
-                    </TextRun>
-                  </TextRuns>
-                  <Style>
-                    <TextAlign>Right</TextAlign>
-                  </Style>
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Sell_to_Customer_Name</rd:DefaultName>
-              <Top>0.375in</Top>
-              <Left>5.77in</Left>
-              <Height>0.25in</Height>
-              <Width>2in</Width>
-              <ZIndex>3</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <VerticalAlign>Middle</VerticalAlign>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Textbox Name="Sell_to_Customer_Name2">
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Label>Sell-to Address</Label>
-                      <Value>=First(Fields!Sell_to_Address.Value, "DataSet_Result")</Value>
-                      <Style />
-                    </TextRun>
-                  </TextRuns>
-                  <Style>
-                    <TextAlign>Right</TextAlign>
-                  </Style>
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Sell_to_Customer_Name</rd:DefaultName>
-              <Top>0.625in</Top>
-              <Left>5.77in</Left>
-              <Height>0.25in</Height>
-              <Width>2in</Width>
-              <ZIndex>4</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -771,21 +685,6 @@ End Function
         <Field Name="Sales_Header_No">
           <DataField>Sales_Header_No</DataField>
         </Field>
-        <Field Name="Sales_Header_Document_Type">
-          <DataField>Sales_Header_Document_Type</DataField>
-        </Field>
-        <Field Name="Order_Date">
-          <DataField>Order_Date</DataField>
-        </Field>
-        <Field Name="Sell_to_Customer_Name">
-          <DataField>Sell_to_Customer_Name</DataField>
-        </Field>
-        <Field Name="Sell_to_Address">
-          <DataField>Sell_to_Address</DataField>
-        </Field>
-        <Field Name="Thanksgiving">
-          <DataField>Thanksgiving</DataField>
-        </Field>
         <Field Name="Company_Picture">
           <DataField>Company_Picture</DataField>
         </Field>
@@ -797,24 +696,6 @@ End Function
         </Field>
         <Field Name="Sales_Line_Line_No">
           <DataField>Sales_Line_Line_No</DataField>
-        </Field>
-        <Field Name="Sales_Line_No">
-          <DataField>Sales_Line_No</DataField>
-        </Field>
-        <Field Name="Sales_Line_Description">
-          <DataField>Sales_Line_Description</DataField>
-        </Field>
-        <Field Name="Sales_Line_Quantity">
-          <DataField>Sales_Line_Quantity</DataField>
-        </Field>
-        <Field Name="Sales_Line_QuantityFormat">
-          <DataField>Sales_Line_QuantityFormat</DataField>
-        </Field>
-        <Field Name="Sales_Line_Amount">
-          <DataField>Sales_Line_Amount</DataField>
-        </Field>
-        <Field Name="Sales_Line_AmountFormat">
-          <DataField>Sales_Line_AmountFormat</DataField>
         </Field>
         <Field Name="Totals_Number">
           <DataField>Totals_Number</DataField>
