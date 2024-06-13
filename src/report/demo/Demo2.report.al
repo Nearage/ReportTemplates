@@ -32,7 +32,6 @@ report 50101 "Demo 2"
                     ReportTemplates.Update();
                 end;
             }
-
             dataitem(Blanks; Integer)
             {
                 column(Blank_Number; Number) { }

@@ -6,13 +6,28 @@ codeunit 50100 "Report Templates"
         Globals: Codeunit Globals;
         BodyHeight: Decimal;
         LineHeight: Decimal;
+        LinesPerPage: Integer;
         NumBlankLins: Integer;
         TotalNumLins: Integer;
-        LinesPerPage: Integer;
 
     trigger OnRun()
     begin
         Rec.SetRange(Number, 1, NumBlankLins);
+    end;
+
+    procedure Init(DocFormat: Enum Global;
+                   LinHeight: Decimal;
+                   MarginTop: Decimal;
+                   MarginBot: Decimal;
+                   HeaderHgt: Decimal;
+                   FooterHgt: Decimal): Decimal
+    begin
+        BodyHeight := Globals.GetValue(DocFormat);
+        LineHeight := LinHeight;
+        BodyHeight -= (MarginTop + MarginBot);
+        BodyHeight -= (HeaderHgt + FooterHgt);
+        TotalNumLins := 0;
+        LinesPerPage := BodyHeight div LineHeight;
     end;
 
     procedure Reserve(PerPage: Decimal; Once: Decimal)
@@ -36,21 +51,6 @@ codeunit 50100 "Report Templates"
 
         Haiendo uso de dicho procedimiento, la versión simplificada funciona de la manera
         deseada. */
-    end;
-
-    procedure Init(DocFormat: Enum Global;
-                   LinHeight: Decimal;
-                   MarginTop: Decimal;
-                   MarginBot: Decimal;
-                   HeaderHgt: Decimal;
-                   FooterHgt: Decimal): Decimal
-    begin
-        BodyHeight := Globals.GetValue(DocFormat);
-        LineHeight := LinHeight;
-        BodyHeight -= (MarginTop + MarginBot);
-        BodyHeight -= (HeaderHgt + FooterHgt);
-        TotalNumLins := 0;
-        LinesPerPage := BodyHeight div LineHeight;
     end;
 
     procedure Update()

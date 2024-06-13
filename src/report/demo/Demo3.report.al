@@ -18,9 +18,7 @@ report 50104 "Demo 3"
                 column(Company_Address; Address) { }
                 #endregion columns
             }
-
             column(Sales_Header_No; Number) { }
-
             dataitem(Sales_Line; Integer)
             {
                 column(Sales_Line_Line_No; Number) { }
@@ -35,7 +33,6 @@ report 50104 "Demo 3"
                     ReportTemplates.Update();
                 end;
             }
-
             dataitem(Totals; Integer)
             {
                 column(Totals_Number; Number) { }
@@ -52,7 +49,6 @@ report 50104 "Demo 3"
                     ReportTemplates.Reserve(0.5, 0);
                 end;
             }
-
             dataitem(Blanks; Integer)
             {
                 column(Blanks_Number; Number) { }
@@ -76,5 +72,4 @@ report 50104 "Demo 3"
     var
         Globals: Codeunit Globals;
         ReportTemplates: Codeunit "Report Templates";
-
 }
