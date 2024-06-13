@@ -18,7 +18,7 @@ report 50100 "Demo 1"
 
                 trigger OnAfterGetRecord()
                 begin
-                    ReportTemplates.Update();
+                    ReportTemplates.Update(1);
                 end;
             }
             dataitem(Blanks; Integer)

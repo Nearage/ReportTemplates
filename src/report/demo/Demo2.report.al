@@ -18,7 +18,7 @@ report 50101 "Demo 2"
 
                 trigger OnAfterGetRecord()
                 begin
-                    ReportTemplates.Update();
+                    ReportTemplates.Update(1);
                 end;
             }
             dataitem(Child2; Integer)
@@ -29,7 +29,7 @@ report 50101 "Demo 2"
 
                 trigger OnAfterGetRecord()
                 begin
-                    ReportTemplates.Update();
+                    ReportTemplates.Update(2);
                 end;
             }
             dataitem(Blanks; Integer)

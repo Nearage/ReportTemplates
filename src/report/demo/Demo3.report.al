@@ -31,7 +31,7 @@ report 50104 "Demo 3"
 
                 trigger OnAfterGetRecord()
                 begin
-                    Templates.Update();
+                    Templates.Update(1);
                 end;
             }
             dataitem(Totals; Integer)

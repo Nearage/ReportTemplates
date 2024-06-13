@@ -105,7 +105,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.25in</Height>
+                  <Height>0.5in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -115,7 +115,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>0,25 in</Value>
+                                  <Value>0,5 in</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                     <Color>PaleTurquoise</Color>
@@ -140,6 +140,7 @@
                             <VerticalAlign>Middle</VerticalAlign>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
@@ -232,7 +233,7 @@
             <DataSetName>DataSet_Result</DataSetName>
             <Top>0in</Top>
             <Left>0in</Left>
-            <Height>4in</Height>
+            <Height>4.25in</Height>
             <Width>8.27in</Width>
             <Style>
               <Border>
@@ -241,7 +242,7 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>4in</Height>
+        <Height>4.25in</Height>
         <Style />
       </Body>
       <Width>8.27in</Width>
