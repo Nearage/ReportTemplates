@@ -40,14 +40,14 @@ report 50104 "Demo 3"
 
                 trigger OnPreDataItem()
                 begin
-                    SetRange(Number, 1, 0);
+                    SetRange(Number, 1, 2);
 
                     if IsEmpty() then CurrReport.Break();
                 end;
 
                 trigger OnAfterGetRecord()
                 begin
-                    Templates.Reserve(0.5, 0);
+                    Templates.Reserve(0.5, true);
                 end;
             }
             dataitem(Blanks; Integer)
@@ -56,7 +56,8 @@ report 50104 "Demo 3"
 
                 trigger OnPreDataItem()
                 begin
-                    Templates.Reserve(0.25, 0.5);
+                    Templates.Reserve(0.25, true);
+                    Templates.Reserve(0.5, false);
                     Templates.Run(Blanks);
 
                     if IsEmpty() then CurrReport.Break();

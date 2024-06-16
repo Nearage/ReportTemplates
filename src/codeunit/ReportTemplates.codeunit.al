@@ -47,10 +47,12 @@ codeunit 50100 "Report Templates"
         TotalLines := 0;
     end;
 
-    procedure Reserve(PerPage: Decimal; Once: Decimal)
+    procedure Reserve(Height: Decimal; PerPage: Boolean)
     begin
-        LinPerPage -= PerPage div LineHeight;
-        TotalLines += Once div LineHeight;
+        if PerPage then
+            LinPerPage -= Height div LineHeight
+        else
+            TotalLines += Height div LineHeight;
     end;
 
     procedure Update(Lines: Integer)

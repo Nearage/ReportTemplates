@@ -27,7 +27,7 @@ report 50100 "Demo 1"
 
                 trigger OnPreDataItem()
                 begin
-                    ReportTemplates.Reserve(0, 3.25);
+                    ReportTemplates.Reserve(3.25, false);
                     ReportTemplates.Run(Blanks);
                 end;
             }
