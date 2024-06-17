@@ -2,18 +2,18 @@ codeunit 50100 "Report Templates"
 {
     TableNo = Integer;
 
+    trigger OnRun()
+    begin
+        Rec.SetRange(Number, 1, Mathx.Modulo(-(GblDcmntHght div GblLinHeight),
+                                               GblPPageHght div GblLinHeight));
+    end;
+
     var
         Globals: Codeunit "Global Values";
         Mathx: Codeunit Mathx;
         GblDcmntHght: Decimal;
         GblLinHeight: Decimal;
         GblPPageHght: Decimal;
-
-    trigger OnRun()
-    begin
-        Rec.SetRange(Number, 1, Mathx.Modulo(-(GblDcmntHght div GblLinHeight),
-                                               GblPPageHght div GblLinHeight));
-    end;
 
     procedure Fill(Height: Decimal)
     begin
