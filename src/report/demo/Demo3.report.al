@@ -66,7 +66,7 @@ report 50104 "Demo 3"
 
             trigger OnAfterGetRecord()
             begin
-                Templates.Init(Global::A4, 0, 0, 1.25, 1.25, 0.25);
+                Templates.Init("Document Format"::A4, 0, 0, 1.25, 1.25, 0.25);
                 Templates.Fit(0.25);
                 Templates.Fill(0.5);
             end;

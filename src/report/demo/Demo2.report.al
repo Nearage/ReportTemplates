@@ -45,7 +45,7 @@ report 50101 "Demo 2"
 
             trigger OnAfterGetRecord()
             begin
-                ReportTemplates.Init(Global::A4, 0, 0, 1, 1, 0.25);
+                ReportTemplates.Init("Document Format"::A4, 0, 0, 1, 1, 0.25);
             end;
         }
     }
