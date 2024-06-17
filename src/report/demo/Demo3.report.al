@@ -11,7 +11,6 @@ report 50104 "Demo 3"
             DataItemTableView = where(Number = filter(1 .. 50));
 
             column(Parent_Number; Number) { }
-
             dataitem(Company_Information; "Company Information")
             {
                 #region columns

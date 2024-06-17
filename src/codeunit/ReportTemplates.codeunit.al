@@ -3,16 +3,26 @@ codeunit 50100 "Report Templates"
     TableNo = Integer;
 
     var
-        Mathx: Codeunit Mathx;
         Globals: Codeunit "Global Values";
-        GblPPageHght: Decimal;
-        GblLinHeight: Decimal;
+        Mathx: Codeunit Mathx;
         GblDcmntHght: Decimal;
+        GblLinHeight: Decimal;
+        GblPPageHght: Decimal;
 
     trigger OnRun()
     begin
         Rec.SetRange(Number, 1, Mathx.Modulo(-(GblDcmntHght div GblLinHeight),
                                                GblPPageHght div GblLinHeight));
+    end;
+
+    procedure Fill(Height: Decimal)
+    begin
+        GblDcmntHght += Height;
+    end;
+
+    procedure Fit(Height: Decimal)
+    begin
+        GblPPageHght -= Height
     end;
 
     procedure Init(DocFormat: Enum Global;
@@ -27,15 +37,5 @@ codeunit 50100 "Report Templates"
         GblPPageHght -= HeaderHgt + FooterHgt;
         GblLinHeight := LinHeight;
         GblDcmntHght := 0;
-    end;
-
-    procedure Fit(Height: Decimal)
-    begin
-        GblPPageHght -= Height
-    end;
-
-    procedure Fill(Height: Decimal)
-    begin
-        GblDcmntHght += Height;
     end;
 }
