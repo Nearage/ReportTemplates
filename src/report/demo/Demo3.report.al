@@ -39,6 +39,7 @@ report 50104 "Demo 3"
 
                 trigger OnPreDataItem()
                 begin
+                    // SetRange(Number, 1, 0);
                     SetRange(Number, 1);
                     // SetRange(Number, 1, 2);
                     // SetRange(Number, 1, Random(3) - 1);
