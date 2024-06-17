@@ -18,7 +18,7 @@ report 50101 "Demo 2"
 
                 trigger OnAfterGetRecord()
                 begin
-                    ReportTemplates.Update(1);
+                    ReportTemplates.Fill(0.25);
                 end;
             }
             dataitem(Child2; Integer)
@@ -29,7 +29,7 @@ report 50101 "Demo 2"
 
                 trigger OnAfterGetRecord()
                 begin
-                    ReportTemplates.Update(2);
+                    ReportTemplates.Fill(0.5);
                 end;
             }
             dataitem(Blanks; Integer)
@@ -38,15 +38,14 @@ report 50101 "Demo 2"
 
                 trigger OnPreDataItem()
                 begin
-
-                    ReportTemplates.Reserve(3.25, false);
+                    ReportTemplates.Fill(3.25);
                     ReportTemplates.Run(Blanks);
                 end;
             }
 
             trigger OnAfterGetRecord()
             begin
-                ReportTemplates.Init(Global::A4, 0.25, 0, 0, 1, 1);
+                ReportTemplates.Init(Global::A4, 0, 0, 1, 1, 0.25);
             end;
         }
     }

@@ -3,60 +3,39 @@ codeunit 50100 "Report Templates"
     TableNo = Integer;
 
     var
+        Mathx: Codeunit Mathx;
         Globals: Codeunit "Global Values";
-        BodyHeight: Decimal;
-        LineHeight: Decimal;
-        LinPerPage: Integer;
-        BlankLines: Integer;
-        TotalLines: Integer;
+        GblPPageHght: Decimal;
+        GblLinHeight: Decimal;
+        GblDcmntHght: Decimal;
 
     trigger OnRun()
-    var
-        Mathx: Codeunit Mathx;
     begin
-        /* El número de líneas en blanco se puede calcular de dos maneras equivalentes:
-
-          1. (LinesPerPage - (TotalNumLins mod LinesPerPage)) mod LinesPerPage
-          2. (-TotalNumLins) mod LinesPerPage
-
-        La segunda opción es una versión refactorizada y simplificada de la primera, pero
-        el resultado debería ser el mismo. Sin embargo, el operador módulo en AL no actúa
-        de la forma esperada  para valores negativos. Para  corregir este problema, se ha
-        creado el  procedimiento  Modulo  en la codeunit Mathx, que emplea una definición
-        distinta del operador módulo para realizar el cálculo.
-
-        Haiendo uso de dicho procedimiento, la versión simplificada funciona de la manera
-        deseada. */
-
-        BlankLines := Mathx.Modulo(-TotalLines, LinPerPage);
-        Rec.SetRange(Number, 1, BlankLines);
+        Rec.SetRange(Number, 1, Mathx.Modulo(-(GblDcmntHght div GblLinHeight),
+                                               GblPPageHght div GblLinHeight));
     end;
 
     procedure Init(DocFormat: Enum Global;
-                   LinHeight: Decimal;
                    MarginTop: Decimal;
                    MarginBot: Decimal;
                    HeaderHgt: Decimal;
-                   FooterHgt: Decimal): Decimal
+                   FooterHgt: Decimal;
+                   LinHeight: Decimal): Decimal
     begin
-        BodyHeight := Globals.GetValue(DocFormat);
-        BodyHeight -= MarginTop + MarginBot;
-        BodyHeight -= HeaderHgt + FooterHgt;
-        LinPerPage := BodyHeight div LinHeight;
-        LineHeight := LinHeight;
-        TotalLines := 0;
+        GblPPageHght := Globals.GetValue(DocFormat);
+        GblPPageHght -= MarginTop + MarginBot;
+        GblPPageHght -= HeaderHgt + FooterHgt;
+        GblLinHeight := LinHeight;
+        GblDcmntHght := 0;
     end;
 
-    procedure Reserve(Height: Decimal; PerPage: Boolean)
+    procedure Fit(Height: Decimal)
     begin
-        if PerPage then
-            LinPerPage -= Height div LineHeight
-        else
-            TotalLines += Height div LineHeight;
+        GblPPageHght -= Height
     end;
 
-    procedure Update(Lines: Integer)
+    procedure Fill(Height: Decimal)
     begin
-        TotalLines += Lines;
+        GblDcmntHght += Height;
     end;
 }

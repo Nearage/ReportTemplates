@@ -28,7 +28,7 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Sales_Header">
+                        <Textbox Name="Parent">
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -41,7 +41,7 @@
                                   </Style>
                                 </TextRun>
                                 <TextRun>
-                                  <Value>=Fields!Sales_Header_No.Value</Value>
+                                  <Value>=Fields!Parent_Number.Value</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                     <Color>PaleTurquoise</Color>
@@ -95,7 +95,7 @@
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
-                                                <Value>Sales_Line_Line_No</Value>
+                                                <Value>Child_Number</Value>
                                                 <Style>
                                                   <Color>Teal</Color>
                                                 </Style>
@@ -129,13 +129,13 @@
                                 <TablixCells>
                                   <TablixCell>
                                     <CellContents>
-                                      <Textbox Name="Sales_Line_Line_No">
+                                      <Textbox Name="Child_Number">
                                         <KeepTogether>true</KeepTogether>
                                         <Paragraphs>
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
-                                                <Value>=Fields!Sales_Line_Line_No.Value</Value>
+                                                <Value>=Fields!Child_Number.Value</Value>
                                                 <Style>
                                                   <Color>Teal</Color>
                                                 </Style>
@@ -342,14 +342,14 @@
                               <TablixMember>
                                 <Group Name="Details2">
                                   <GroupExpressions>
-                                    <GroupExpression>=Fields!Sales_Line_Line_No.Value</GroupExpression>
+                                    <GroupExpression>=Fields!Child_Number.Value</GroupExpression>
                                     <GroupExpression>=Fields!Blanks_Number.Value</GroupExpression>
                                   </GroupExpressions>
                                 </Group>
                                 <TablixMembers>
                                   <TablixMember>
                                     <Visibility>
-                                      <Hidden>=IsNothing(Fields!Sales_Line_Line_No.Value)</Hidden>
+                                      <Hidden>=IsNothing(Fields!Child_Number.Value)</Hidden>
                                     </Visibility>
                                   </TablixMember>
                                   <TablixMember>
@@ -435,7 +435,7 @@
                 <TablixMember>
                   <Group Name="Details">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!Sales_Header_No.Value</GroupExpression>
+                      <GroupExpression>=Fields!Parent_Number.Value</GroupExpression>
                     </GroupExpressions>
                     <PageBreak>
                       <BreakLocation>Between</BreakLocation>
@@ -596,7 +596,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=ReportItems!Sales_Line_Line_No.Value</Value>
+                      <Value>=ReportItems!Child_Number.Value</Value>
                       <Style />
                     </TextRun>
                   </TextRuns>
@@ -682,8 +682,8 @@ End Function
   <DataSets>
     <DataSet Name="DataSet_Result">
       <Fields>
-        <Field Name="Sales_Header_No">
-          <DataField>Sales_Header_No</DataField>
+        <Field Name="Parent_Number">
+          <DataField>Parent_Number</DataField>
         </Field>
         <Field Name="Company_Picture">
           <DataField>Company_Picture</DataField>
@@ -694,8 +694,8 @@ End Function
         <Field Name="Company_Address">
           <DataField>Company_Address</DataField>
         </Field>
-        <Field Name="Sales_Line_Line_No">
-          <DataField>Sales_Line_Line_No</DataField>
+        <Field Name="Child_Number">
+          <DataField>Child_Number</DataField>
         </Field>
         <Field Name="Totals_Number">
           <DataField>Totals_Number</DataField>
