@@ -19,6 +19,7 @@ report 50104 "Demo 3"
                 column(Company_Address; Address) { }
                 #endregion columns
             }
+            column(Number_Caption; Globals.GetText(Label::Number)) { }
             dataitem(Child; Integer)
             {
                 column(Child_Number; Number) { }
@@ -66,7 +67,7 @@ report 50104 "Demo 3"
 
             trigger OnAfterGetRecord()
             begin
-                Templates.Init("Document Format"::A4, 0, 0, 1.25, 1.25, 0.25);
+                Templates.Init(Paper::A4, 0, 0, 1.25, 1.25, 0.25);
                 Templates.Fit(0.25);
                 Templates.Fill(0.5);
             end;
@@ -75,4 +76,5 @@ report 50104 "Demo 3"
 
     var
         Templates: Codeunit "Report Templates";
+        Globals: Codeunit Globals;
 }

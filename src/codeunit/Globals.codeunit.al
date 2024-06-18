@@ -1,4 +1,4 @@
-codeunit 50102 "Global Values"
+codeunit 50102 Globals
 {
     procedure GetText(Global: Variant) Value: Text
     begin

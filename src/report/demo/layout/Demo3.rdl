@@ -34,7 +34,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value xml:space="preserve"> </Value>
+                                  <Value>↑  </Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                     <Color>PaleTurquoise</Color>
@@ -95,7 +95,7 @@
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
-                                                <Value>Child_Number</Value>
+                                                <Value>=Fields!Number_Caption.Value</Value>
                                                 <Style>
                                                   <Color>Teal</Color>
                                                 </Style>
@@ -388,13 +388,20 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox29">
+                        <Textbox Name="Parent2">
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value xml:space="preserve"> </Value>
+                                  <Value>↓  </Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>PaleTurquoise</Color>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value>=Fields!Parent_Number.Value</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                     <Color>PaleTurquoise</Color>
@@ -406,10 +413,10 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox29</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Style>None</Style>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
                             </Border>
                             <BackgroundColor>Teal</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
@@ -419,6 +426,7 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
@@ -684,6 +692,9 @@ End Function
       <Fields>
         <Field Name="Parent_Number">
           <DataField>Parent_Number</DataField>
+        </Field>
+        <Field Name="Number_Caption">
+          <DataField>Number_Caption</DataField>
         </Field>
         <Field Name="Company_Picture">
           <DataField>Company_Picture</DataField>
