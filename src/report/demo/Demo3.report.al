@@ -75,6 +75,6 @@ report 50104 "Demo 3"
     }
 
     var
-        Templates: Codeunit "Report Templates";
         Globals: Codeunit Globals;
+        Templates: Codeunit "Report Templates";
 }
