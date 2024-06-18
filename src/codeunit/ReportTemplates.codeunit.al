@@ -1,41 +1,64 @@
 codeunit 50100 "Report Templates"
 {
-    TableNo = Integer;
+    TableNo = Integer; // Integer table is used to generate blank lines.
 
     var
         Globals: Codeunit Globals;
         Mathx: Codeunit Mathx;
-        GblDcmntHght: Decimal;
-        GblLinHeight: Decimal;
-        GblPPageHght: Decimal;
+        GblDocHeight: Decimal; // Height of the document content.
+        GblLinHeight: Decimal; // Default line height.
+        GblPagHeight: Decimal; // Available height per page.
 
+    /// <summary>
+    /// Adjust the height of the document content according to the specified
+    /// height.
+    /// </summary>
     trigger OnRun()
     begin
-        Rec.SetRange(Number, 1, Mathx.Modulo(-(GblDcmntHght div GblLinHeight),
-                                               GblPPageHght div GblLinHeight));
+        Rec.SetRange(Number, 1, Mathx.Modulo(-(GblDocHeight div GblLinHeight),
+                                               GblPagHeight div GblLinHeight));
     end;
 
+    /// <summary>
+    /// Adjust the height of the document content according to the specified
+    /// height.
+    /// </summary>
+    /// <param name="Height">Height to fill in.</param>
     procedure Fill(Height: Decimal)
     begin
-        GblDcmntHght += Height;
+        GblDocHeight += Height;
     end;
 
+    /// <summary>
+    /// Adjust the available height per page according to the specified height.
+    /// </summary>
+    /// <param name="Height">Height to fit in.</param>
     procedure Fit(Height: Decimal)
     begin
-        GblPPageHght -= Height
+        GblPagHeight -= Height
     end;
 
-    procedure Init(DocFormat: Variant;
+    /// <summary>
+    /// Calculates the initial height available per page based on the specified
+    /// paper size and initializes all global variables.
+    /// </summary>
+    /// <param name="PaperSize"></param>
+    /// <param name="MarginTop"></param>
+    /// <param name="MarginBot"></param>
+    /// <param name="HeaderHgt"></param>
+    /// <param name="FooterHgt"></param>
+    /// <param name="LinHeight"></param>
+    procedure Init(PaperSize: Variant;
                    MarginTop: Decimal;
                    MarginBot: Decimal;
                    HeaderHgt: Decimal;
                    FooterHgt: Decimal;
-                   LinHeight: Decimal): Decimal
+                   LinHeight: Decimal)
     begin
-        GblPPageHght := Globals.GetValue(DocFormat);
-        GblPPageHght -= MarginTop + MarginBot;
-        GblPPageHght -= HeaderHgt + FooterHgt;
+        GblPagHeight := Globals.GetValue(PaperSize);
+        GblPagHeight -= MarginTop + MarginBot;
+        GblPagHeight -= HeaderHgt + FooterHgt;
         GblLinHeight := LinHeight;
-        GblDcmntHght := 0;
+        GblDocHeight := 0;
     end;
 }
