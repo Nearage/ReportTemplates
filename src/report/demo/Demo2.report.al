@@ -38,7 +38,6 @@ report 50101 "Demo 2"
 
                 trigger OnPreDataItem()
                 begin
-                    ReportTemplates.Fill(3.25);
                     ReportTemplates.Run(Blanks);
                 end;
             }
@@ -46,6 +45,7 @@ report 50101 "Demo 2"
             trigger OnAfterGetRecord()
             begin
                 ReportTemplates.Init(Paper::A4, 0, 0, 1, 1, 0.25);
+                ReportTemplates.Fill(3.25);
             end;
         }
     }
