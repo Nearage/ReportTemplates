@@ -42,12 +42,12 @@ codeunit 50100 "Report Templates"
     /// Calculates the initial height available per page based on the specified
     /// paper size and initializes all global variables.
     /// </summary>
-    /// <param name="PaperSize"></param>
-    /// <param name="MarginTop"></param>
-    /// <param name="MarginBot"></param>
-    /// <param name="HeaderHgt"></param>
-    /// <param name="FooterHgt"></param>
-    /// <param name="LinHeight"></param>
+    /// <param name="PaperSize">Paper size variant.</param>
+    /// <param name="MarginTop">Top margin.</param>
+    /// <param name="MarginBot">Bottom margin.</param>
+    /// <param name="HeaderHgt">Header height.</param>
+    /// <param name="FooterHgt">Footer height.</param>
+    /// <param name="LinHeight">Line height.</param>
     procedure Init(PaperSize: Variant;
                    MarginTop: Decimal;
                    MarginBot: Decimal;
