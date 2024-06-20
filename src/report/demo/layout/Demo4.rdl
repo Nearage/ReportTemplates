@@ -974,7 +974,10 @@
                   <TextRuns>
                     <TextRun>
                       <Value>=Sum(ReportItems!Amount.Value)</Value>
-                      <Style />
+                      <Style>
+                        <Format>0.00'€';(0.00'€')</Format>
+                        <rd:FormatSymbolCulture>es-ES</rd:FormatSymbolCulture>
+                      </Style>
                     </TextRun>
                   </TextRuns>
                   <Style>
