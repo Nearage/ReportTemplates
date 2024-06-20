@@ -6,20 +6,21 @@ report 50104 "Demo 3"
 
     dataset
     {
+        dataitem(Company_Information; "Company Information")
+        {
+            #region columns
+            column(Company_Picture; Picture) { AutoCalcField = true; }
+            column(Company_Name; Name) { }
+            column(Company_Address; Address) { }
+            #endregion columns
+        }
         dataitem(Parent; Integer)
         {
             DataItemTableView = where(Number = filter(1 .. 50));
 
+            column(Child_Number_Caption; Globals.GetText(Label::Number)) { }
             column(Parent_Number; Number) { }
-            dataitem(Company_Information; "Company Information")
-            {
-                #region columns
-                column(Company_Picture; Picture) { AutoCalcField = true; }
-                column(Company_Name; Name) { }
-                column(Company_Address; Address) { }
-                #endregion columns
-            }
-            column(Number_Caption; Globals.GetText(Label::Number)) { }
+
             dataitem(Child; Integer)
             {
                 column(Child_Number; Number) { }

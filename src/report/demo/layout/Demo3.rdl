@@ -66,6 +66,7 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
@@ -95,7 +96,7 @@
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
-                                                <Value>=Fields!Number_Caption.Value</Value>
+                                                <Value>=Fields!Child_Number_Caption.Value</Value>
                                                 <Style>
                                                   <Color>Teal</Color>
                                                 </Style>
@@ -379,6 +380,7 @@
                             </Border>
                           </Style>
                         </Tablix>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
@@ -454,6 +456,9 @@
                     <TablixMember />
                     <TablixMember />
                   </TablixMembers>
+                  <Visibility>
+                    <Hidden>=IsNothing(Fields!Parent_Number.Value)</Hidden>
+                  </Visibility>
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
@@ -690,12 +695,6 @@ End Function
   <DataSets>
     <DataSet Name="DataSet_Result">
       <Fields>
-        <Field Name="Parent_Number">
-          <DataField>Parent_Number</DataField>
-        </Field>
-        <Field Name="Number_Caption">
-          <DataField>Number_Caption</DataField>
-        </Field>
         <Field Name="Company_Picture">
           <DataField>Company_Picture</DataField>
         </Field>
@@ -704,6 +703,12 @@ End Function
         </Field>
         <Field Name="Company_Address">
           <DataField>Company_Address</DataField>
+        </Field>
+        <Field Name="Child_Number_Caption">
+          <DataField>Child_Number_Caption</DataField>
+        </Field>
+        <Field Name="Parent_Number">
+          <DataField>Parent_Number</DataField>
         </Field>
         <Field Name="Child_Number">
           <DataField>Child_Number</DataField>
