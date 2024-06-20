@@ -18,8 +18,10 @@ report 50104 "Demo 3"
         {
             DataItemTableView = where(Number = filter(1 .. 50));
 
+            #region columns
             column(Child_Number_Caption; Globals.GetText(Label::Number)) { }
             column(Parent_Number; Number) { }
+            #endregion columns
 
             dataitem(Child; Integer)
             {
