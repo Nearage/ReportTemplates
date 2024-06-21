@@ -55,7 +55,9 @@ report 50105 "Demo 4"
                 {
                     DataItemLink = "Document Type" = field("Document Type"), "No." = field("No.");
 
+                    #region columns
                     column(Comment; Comment) { }
+                    #endregion columns
 
                     trigger OnAfterGetRecord()
                     begin
