@@ -775,6 +775,36 @@
                                     <Color>PaleTurquoise</Color>
                                   </Style>
                                 </TextRun>
+                                <TextRun>
+                                  <Value> - </Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>PaleTurquoise</Color>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value>=Fields!Amount_.Value</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>PaleTurquoise</Color>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value>: </Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>PaleTurquoise</Color>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value>=Sum(Fields!Amount.Value)</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>0.00 '€';(0.00 '€')</Format>
+                                    <Color>PaleTurquoise</Color>
+                                    <rd:FormatSymbolCulture>es-ES</rd:FormatSymbolCulture>
+                                  </Style>
+                                </TextRun>
                               </TextRuns>
                               <Style>
                                 <TextAlign>Center</TextAlign>
@@ -973,9 +1003,23 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=Sum(ReportItems!Amount.Value)</Value>
+                      <Value>=Fields!Amount_.Value</Value>
                       <Style>
                         <Format>0.00'€';(0.00'€')</Format>
+                        <rd:FormatSymbolCulture>es-ES</rd:FormatSymbolCulture>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value>: </Value>
+                      <Style>
+                        <Format>0.00'€';(0.00'€')</Format>
+                        <rd:FormatSymbolCulture>es-ES</rd:FormatSymbolCulture>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value>=Sum(ReportItems!Amount.Value)</Value>
+                      <Style>
+                        <Format>0.00 '€';(0.00 '€')</Format>
                         <rd:FormatSymbolCulture>es-ES</rd:FormatSymbolCulture>
                       </Style>
                     </TextRun>
@@ -1062,6 +1106,21 @@ End Function
   <DataSets>
     <DataSet Name="DataSet_Result">
       <Fields>
+        <Field Name="No_">
+          <DataField>No_</DataField>
+        </Field>
+        <Field Name="Description_">
+          <DataField>Description_</DataField>
+        </Field>
+        <Field Name="Quantity_">
+          <DataField>Quantity_</DataField>
+        </Field>
+        <Field Name="Amount_">
+          <DataField>Amount_</DataField>
+        </Field>
+        <Field Name="VATPct_">
+          <DataField>VATPct_</DataField>
+        </Field>
         <Field Name="Company_Picture">
           <DataField>Company_Picture</DataField>
         </Field>
@@ -1080,20 +1139,11 @@ End Function
         <Field Name="Line_No">
           <DataField>Line_No</DataField>
         </Field>
-        <Field Name="No_">
-          <DataField>No_</DataField>
-        </Field>
         <Field Name="No">
           <DataField>No</DataField>
         </Field>
-        <Field Name="Description_">
-          <DataField>Description_</DataField>
-        </Field>
         <Field Name="Description">
           <DataField>Description</DataField>
-        </Field>
-        <Field Name="Quantity_">
-          <DataField>Quantity_</DataField>
         </Field>
         <Field Name="Quantity">
           <DataField>Quantity</DataField>
@@ -1101,17 +1151,11 @@ End Function
         <Field Name="QuantityFormat">
           <DataField>QuantityFormat</DataField>
         </Field>
-        <Field Name="Amount_">
-          <DataField>Amount_</DataField>
-        </Field>
         <Field Name="Amount">
           <DataField>Amount</DataField>
         </Field>
         <Field Name="AmountFormat">
           <DataField>AmountFormat</DataField>
-        </Field>
-        <Field Name="VATPct_">
-          <DataField>VATPct_</DataField>
         </Field>
         <Field Name="VATPct">
           <DataField>VATPct</DataField>
