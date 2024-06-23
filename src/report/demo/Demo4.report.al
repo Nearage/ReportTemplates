@@ -11,11 +11,11 @@ report 50105 "Demo 4"
             DataItemTableView = where(Number = const(1));
 
             #region captions
-            column(No_; Globals.GetText(Label::Number)) { }
-            column(Description_; Globals.GetText(Label::Description)) { }
-            column(Quantity_; Globals.GetText(Label::Quantity)) { }
-            column(Amount_; Globals.GetText(Label::Amount)) { }
-            column(VATPct_; Globals.GetText(Label::VATPct)) { }
+            column(No_; Globals.GetText(Caption::Number)) { }
+            column(Description_; Globals.GetText(Caption::Description)) { }
+            column(Quantity_; Globals.GetText(Caption::Quantity)) { }
+            column(Amount_; Globals.GetText(Caption::Amount)) { }
+            column(VATPct_; Globals.GetText(Caption::VATPct)) { }
             #endregion captions
 
             dataitem(Company_Information; "Company Information")
