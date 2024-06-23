@@ -1121,6 +1121,12 @@ End Function
         <Field Name="VATPct_">
           <DataField>VATPct_</DataField>
         </Field>
+        <Field Name="Type">
+          <DataField>Type</DataField>
+        </Field>
+        <Field Name="Code">
+          <DataField>Code</DataField>
+        </Field>
         <Field Name="Company_Picture">
           <DataField>Company_Picture</DataField>
         </Field>
@@ -1129,12 +1135,6 @@ End Function
         </Field>
         <Field Name="Company_Address">
           <DataField>Company_Address</DataField>
-        </Field>
-        <Field Name="Type">
-          <DataField>Type</DataField>
-        </Field>
-        <Field Name="Code">
-          <DataField>Code</DataField>
         </Field>
         <Field Name="Line_No">
           <DataField>Line_No</DataField>
