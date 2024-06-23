@@ -23,30 +23,30 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Demo 4 - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Enum 1457054730 - EnumValue 636392376 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Enum 2879900210 - EnumValue 636392376 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Amount</source>
           <note from="Developer" annotates="general" priority="2">ESP="Importe"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Enum Label - EnumValue Amount - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Caption - EnumValue Amount - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Enum 1457054730 - EnumValue 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Enum 2879900210 - EnumValue 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Description</source>
           <note from="Developer" annotates="general" priority="2">ESP="Descripción"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Enum Label - EnumValue Description - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Caption - EnumValue Description - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Enum 1457054730 - EnumValue 2272340397 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Enum 2879900210 - EnumValue 2272340397 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Number</source>
           <note from="Developer" annotates="general" priority="2">ESP="Número"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Enum Label - EnumValue Number - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Caption - EnumValue Number - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Enum 1457054730 - EnumValue 2704404533 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Enum 2879900210 - EnumValue 2704404533 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Quantity</source>
           <note from="Developer" annotates="general" priority="2">ESP="Cantidad"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Enum Label - EnumValue Quantity - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Caption - EnumValue Quantity - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Enum 1457054730 - EnumValue 1721266264 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Enum 2879900210 - EnumValue 1721266264 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT %</source>
           <note from="Developer" annotates="general" priority="2">ESP="% IVA"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Enum Label - EnumValue VATPct - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Caption - EnumValue VATPct - Property Caption</note>
         </trans-unit>
       </group>
     </body>

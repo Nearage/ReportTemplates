@@ -1,20 +1,20 @@
 codeunit 50102 Globals
 {
     /// <summary>
-    /// Gets the value of the specified global variant as text.
+    /// Obtiene el valor de la variante especificada como texto.
     /// </summary>
-    /// <param name="Global">Global variant</param>
-    /// <returns>The value of the specified global variant as Text.</returns>
+    /// <param name="Global">Variante</param>
+    /// <returns>El valor de la variante especificada como texto.</returns>
     procedure GetText(Global: Variant) Value: Text
     begin
         Value := Format(Global);
     end;
 
     /// <summary>
-    /// Gets the value of the specified global variant as a real number.
+    /// Obtiene el valor numérico de la variante especificada.
     /// </summary>
-    /// <param name="Global">Global variant</param>
-    /// <returns>The value of the specified global variant.</returns>
+    /// <param name="Global">Variante</param>
+    /// <returns>El valor numérico de la variante especificada.</returns>
     procedure GetValue(Global: Variant) Value: Decimal
     begin
         if Evaluate(Value, GetText(Global).Replace('.', ',')) then exit(Value);
