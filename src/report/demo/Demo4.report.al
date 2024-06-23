@@ -88,5 +88,5 @@ report 50105 "Demo 4"
 
     var
         Globals: Codeunit Globals;
-        Templates: Codeunit "Report Templates";
+        Templates: Codeunit Template;
 }

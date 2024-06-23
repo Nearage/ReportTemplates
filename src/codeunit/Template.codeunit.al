@@ -1,4 +1,4 @@
-codeunit 50100 "Report Templates"
+codeunit 50100 Template
 {
     TableNo = Integer; // Integer table is used to generate blank lines.
 

@@ -40,5 +40,5 @@ report 50100 "Demo 1"
     }
 
     var
-        ReportTemplates: Codeunit "Report Templates";
+        ReportTemplates: Codeunit Template;
 }
