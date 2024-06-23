@@ -1,5 +1,5 @@
 # Report Templates
 
-The purpose of this project was initially to define a series of templates for different report formats, which would be easy to access, customize, and adapt, in order to optimize the development of similar reports. However, new functionalities, new objects, and new approaches have gradually been integrated into it.
+El propósito de este proyecto era, inicialmente, definir una serie de plantillas para distintos formatos de informes, que fuesen de fácil acceso, personalización, y adaptación, para optimizar el desarrollo de informes similares. Sin embargo, poco a poco se han ido integrando nuevas funcionalidades, nuevos objetos y nuevos enfoques al mismo.
 
-Currently, this project contains three codeunits designed to simplify the implementation of resources and processes that are, in principle, more complex; as well as two enumerations of global variants that, together with these code units, optimize certain aspects of development.
+Actualmente, este proyecto contiene tres unidades de código, diseñadas para simplificar la implementación de recursos y procesos, a priori más complejos; así como dos enumeraciones de variantes globales que, junto a dichas unidades de código, optimizan ciertos aspectos del desarrollo.
