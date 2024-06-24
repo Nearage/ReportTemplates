@@ -521,7 +521,7 @@
                                         <rd:DefaultName>Textbox26</rd:DefaultName>
                                         <Style>
                                           <Border>
-                                            <Color>Teal</Color>
+                                            <Color>Gray</Color>
                                             <Style>None</Style>
                                           </Border>
                                           <BottomBorder>
