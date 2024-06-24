@@ -18,7 +18,7 @@ report 50100 "Demo 1"
 
                 trigger OnAfterGetRecord()
                 begin
-                    ReportTemplates.Fill(0.25);
+                    Template.Fix(0.25);
                 end;
             }
             dataitem(Blanks; Integer)
@@ -27,18 +27,19 @@ report 50100 "Demo 1"
 
                 trigger OnPreDataItem()
                 begin
-                    ReportTemplates.Run(Blanks);
+                    Template.Run(Blanks);
                 end;
             }
 
             trigger OnAfterGetRecord()
             begin
-                ReportTemplates.Init(Paper::A4, 0, 0, 1, 1, 0.25);
-                ReportTemplates.Fill(3.25);
+                Template.Init(Paper::A4, 0.25);
+                Template.Fit(2);
+                Template.Fix(3.25);
             end;
         }
     }
 
     var
-        ReportTemplates: Codeunit Template;
+        Template: Codeunit Template;
 }

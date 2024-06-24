@@ -6,23 +6,23 @@ report 50104 "Demo 3"
 
     dataset
     {
-        dataitem(Company_Information; "Company Information")
-        {
-            #region columns
-            column(Company_Picture; Picture) { AutoCalcField = true; }
-            column(Company_Name; Name) { }
-            column(Company_Address; Address) { }
-            #endregion columns
-        }
         dataitem(Parent; Integer)
         {
             DataItemTableView = where(Number = filter(1 .. 50));
 
             #region columns
-            column(Child_Number_Caption; Globals.GetText(Caption::Number)) { }
+            column(Child_Number_Caption; Global.GetText(Caption::Number)) { }
             column(Parent_Number; Number) { }
             #endregion columns
 
+            dataitem("Company Information"; "Company Information")
+            {
+                #region columns
+                column(Company_Picture; Picture) { AutoCalcField = true; }
+                column(Company_Name; Name) { }
+                column(Company_Address; Address) { }
+                #endregion columns
+            }
             dataitem(Child; Integer)
             {
                 column(Child_Number; Number) { }
@@ -34,7 +34,7 @@ report 50104 "Demo 3"
 
                 trigger OnAfterGetRecord()
                 begin
-                    Templates.Fill(0.25);
+                    Template.Fix(0.25);
                 end;
             }
             dataitem(Totals; Integer)
@@ -53,7 +53,7 @@ report 50104 "Demo 3"
 
                 trigger OnAfterGetRecord()
                 begin
-                    Templates.Fit(0.5);
+                    Template.Fit(0.5);
                 end;
             }
             dataitem(Blanks; Integer)
@@ -62,7 +62,7 @@ report 50104 "Demo 3"
 
                 trigger OnPreDataItem()
                 begin
-                    Templates.Run(Blanks);
+                    Template.Run(Blanks);
 
                     if IsEmpty() then CurrReport.Break();
                 end;
@@ -70,14 +70,15 @@ report 50104 "Demo 3"
 
             trigger OnAfterGetRecord()
             begin
-                Templates.Init(Paper::A4, 0, 0, 1.25, 1.25, 0.25);
-                Templates.Fit(0.25);
-                Templates.Fill(0.5);
+                Template.Init(Paper::A4, 0.25);
+                Template.Fit(1.25 + 1.25);
+                Template.Fit(0.25);
+                Template.Fix(0.5);
             end;
         }
     }
 
     var
-        Globals: Codeunit Globals;
-        Templates: Codeunit Template;
+        Global: Codeunit Global;
+        Template: Codeunit Template;
 }

@@ -697,7 +697,7 @@
                                 <Group Name="Details2">
                                   <GroupExpressions>
                                     <GroupExpression>=Fields!Line_No.Value</GroupExpression>
-                                    <GroupExpression>=Fields!Blanks_Number.Value</GroupExpression>
+                                    <GroupExpression>=Fields!Number.Value</GroupExpression>
                                   </GroupExpressions>
                                 </Group>
                                 <TablixMembers>
@@ -708,7 +708,7 @@
                                   </TablixMember>
                                   <TablixMember>
                                     <Visibility>
-                                      <Hidden>=IsNothing(Fields!Blanks_Number.Value)</Hidden>
+                                      <Hidden>=IsNothing(Fields!Number.Value)</Hidden>
                                     </Visibility>
                                   </TablixMember>
                                 </TablixMembers>
@@ -1166,8 +1166,8 @@ End Function
         <Field Name="Comment">
           <DataField>Comment</DataField>
         </Field>
-        <Field Name="Blanks_Number">
-          <DataField>Blanks_Number</DataField>
+        <Field Name="Number">
+          <DataField>Number</DataField>
         </Field>
       </Fields>
       <Query>

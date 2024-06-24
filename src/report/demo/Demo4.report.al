@@ -9,11 +9,11 @@ report 50105 "Demo 4"
         dataitem("Sales Header"; "Sales Header")
         {
             #region captions
-            column(No_; Globals.GetText(Caption::Number)) { }
-            column(Description_; Globals.GetText(Caption::Description)) { }
-            column(Quantity_; Globals.GetText(Caption::Quantity)) { }
-            column(Amount_; Globals.GetText(Caption::Amount)) { }
-            column(VATPct_; Globals.GetText(Caption::VATPct)) { }
+            column(No_; Global.GetText(Caption::Number)) { }
+            column(Description_; Global.GetText(Caption::Description)) { }
+            column(Quantity_; Global.GetText(Caption::Quantity)) { }
+            column(Amount_; Global.GetText(Caption::Amount)) { }
+            column(VATPct_; Global.GetText(Caption::VATPct)) { }
             #endregion captions
 
             #region columns
@@ -21,7 +21,7 @@ report 50105 "Demo 4"
             column(Code; "No.") { }
             #endregion columns
 
-            dataitem(Company_Information; "Company Information")
+            dataitem("Company Information"; "Company Information")
             {
                 #region columns
                 column(Company_Picture; Picture) { AutoCalcField = true; }
@@ -44,10 +44,10 @@ report 50105 "Demo 4"
 
                 trigger OnAfterGetRecord()
                 begin
-                    Templates.Fill(0.25);
+                    Template.Fix(0.25);
                 end;
             }
-            dataitem(Comments; "Sales Comment Line")
+            dataitem("Sales Comment Line"; "Sales Comment Line")
             {
                 DataItemLink = "Document Type" = field("Document Type"), "No." = field("No.");
 
@@ -57,16 +57,16 @@ report 50105 "Demo 4"
 
                 trigger OnAfterGetRecord()
                 begin
-                    Templates.Fit(0.5);
+                    Template.Fit(0.5);
                 end;
             }
-            dataitem(Blanks; Integer)
+            dataitem("Blank Line"; Integer)
             {
-                column(Blanks_Number; Number) { }
+                column(Number; Number) { }
 
                 trigger OnPreDataItem()
                 begin
-                    Templates.Run(Blanks);
+                    Template.Run("Blank Line");
 
                     if IsEmpty() then CurrReport.Break();
                 end;
@@ -74,14 +74,17 @@ report 50105 "Demo 4"
 
             trigger OnAfterGetRecord()
             begin
-                Templates.Init(Paper::A4, 0, 0, 1.25, 1.25, 0.25);
-                Templates.Fill(0.5);
-                Templates.Fit(0.25);
+                Template.Init(Paper::A4, 0.25);
+                Template.Fit(1.25);
+                Template.Fix(0.25);
+                Template.Fit(0.25);
+                Template.Fix(0.25);
+                Template.Fit(1.25);
             end;
         }
     }
 
     var
-        Globals: Codeunit Globals;
-        Templates: Codeunit Template;
+        Global: Codeunit Global;
+        Template: Codeunit Template;
 }

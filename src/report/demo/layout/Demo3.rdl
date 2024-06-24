@@ -695,6 +695,12 @@ End Function
   <DataSets>
     <DataSet Name="DataSet_Result">
       <Fields>
+        <Field Name="Child_Number_Caption">
+          <DataField>Child_Number_Caption</DataField>
+        </Field>
+        <Field Name="Parent_Number">
+          <DataField>Parent_Number</DataField>
+        </Field>
         <Field Name="Company_Picture">
           <DataField>Company_Picture</DataField>
         </Field>
@@ -703,12 +709,6 @@ End Function
         </Field>
         <Field Name="Company_Address">
           <DataField>Company_Address</DataField>
-        </Field>
-        <Field Name="Child_Number_Caption">
-          <DataField>Child_Number_Caption</DataField>
-        </Field>
-        <Field Name="Parent_Number">
-          <DataField>Parent_Number</DataField>
         </Field>
         <Field Name="Child_Number">
           <DataField>Child_Number</DataField>

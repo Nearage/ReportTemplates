@@ -1,4 +1,4 @@
-codeunit 50102 Globals
+codeunit 50102 Global
 {
     /// <summary>
     /// Obtiene el valor de la variante especificada como texto.

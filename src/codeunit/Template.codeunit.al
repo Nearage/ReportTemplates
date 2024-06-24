@@ -3,7 +3,7 @@ codeunit 50100 Template
     TableNo = Integer; // La tabla Integer facilita generar líneas en blanco.
 
     var
-        Globals: Codeunit Globals;
+        Globals: Codeunit Global;
         Mathx: Codeunit Mathx;
         GblDocHeight: Decimal; // Altura del contenido del documento.
         GblLinHeight: Decimal; // Altura por defecto de las líneas.
@@ -22,7 +22,7 @@ codeunit 50100 Template
     /// especificada.
     /// </summary>
     /// <param name="Height">Altura ajustada.</param>
-    procedure Fill(Height: Decimal)
+    procedure Fix(Height: Decimal)
     begin
         GblDocHeight += Height;
     end;
@@ -41,22 +41,11 @@ codeunit 50100 Template
     /// Calcula la altura disponible en cada página en función de los
     /// parámetros especificados e inicializa las variables globales.
     /// </summary>
-    /// <param name="PaperSize">Tamaño del papel.</param>
-    /// <param name="MarginTop">Margen superior.</param>
-    /// <param name="MarginBot">Margen inferior.</param>
-    /// <param name="HeaderHgt">Altura de la cabecera.</param>
-    /// <param name="FooterHgt">Altura del pie de página.</param>
+    /// <param name="PaperSize">Variante de papel.</param>
     /// <param name="LinHeight">Altura por defecto de las líneas.</param>
-    procedure Init(PaperSize: Variant;
-                   MarginTop: Decimal;
-                   MarginBot: Decimal;
-                   HeaderHgt: Decimal;
-                   FooterHgt: Decimal;
-                   LinHeight: Decimal)
+    procedure Init(PaperSize: Variant; LinHeight: Decimal)
     begin
         GblPagHeight := Globals.GetValue(PaperSize);
-        GblPagHeight -= MarginTop + MarginBot;
-        GblPagHeight -= HeaderHgt + FooterHgt;
         GblLinHeight := LinHeight;
         GblDocHeight := 0;
     end;
