@@ -34,7 +34,7 @@ report 50104 "Demo 3"
 
                 trigger OnAfterGetRecord()
                 begin
-                    Template.Fix(0.25);
+                    Template.Fit(0.25);
                 end;
             }
             dataitem(Totals; Integer)
@@ -53,7 +53,7 @@ report 50104 "Demo 3"
 
                 trigger OnAfterGetRecord()
                 begin
-                    Template.Fit(0.5);
+                    Template.Fix(0.5);
                 end;
             }
             dataitem(Blanks; Integer)
@@ -70,10 +70,10 @@ report 50104 "Demo 3"
 
             trigger OnAfterGetRecord()
             begin
-                Template.Init(Paper::A4, 0.25);
-                Template.Fit(1.25 + 1.25);
-                Template.Fit(0.25);
-                Template.Fix(0.5);
+                Template.Set(Paper::A4, 0.25);
+                Template.Fix(1.25 + 1.25);
+                Template.Fix(0.25);
+                Template.Fit(0.5);
             end;
         }
     }

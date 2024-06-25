@@ -18,7 +18,7 @@ report 50101 "Demo 2"
 
                 trigger OnAfterGetRecord()
                 begin
-                    Template.Fix(0.25);
+                    Template.Fit(0.25);
                 end;
             }
             dataitem(Child2; Integer)
@@ -29,7 +29,7 @@ report 50101 "Demo 2"
 
                 trigger OnAfterGetRecord()
                 begin
-                    Template.Fix(0.5);
+                    Template.Fit(0.5);
                 end;
             }
             dataitem(Blanks; Integer)
@@ -44,9 +44,9 @@ report 50101 "Demo 2"
 
             trigger OnAfterGetRecord()
             begin
-                Template.Init(Paper::A4, 0.25);
-                Template.Fit(1 + 1);
-                Template.Fix(3.25);
+                Template.Set(Paper::A4, 0.25);
+                Template.Fix(1 + 1);
+                Template.Fit(3.25);
             end;
         }
     }

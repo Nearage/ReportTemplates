@@ -22,7 +22,7 @@ codeunit 50100 Template
     /// especificada.
     /// </summary>
     /// <param name="Height">Altura ajustada.</param>
-    procedure Fix(Height: Decimal)
+    procedure Fit(Height: Decimal)
     begin
         GblDocHeight += Height;
     end;
@@ -32,7 +32,7 @@ codeunit 50100 Template
     /// especificada.
     /// </summary>
     /// <param name="Height">Altura ajustada.</param>
-    procedure Fit(Height: Decimal)
+    procedure Fix(Height: Decimal)
     begin
         GblPagHeight -= Height
     end;
@@ -43,7 +43,7 @@ codeunit 50100 Template
     /// </summary>
     /// <param name="PaperSize">Variante de papel.</param>
     /// <param name="LinHeight">Altura por defecto de las líneas.</param>
-    procedure Init(PaperSize: Variant; LinHeight: Decimal)
+    procedure Set(PaperSize: Variant; LinHeight: Decimal)
     begin
         GblPagHeight := Globals.GetValue(PaperSize);
         GblLinHeight := LinHeight;

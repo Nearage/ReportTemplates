@@ -44,7 +44,7 @@ report 50105 "Demo 4"
 
                 trigger OnAfterGetRecord()
                 begin
-                    Template.Fix(0.25);
+                    Template.Fit(0.25);
                 end;
             }
             dataitem("Sales Comment Line"; "Sales Comment Line")
@@ -57,7 +57,7 @@ report 50105 "Demo 4"
 
                 trigger OnAfterGetRecord()
                 begin
-                    Template.Fit(0.5);
+                    Template.Fix(0.5);
                 end;
             }
             dataitem("Blank Line"; Integer)
@@ -74,12 +74,12 @@ report 50105 "Demo 4"
 
             trigger OnAfterGetRecord()
             begin
-                Template.Init(Paper::A4, 0.25);
-                Template.Fit(1.25);
-                Template.Fix(0.25);
+                Template.Set(Paper::A4, 0.25);
+                Template.Fix(1.25);
                 Template.Fit(0.25);
                 Template.Fix(0.25);
-                Template.Fit(1.25);
+                Template.Fit(0.25);
+                Template.Fix(1.25);
             end;
         }
     }
