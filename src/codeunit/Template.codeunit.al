@@ -38,8 +38,8 @@ codeunit 50100 Template
     end;
 
     /// <summary>
-    /// Calcula la altura disponible en cada página en función de los
-    /// parámetros especificados e inicializa las variables globales.
+    /// Inicializa las variables globales en función de la variante de papel
+    /// y la altura de línea especificadas.
     /// </summary>
     /// <param name="PaperSize">Variante de papel.</param>
     /// <param name="LinHeight">Altura por defecto de las líneas.</param>
