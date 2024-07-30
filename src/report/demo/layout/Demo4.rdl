@@ -150,6 +150,7 @@
                                           <PaddingBottom>2pt</PaddingBottom>
                                         </Style>
                                       </Textbox>
+                                      <rd:Selected>true</rd:Selected>
                                     </CellContents>
                                   </TablixCell>
                                   <TablixCell>
@@ -313,9 +314,12 @@
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
-                                                <Value />
+                                                <Label>&amp;Reiniciar</Label>
+                                                <Value>=Code.Reiniciar()</Value>
                                                 <Style>
+                                                  <Format>0.00 '€';(0.00 '€')</Format>
                                                   <Color>Teal</Color>
+                                                  <rd:FormatSymbolCulture>es-ES</rd:FormatSymbolCulture>
                                                 </Style>
                                               </TextRun>
                                             </TextRuns>
@@ -590,9 +594,12 @@
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
+                                                <Label>&amp;Reiniciar</Label>
                                                 <Value />
                                                 <Style>
-                                                  <Color>Gray</Color>
+                                                  <Format>0.00 '€';(0.00 '€')</Format>
+                                                  <Color>Yellow</Color>
+                                                  <rd:FormatSymbolCulture>es-ES</rd:FormatSymbolCulture>
                                                 </Style>
                                               </TextRun>
                                             </TextRuns>
@@ -632,29 +639,30 @@
                                 <TablixCells>
                                   <TablixCell>
                                     <CellContents>
-                                      <Textbox Name="Textbox4">
+                                      <Textbox Name="Textbox18">
+                                        <CanGrow>true</CanGrow>
                                         <KeepTogether>true</KeepTogether>
                                         <Paragraphs>
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
+                                                <Label>&amp;Reiniciar</Label>
                                                 <Value />
-                                                <Style />
+                                                <Style>
+                                                  <Format>0.00 '€';(0.00 '€')</Format>
+                                                  <rd:FormatSymbolCulture>es-ES</rd:FormatSymbolCulture>
+                                                </Style>
                                               </TextRun>
                                             </TextRuns>
                                             <Style />
                                           </Paragraph>
                                         </Paragraphs>
-                                        <rd:DefaultName>Textbox4</rd:DefaultName>
+                                        <rd:DefaultName>Textbox18</rd:DefaultName>
                                         <Style>
                                           <Border>
                                             <Style>None</Style>
                                           </Border>
                                           <BackgroundColor>LightGrey</BackgroundColor>
-                                          <PaddingLeft>2pt</PaddingLeft>
-                                          <PaddingRight>2pt</PaddingRight>
-                                          <PaddingTop>2pt</PaddingTop>
-                                          <PaddingBottom>2pt</PaddingBottom>
                                         </Style>
                                       </Textbox>
                                       <ColSpan>6</ColSpan>
@@ -901,15 +909,6 @@
                                     <rd:FormatSymbolCulture>es-ES</rd:FormatSymbolCulture>
                                   </Style>
                                 </TextRun>
-                                <TextRun>
-                                  <Label>&amp;Reiniciar</Label>
-                                  <Value>=Code.Reiniciar()</Value>
-                                  <Style>
-                                    <Format>0.00 '€';(0.00 '€')</Format>
-                                    <Color>Yellow</Color>
-                                    <rd:FormatSymbolCulture>es-ES</rd:FormatSymbolCulture>
-                                  </Style>
-                                </TextRun>
                               </TextRuns>
                               <Style>
                                 <TextAlign>Center</TextAlign>
@@ -956,9 +955,6 @@
                     <TablixMember />
                     <TablixMember />
                   </TablixMembers>
-                  <Visibility>
-                    <Hidden>=IsNothing(Fields!Code.Value)</Hidden>
-                  </Visibility>
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
