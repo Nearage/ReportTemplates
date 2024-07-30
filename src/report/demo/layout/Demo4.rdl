@@ -92,19 +92,22 @@
                           <TablixBody>
                             <TablixColumns>
                               <TablixColumn>
-                                <Width>1in</Width>
+                                <Width>0.83333in</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>3.27in</Width>
+                                <Width>3.10333in</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>1in</Width>
+                                <Width>0.83333in</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>1in</Width>
+                                <Width>0.83333in</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>1in</Width>
+                                <Width>0.83333in</Width>
+                              </TablixColumn>
+                              <TablixColumn>
+                                <Width>0.83333in</Width>
                               </TablixColumn>
                             </TablixColumns>
                             <TablixRows>
@@ -283,6 +286,45 @@
                                           </Paragraph>
                                         </Paragraphs>
                                         <rd:DefaultName>Textbox28</rd:DefaultName>
+                                        <Style>
+                                          <Border>
+                                            <Color>Teal</Color>
+                                            <Style>None</Style>
+                                          </Border>
+                                          <BottomBorder>
+                                            <Style>Solid</Style>
+                                          </BottomBorder>
+                                          <BackgroundColor>Turquoise</BackgroundColor>
+                                          <VerticalAlign>Middle</VerticalAlign>
+                                          <PaddingLeft>2pt</PaddingLeft>
+                                          <PaddingRight>2pt</PaddingRight>
+                                          <PaddingTop>2pt</PaddingTop>
+                                          <PaddingBottom>2pt</PaddingBottom>
+                                        </Style>
+                                      </Textbox>
+                                    </CellContents>
+                                  </TablixCell>
+                                  <TablixCell>
+                                    <CellContents>
+                                      <Textbox Name="Textbox8">
+                                        <CanGrow>true</CanGrow>
+                                        <KeepTogether>true</KeepTogether>
+                                        <Paragraphs>
+                                          <Paragraph>
+                                            <TextRuns>
+                                              <TextRun>
+                                                <Value />
+                                                <Style>
+                                                  <Color>Teal</Color>
+                                                </Style>
+                                              </TextRun>
+                                            </TextRuns>
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
+                                          </Paragraph>
+                                        </Paragraphs>
+                                        <rd:DefaultName>Textbox8</rd:DefaultName>
                                         <Style>
                                           <Border>
                                             <Color>Teal</Color>
@@ -494,6 +536,47 @@
                                       </Textbox>
                                     </CellContents>
                                   </TablixCell>
+                                  <TablixCell>
+                                    <CellContents>
+                                      <Textbox Name="Textbox23">
+                                        <CanGrow>true</CanGrow>
+                                        <KeepTogether>true</KeepTogether>
+                                        <Paragraphs>
+                                          <Paragraph>
+                                            <TextRuns>
+                                              <TextRun>
+                                                <Label>&amp;Subtotal</Label>
+                                                <Value>=Code.SumaYSigue(ReportItems!Amount.Value)</Value>
+                                                <Style>
+                                                  <Format>0.00 '€';(0.00 '€')</Format>
+                                                  <Color>Teal</Color>
+                                                  <rd:FormatSymbolCulture>es-ES</rd:FormatSymbolCulture>
+                                                </Style>
+                                              </TextRun>
+                                            </TextRuns>
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
+                                          </Paragraph>
+                                        </Paragraphs>
+                                        <Style>
+                                          <Border>
+                                            <Color>Teal</Color>
+                                            <Style>None</Style>
+                                          </Border>
+                                          <BottomBorder>
+                                            <Style>Solid</Style>
+                                          </BottomBorder>
+                                          <BackgroundColor>PaleTurquoise</BackgroundColor>
+                                          <VerticalAlign>Middle</VerticalAlign>
+                                          <PaddingLeft>2pt</PaddingLeft>
+                                          <PaddingRight>2pt</PaddingRight>
+                                          <PaddingTop>2pt</PaddingTop>
+                                          <PaddingBottom>2pt</PaddingBottom>
+                                        </Style>
+                                      </Textbox>
+                                    </CellContents>
+                                  </TablixCell>
                                 </TablixCells>
                               </TablixRow>
                               <TablixRow>
@@ -534,9 +617,10 @@
                                           <PaddingBottom>2pt</PaddingBottom>
                                         </Style>
                                       </Textbox>
-                                      <ColSpan>5</ColSpan>
+                                      <ColSpan>6</ColSpan>
                                     </CellContents>
                                   </TablixCell>
+                                  <TablixCell />
                                   <TablixCell />
                                   <TablixCell />
                                   <TablixCell />
@@ -573,9 +657,10 @@
                                           <PaddingBottom>2pt</PaddingBottom>
                                         </Style>
                                       </Textbox>
-                                      <ColSpan>5</ColSpan>
+                                      <ColSpan>6</ColSpan>
                                     </CellContents>
                                   </TablixCell>
+                                  <TablixCell />
                                   <TablixCell />
                                   <TablixCell />
                                   <TablixCell />
@@ -667,9 +752,10 @@
                                           <BackgroundColor>Plum</BackgroundColor>
                                         </Style>
                                       </Tablix>
-                                      <ColSpan>5</ColSpan>
+                                      <ColSpan>6</ColSpan>
                                     </CellContents>
                                   </TablixCell>
+                                  <TablixCell />
                                   <TablixCell />
                                   <TablixCell />
                                   <TablixCell />
@@ -680,6 +766,7 @@
                           </TablixBody>
                           <TablixColumnHierarchy>
                             <TablixMembers>
+                              <TablixMember />
                               <TablixMember />
                               <TablixMember />
                               <TablixMember />
@@ -802,6 +889,24 @@
                                     <FontWeight>Bold</FontWeight>
                                     <Format>0.00 '€';(0.00 '€')</Format>
                                     <Color>PaleTurquoise</Color>
+                                    <rd:FormatSymbolCulture>es-ES</rd:FormatSymbolCulture>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value xml:space="preserve"> </Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>0.00 '€';(0.00 '€')</Format>
+                                    <Color>PaleTurquoise</Color>
+                                    <rd:FormatSymbolCulture>es-ES</rd:FormatSymbolCulture>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Label>&amp;Reiniciar</Label>
+                                  <Value>=Code.Reiniciar()</Value>
+                                  <Style>
+                                    <Format>0.00 '€';(0.00 '€')</Format>
+                                    <Color>Yellow</Color>
                                     <rd:FormatSymbolCulture>es-ES</rd:FormatSymbolCulture>
                                   </Style>
                                 </TextRun>
@@ -1017,6 +1122,7 @@
                       </Style>
                     </TextRun>
                     <TextRun>
+                      <Label>&amp;Importe</Label>
                       <Value>=Sum(ReportItems!Amount.Value)</Value>
                       <Style>
                         <Format>0.00 '€';(0.00 '€')</Format>
@@ -1064,41 +1170,16 @@
       </Page>
     </ReportSection>
   </ReportSections>
-  <Code>Public Function BlankZero(ByVal Value As Decimal)
-    if Value = 0 then
-        Return ""
-    end if
-    Return Value
+  <Code>Dim Total As Decimal = 0
+
+Public Function SumaYSigue(ByVal Value) As Decimal
+    Me.Total += Value
+    Return Me.Total
 End Function
 
-Public Function BlankPos(ByVal Value As Decimal)
-    if Value &gt; 0 then
-        Return ""
-    end if
-    Return Value
-End Function
-
-Public Function BlankZeroAndPos(ByVal Value As Decimal)
-    if Value &gt;= 0 then
-        Return ""
-    end if
-    Return Value
-End Function
-
-Public Function BlankNeg(ByVal Value As Decimal)
-    if Value &lt; 0 then
-        Return ""
-    end if
-    Return Value
-End Function
-
-Public Function BlankNegAndZero(ByVal Value As Decimal)
-    if Value &lt;= 0 then
-        Return ""
-    end if
-    Return Value
-End Function
-</Code>
+Public Function Reiniciar() As String
+    Me.Total = 0
+End Function</Code>
   <Language>=User!Language</Language>
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
