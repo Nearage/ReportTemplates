@@ -150,7 +150,6 @@
                                           <PaddingBottom>2pt</PaddingBottom>
                                         </Style>
                                       </Textbox>
-                                      <rd:Selected>true</rd:Selected>
                                     </CellContents>
                                   </TablixCell>
                                   <TablixCell>
@@ -317,7 +316,6 @@
                                                 <Label>&amp;Reiniciar</Label>
                                                 <Value>=Code.Reiniciar()</Value>
                                                 <Style>
-                                                  <Format>0.00 '€';(0.00 '€')</Format>
                                                   <Color>Teal</Color>
                                                   <rd:FormatSymbolCulture>es-ES</rd:FormatSymbolCulture>
                                                 </Style>
