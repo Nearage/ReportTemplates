@@ -3,7 +3,7 @@ page 50100 "HTMLPort Preview"
     ApplicationArea = All;
     UsageCategory = Administration;
     Caption = 'HTMLPort Preview';
-    PageType = List;
+    PageType = Card;
     DeleteAllowed = false;
     InsertAllowed = false;
     ModifyAllowed = false;
@@ -12,14 +12,22 @@ page 50100 "HTMLPort Preview"
     {
         area(Content)
         {
-            /* group(fields)
-            {
-                field("test"; 'testfield') { }
-            } */
-
             usercontrol(HTMLPortPreview; HTMLPortPreview)
             {
                 ApplicationArea = All;
+            }
+
+            group("Origen de datos")
+            {
+                field("Código fuente"; Content)
+                {
+                    MultiLine = true;
+
+                    trigger OnValidate()
+                    begin
+                        CurrPage.HTMLPortPreview.SetContent(Content);
+                    end;
+                }
             }
         }
     }
@@ -46,4 +54,7 @@ page 50100 "HTMLPort Preview"
             }
         }
     }
+
+    var
+        Content: Text;
 }

@@ -194,9 +194,9 @@ class PageImpl {
     }
 }
 
-window.addEventListener("load", _ => {
+/* window.addEventListener("load", _ => {
     const controlAddIn = document.querySelector("#controlAddIn");
-    
+
     controlAddIn.innerHTML = `
     <div id="HTMLPort">
         <div class="report">
@@ -271,8 +271,16 @@ window.addEventListener("load", _ => {
     </div>`;
 
     HTMLPort.run();
-});
+}); */
 
 function Print() {
     print();
+}
+
+function SetContent(content) {
+    const controlAddIn = document.querySelector("#controlAddIn");
+
+    controlAddIn.innerHTML = content;
+
+    HTMLPort.run();
 }

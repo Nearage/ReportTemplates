@@ -31,6 +31,11 @@
     padding: 0;
 }
 
+body {
+    box-sizing: border-box;
+    padding-bottom: .25in !important;
+}
+
 #HTMLPort {
     align-items: center;
     display: flex;

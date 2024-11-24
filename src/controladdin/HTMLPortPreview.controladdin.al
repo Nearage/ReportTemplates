@@ -7,4 +7,5 @@ controladdin HTMLPortPreview
     StartupScript = './src/controladdin/HTMLPortPreview.js';
 
     procedure Print();
+    procedure SetContent(content: Text);
 }
