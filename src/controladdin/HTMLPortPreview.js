@@ -275,6 +275,10 @@ class PageImpl {
 
 function Print() {
     print();
+
+    // var element = document.getElementById('HTMLPort');
+
+    // html2pdf(element);
 }
 
 function SetContent(content) {

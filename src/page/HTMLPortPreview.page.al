@@ -19,7 +19,7 @@ page 50100 "HTMLPort Preview"
 
             group("Origen de datos")
             {
-                field("Código fuente"; Content)
+                field("Código HTML"; Content)
                 {
                     MultiLine = true;
 
