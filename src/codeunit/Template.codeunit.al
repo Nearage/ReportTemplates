@@ -6,16 +6,16 @@ codeunit 50100 Template
     // espacio vacío con líneas en blanco.
     trigger OnRun()
     begin
-        Rec.SetRange(Number, 1, Mathx.Modulo(-(GblDocHeight div GblLinHeight),
-                                               GblPagHeight div GblLinHeight));
+        Rec.SetRange(Number, 1, gMathx.Modulo(-(gDocHeight div gLinHeight),
+                                                gPagHeight div gLinHeight));
     end;
 
     var
-        Globals: Codeunit Global;
-        Mathx: Codeunit Mathx;
-        GblDocHeight: Decimal; // Altura del contenido del documento.
-        GblLinHeight: Decimal; // Altura por defecto de las líneas.
-        GblPagHeight: Decimal; // Altura disponible en cada página.
+        gLabelManagement: Codeunit "Label Management";
+        gMathx: Codeunit Mathx;
+        gDocHeight: Decimal; // Altura del contenido del documento.
+        gLinHeight: Decimal; // Altura por defecto de las líneas.
+        gPagHeight: Decimal; // Altura disponible en cada página.
 
     /// <summary>
     /// Ajusta la altura del contenido del documento en función de la altura
@@ -24,7 +24,7 @@ codeunit 50100 Template
     /// <param name="Height">Altura ajustada.</param>
     procedure Fit(Height: Decimal)
     begin
-        GblDocHeight += Height;
+        gDocHeight += Height;
     end;
 
     /// <summary>
@@ -34,7 +34,18 @@ codeunit 50100 Template
     /// <param name="Height">Altura ajustada.</param>
     procedure Fix(Height: Decimal)
     begin
-        GblPagHeight -= Height
+        gPagHeight -= Height
+    end;
+
+    /// <summary>
+    /// Devuelve el número de páginas 
+    /// </summary>
+    /// <returns></returns>
+    procedure Pages(): Integer
+    var
+        math: Codeunit Math;
+    begin
+        exit(Round(gPagHeight / gLinHeight, 1));
     end;
 
     /// <summary>
@@ -45,8 +56,8 @@ codeunit 50100 Template
     /// <param name="LinHeight">Altura por defecto de las líneas.</param>
     procedure Set(PaperSize: Variant; LinHeight: Decimal)
     begin
-        GblPagHeight := Globals.GetValue(PaperSize);
-        GblLinHeight := LinHeight;
-        GblDocHeight := 0;
+        gPagHeight := gLabelManagement.GetValue(PaperSize);
+        gLinHeight := LinHeight;
+        gDocHeight := 0;
     end;
 }

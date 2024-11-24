@@ -79,6 +79,6 @@ report 50104 "Demo 3"
     }
 
     var
-        Global: Codeunit Global;
+        Global: Codeunit "Label Management";
         Template: Codeunit Template;
 }

@@ -586,17 +586,29 @@
                                 <TablixCells>
                                   <TablixCell>
                                     <CellContents>
-                                      <Textbox Name="Textbox26">
+                                      <Textbox Name="Page">
                                         <KeepTogether>true</KeepTogether>
                                         <Paragraphs>
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
-                                                <Label>&amp;Reiniciar</Label>
-                                                <Value />
+                                                <Value>Page:</Value>
+                                                <Style>
+                                                  <FontWeight>Bold</FontWeight>
+                                                  <Format>0.00 '€';(0.00 '€')</Format>
+                                                  <rd:FormatSymbolCulture>es-ES</rd:FormatSymbolCulture>
+                                                </Style>
+                                              </TextRun>
+                                              <TextRun>
+                                                <Value xml:space="preserve"> </Value>
                                                 <Style>
                                                   <Format>0.00 '€';(0.00 '€')</Format>
-                                                  <Color>Yellow</Color>
+                                                  <rd:FormatSymbolCulture>es-ES</rd:FormatSymbolCulture>
+                                                </Style>
+                                              </TextRun>
+                                              <TextRun>
+                                                <Value>=Fields!Page.Value</Value>
+                                                <Style>
                                                   <rd:FormatSymbolCulture>es-ES</rd:FormatSymbolCulture>
                                                 </Style>
                                               </TextRun>
@@ -606,7 +618,7 @@
                                             </Style>
                                           </Paragraph>
                                         </Paragraphs>
-                                        <rd:DefaultName>Textbox26</rd:DefaultName>
+                                        <rd:DefaultName>Page</rd:DefaultName>
                                         <Style>
                                           <Border>
                                             <Color>Gray</Color>
@@ -1181,6 +1193,9 @@ End Function</Code>
   <DataSets>
     <DataSet Name="DataSet_Result">
       <Fields>
+        <Field Name="Page">
+          <DataField>Page</DataField>
+        </Field>
         <Field Name="No_">
           <DataField>No_</DataField>
         </Field>

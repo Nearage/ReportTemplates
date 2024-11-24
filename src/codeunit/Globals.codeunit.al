@@ -1,4 +1,4 @@
-codeunit 50102 Global
+codeunit 50102 "Label Management"
 {
     /// <summary>
     /// Obtiene el valor de la variante especificada como texto.

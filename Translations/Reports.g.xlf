@@ -3,6 +3,21 @@
   <file datatype="xml" source-language="en-US" target-language="en-US" original="Reports">
     <body>
       <group id="body">
+        <trans-unit id="Page 369814170 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>HTMLPort Preview</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page HTMLPort Preview - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 369814170 - Action 3440541435 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Imprime el documento.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page HTMLPort Preview - Action Imprimir - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 369814170 - Action 3440541435 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Imprimir</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page HTMLPort Preview - Action Imprimir - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Report 2879275470 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Demo 1</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -22,6 +37,11 @@
           <source>Demo 4</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Demo 4 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 475631896 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>HTMLPort</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report HTMLPort - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 2879900210 - EnumValue 636392376 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Amount</source>

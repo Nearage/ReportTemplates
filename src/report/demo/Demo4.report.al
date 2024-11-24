@@ -1,5 +1,6 @@
 report 50105 "Demo 4"
 {
+    ApplicationArea = All;
     Caption = 'Demo 4';
     RDLCLayout = 'src/report/demo/layout/Demo4.rdl';
     UsageCategory = ReportsAndAnalysis;
@@ -8,6 +9,10 @@ report 50105 "Demo 4"
     {
         dataitem("Sales Header"; "Sales Header")
         {
+            #region metadata
+            column(Page; gPages) { }
+            #endregion metadata
+
             #region captions
             column(No_; Global.GetText(Caption::Number)) { }
             column(Description_; Global.GetText(Caption::Description)) { }
@@ -75,6 +80,7 @@ report 50105 "Demo 4"
             trigger OnAfterGetRecord()
             begin
                 Template.Set(Paper::A4, 0.25);
+                gPages := Template.Pages();
                 Template.Fix(1.25);
                 Template.Fit(0.25);
                 Template.Fix(0.25);
@@ -85,6 +91,7 @@ report 50105 "Demo 4"
     }
 
     var
-        Global: Codeunit Global;
+        Global: Codeunit "Label Management";
         Template: Codeunit Template;
+        gPages: Integer;
 }
