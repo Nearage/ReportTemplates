@@ -198,12 +198,13 @@ window.addEventListener("load", _ => {
     const controlAddIn = document.querySelector("#controlAddIn");
     
     controlAddIn.innerHTML = `
+    <div id="HTMLPort">
         <div class="report">
             <div id="settings">
                 <span id="width">6</span>
                 <span id="height">4</span>
                 <span id="padding">0.25</span>
-                <!-- <span id="pagebreak">always</span> -->
+                <span id="pagebreak">always</span>
             </div>
             <div class="fixtop" style="background-color: #f60; color: white;">Fixed top</div>
             <div class="header" style="background-color: #026; color: white;">Header %page%/%pages%</div>
@@ -266,7 +267,8 @@ window.addEventListener("load", _ => {
             <div class="footer" style="background-color: #0c9; color: white;">Footer 1 %page%/%pages%</div>
             <div class="footer" style="background-color: #06f; color: white;">Footer 2 %page%/%pages%</div>
             <div class="fixbot" style="background-color: #f9f; color: white;">Fixed bottom</div>
-        </div>`;
+        </div>
+    </div>`;
 
     HTMLPort.run();
 });
